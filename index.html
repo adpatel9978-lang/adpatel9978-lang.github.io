@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madinal Lifescience | Quality Formulations</title>
+    <style>
+        /* Modern CSS Reset & Core Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0284c7;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: #d11a2a; /* Brand Red */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0284c7;
+        }
+
+        /* Hero Section with Animation */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2070') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Premium Interactive Product Section */
+        .products-section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        /* Interactive Product Card with Auto-Zoom */
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+            cursor: pointer;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Hover card lift effect */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Image Wrapper with hidden overflow to handle Zooming */
+        .img-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f1f5f9;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease; /* Smooth slow zoom transition */
+        }
+
+        /* The actual smooth zoom effect on image when user hovers */
+        .product-card:hover .img-container img {
+            transform: scale(1.15); 
+        }
+
+        .product-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #0284c7;
+            background: #e0f2fe;
+            padding: 4px 10px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .product-card p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Mobile Changes */
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            nav ul { display: none; } /* Simplifies for mobile */
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .products-section { padding: 50px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <nav>
+        <div class="logo">MADINAL <span>LIFESCIENCE</span></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Banner Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Advancing Healthcare through Quality Formulations</h1>
+            <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
+        </div>
+    </div>
+
+    <!-- Product Grid Section with Premium Hover Effects -->
+    <div class="products-section">
+        <h2 class="section-title">Our Premium Formulations</h2>
+        <p class="section-subtitle">Hover over the products to inspect packaging quality and composition details.</p>
+        
+        <div class="product-grid">
+            
+            <!-- Card 1 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <!-- Replace link inside src='' with your medicine photos when ready -->
+                    <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?q=80&w=1000" alt="Antibiotics">
+                </div>
+                <span class="product-tag">Antibiotic</span>
+                <h3>ZOSAN 400</h3>
+                <p>High-efficacy antibacterial formulation manufactured under global safety standards.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1550572017-edd951b55104?q=80&w=1000" alt="Analgesics">
+                </div>
+                <span class="product-tag">Analgesic</span>
+                <h3>Premium Analgesics</h3>
+                <p>Fast-acting targeted relief compositions crafted for maximal patient compliance.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1626716493137-b67fe9501e76?q=80&w=1000" alt="Dermatology">
+                </div>
+                <span class="product-tag">Derma & Hair</span>
+                <h3>Advanced Derma Range</h3>
+                <p>Clinically tested targeted therapies for optimal skin health and hair recovery.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
