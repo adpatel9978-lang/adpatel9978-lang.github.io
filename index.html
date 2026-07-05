@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitsan Pharmaceuticals | Advanced Healthcare Solutions</title>
+    <title>Madinal Lifescience | Quality Formulations</title>
     <style>
-        /* --- Modern CSS Reset & Core Styling --- */
+        /* --- Core Theme Reset & Variables --- */
         * {
             margin: 0;
             padding: 0;
@@ -13,9 +13,16 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        :root {
+            --primary-blue: #2563eb;
+            --brand-red: #dc2626;
+            --dark-slate: #0f172a;
+            --light-bg: #f8fafc;
+        }
+
         body {
-            background-color: #f8fafc;
-            color: #1e293b;
+            background-color: var(--light-bg);
+            color: var(--dark-slate);
             overflow-x: hidden;
         }
 
@@ -30,25 +37,18 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid var(--brand-red);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* Temporary high-end text logo structure for your branding */
         .logo-text {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: 1px;
-            color: #0f172a;
+            letter-spacing: 0.5px;
+            color: var(--primary-blue);
         }
 
         .logo-text span {
-            color: #2563eb;
-            font-weight: 400;
+            color: var(--brand-red);
         }
 
         .nav-links {
@@ -60,71 +60,97 @@
         .nav-links a {
             text-decoration: none;
             color: #64748b;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 15px;
             transition: color 0.3s ease;
         }
 
         .nav-links a:hover, .nav-links a.active {
-            color: #2563eb;
+            color: var(--primary-blue);
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Banner Section --- */
         .hero {
             padding: 100px 8% 80px 8%;
-            background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #fef2f2 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* Medical banner image placeholder integrated cleanly */
+        .hero-banner-image {
+            width: 100%;
+            max-width: 900px;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(37,99,235,0.85), rgba(220,38,38,0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 4px solid #ffffff;
         }
 
         .hero h1 {
-            font-size: 48px;
-            color: #0f172a;
+            font-size: 46px;
+            color: var(--dark-slate);
             font-weight: 800;
             margin-bottom: 20px;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--brand-red);
         }
 
         .hero p {
             font-size: 18px;
             color: #475569;
-            max-width: 600px;
-            margin-bottom: 30px;
+            max-width: 700px;
             line-height: 1.6;
         }
 
         /* --- Brand Story Section --- */
         .story-section {
-            padding: 80px 10%;
+            padding: 80px 8%;
             background: #ffffff;
             display: flex;
             justify-content: center;
         }
 
         .story-card {
-            background: #f8fafc;
-            border-left: 5px solid #2563eb;
-            padding: 40px;
-            border-radius: 0 16px 16px 0;
-            max-width: 900px;
+            background: var(--light-bg);
+            border-top: 4px solid var(--primary-blue);
+            border-bottom: 4px solid var(--brand-red);
+            padding: 50px;
+            border-radius: 16px;
+            max-width: 1000px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         .story-card h2 {
-            font-size: 28px;
-            color: #0f172a;
-            margin-bottom: 15px;
+            font-size: 32px;
+            color: var(--dark-slate);
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
         .story-card p {
             font-size: 16px;
             color: #475569;
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 20px;
         }
 
@@ -132,229 +158,173 @@
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 35px;
             border-top: 1px solid #e2e8f0;
-            padding-top: 20px;
+            padding-top: 25px;
         }
 
         .highlight-item {
             flex: 1;
-            min-width: 150px;
+            min-width: 200px;
         }
 
         .highlight-item h3 {
-            color: #2563eb;
-            font-size: 24px;
+            color: var(--brand-red);
+            font-size: 26px;
             margin-bottom: 5px;
         }
 
         .highlight-item p {
             font-size: 14px;
             color: #64748b;
-            margin: 0;
+            font-weight: 500;
         }
 
-        /* --- 3D Cascading Roll Gallery Panel --- */
-        .formulation-container {
-            padding: 80px 5%;
+        /* --- OnePlus Style Auto-Rotating Widget Loop --- */
+        .formulation-section {
+            padding: 100px 5%;
             text-align: center;
+            background: #f1f5f9;
         }
 
-        .formulation-container h2 {
-            font-size: 32px;
+        .formulation-section h2 {
+            font-size: 36px;
+            color: var(--dark-slate);
             margin-bottom: 10px;
-            color: #0f172a;
         }
 
-        .formulation-container .subtitle {
+        .formulation-section .subtitle {
             color: #64748b;
             margin-bottom: 60px;
             font-size: 16px;
         }
 
-        /* Wrapper that gives perspective to the 3D space */
-        .roll-viewport {
-            perspective: 1200px;
-            padding: 40px 0;
+        /* 3D Viewport window */
+        .widget-viewport {
             width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* The deck holding the panels layering behind each other */
-        .roll-deck {
-            position: relative;
-            width: 320px;
-            height: 420px;
-        }
-
-        /* Individual Product Cards styling with 3D Transforms */
-        .roll-card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease, box-shadow 0.3s ease;
-            transform-origin: center bottom;
-        }
-
-        /* Static Layout Setup for the layer deck stack (arranged back-to-front) */
-        
-        /* Card 1 (Front View) */
-        .roll-card:nth-child(1) {
-            transform: translateZ(0px) translateY(0px);
-            z-index: 5;
-            opacity: 1;
-        }
-        /* Card 2 (Layered Behind 1) */
-        .roll-card:nth-child(2) {
-            transform: translateZ(-40px) translateY(-25px);
-            z-index: 4;
-            opacity: 0.85;
-        }
-        /* Card 3 (Layered Behind 2) */
-        .roll-card:nth-child(3) {
-            transform: translateZ(-80px) translateY(-50px);
-            z-index: 3;
-            opacity: 0.7;
-        }
-        /* Card 4 (Layered Behind 3) */
-        .roll-card:nth-child(4) {
-            transform: translateZ(-120px) translateY(-75px);
-            z-index: 2;
-            opacity: 0.55;
-        }
-        /* Card 5 (Layered Behind 4) */
-        .roll-card:nth-child(5) {
-            transform: translateZ(-160px) translateY(-100px);
-            z-index: 1;
-            opacity: 0.4;
-        }
-
-        /* --- Interactive Continuous Roll Effects on Deck Hover --- */
-        
-        /* When hovering the cluster container, cards dynamically break forward and drop backward in space */
-        .roll-deck:hover .roll-card:nth-child(1) {
-            transform: translateZ(60px) translateY(40px) rotateX(-5deg);
-            z-index: 5;
-        }
-        .roll-deck:hover .roll-card:nth-child(2) {
-            transform: translateZ(20px) translateY(5px) rotateX(-3deg);
-            z-index: 4;
-            opacity: 1;
-        }
-        .roll-deck:hover .roll-card:nth-child(3) {
-            transform: translateZ(-20px) translateY(-30px);
-            z-index: 3;
-            opacity: 0.9;
-        }
-        .roll-deck:hover .roll-card:nth-child(4) {
-            transform: translateZ(-60px) translateY(-65px);
-            z-index: 2;
-            opacity: 0.75;
-        }
-        .roll-deck:hover .roll-card:nth-child(5) {
-            transform: translateZ(-100px) translateY(-100px);
-            z-index: 1;
-            opacity: 0.6;
-        }
-
-        /* Click Action Focus - Simulated Active Card overlay popup expansion style */
-        .roll-card:active {
-            transform: scale(0.98) translateZ(40px) !important;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
-            border-color: #2563eb;
-        }
-
-        /* Placeholder image asset illustration block inside the layout */
-        .card-img-placeholder {
-            width: 100%;
-            height: 160px;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            border-radius: 12px;
+            height: 500px;
+            perspective: 1400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #94a3b8;
-            font-size: 13px;
-            font-weight: 500;
-            border: 1px dashed #cbd5e1;
             position: relative;
             overflow: hidden;
         }
 
-        .card-img-placeholder::after {
-            content: '';
+        /* Carousel Ring */
+        .widget-carousel {
+            position: relative;
+            width: 320px;
+            height: 440px;
+            transform-style: preserve-3d;
+            animation: rotateCarousel 25s infinite linear;
+        }
+
+        /* Pause auto-rotation when user hovers to examine a product */
+        .widget-viewport:hover .widget-carousel {
+            animation-play-state: paused;
+        }
+
+        /* Smooth Carousel rotation timeline formula */
+        @keyframes rotateCarousel {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(-360deg); }
+        }
+
+        /* Individual Card Styling */
+        .product-card {
             position: absolute;
-            top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
-        }
-        .roll-card:hover .card-img-placeholder::after {
-            left: 150%;
-            transition: 0.8s ease-in-out;
+            width: 320px;
+            height: 440px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backface-visibility: visible;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .badge {
-            background: #eff6ff;
-            color: #2563eb;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
+        /* Precise 3D positioning layout around the carousel pivot axis (360 deg / 5 cards = 72 deg increments) */
+        .product-card:nth-child(1) { transform: rotateY(0deg) translateZ(320px); }
+        .product-card:nth-child(2) { transform: rotateY(72deg) translateZ(320px); }
+        .product-card:nth-child(3) { transform: rotateY(144deg) translateZ(320px); }
+        .product-card:nth-child(4) { transform: rotateY(216deg) translateZ(320px); }
+        .product-card:nth-child(5) { transform: rotateY(288deg) translateZ(320px); }
+
+        /* Cover Image containers loaded with high-quality medical illustration layers */
+        .cover-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 16px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 15px;
+            border: 1px solid #f1f5f9;
+        }
+
+        /* Specific clean cover backgrounds for products */
+        .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
+        .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
+        .img-powder { background-image: url('https://images.unsplash.com/photo-1579721525754-526432655518?auto=format&fit=crop&w=400&q=80'); }
+        .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); }
+        .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=400&q=80'); }
+
+        .prod-tag {
+            align-self: flex-start;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 30px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #eff6ff;
+            color: var(--primary-blue);
         }
 
-        .card-details h3 {
+        .product-card h3 {
             font-size: 22px;
-            color: #0f172a;
-            margin: 15px 0 8px 0;
+            color: var(--dark-slate);
+            margin: 10px 0 5px 0;
+            text-align: left;
         }
 
-        .card-details p {
+        .product-card p {
             font-size: 14px;
             color: #64748b;
-            line-height: 1.4;
+            line-height: 1.5;
+            text-align: left;
+            margin-bottom: 15px;
         }
 
-        .view-list-btn {
-            margin-top: 15px;
-            background: #0f172a;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.2s;
+        .list-action-btn {
             width: 100%;
+            padding: 12px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
         }
 
-        .roll-card:hover .view-list-btn {
-            background: #2563eb;
+        .list-action-btn:hover {
+            background: var(--brand-red);
         }
 
         /* --- Footer --- */
         footer {
-            background: #0f172a;
+            background: var(--dark-slate);
             color: #94a3b8;
             padding: 40px 8%;
             text-align: center;
             font-size: 14px;
-            border-top: 1px solid #1e293b;
-            margin-top: 60px;
+            border-top: 4px solid var(--brand-red);
         }
     </style>
 </head>
@@ -362,129 +332,108 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="logo-container">
-            <!-- Text placeholder for logo layout -->
-            <div class="logo-text">MITSAN <span>PHARMACEUTICALS</span></div>
-        </div>
+        <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
         <ul class="nav-links">
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#">About Us</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Hero Title -->
+    <!-- Hero Banner Area -->
     <section class="hero">
-        <h1>Advancing Healthcare Through Quality Formulations</h1>
-        <p>Delivering premium Antibiotics, Analgesics, and targeted healthcare solutions across local and corporate supply metrics.</p>
+        <div class="hero-banner-image">Madinal Lifescience Quality Lab</div>
+        <h1>Advancing Healthcare Through <span>Quality Formulations</span></h1>
+        <p>Delivering premium medical agents, active antibiotics, and tailored corporate healthcare solutions safely across global distribution loops.</p>
     </section>
 
-    <!-- Medium Corporate Identity Story Section -->
+    <!-- Detailed Corporate Story Section -->
     <section class="story-section">
         <div class="story-card">
-            <h2>Our Journey & Commitment</h2>
-            <p>Established in 2018, Mitsan Pharmaceuticals has consistently committed itself to improving healthcare accessibility across India. We specialize in producing and developing a comprehensive array of premium medicinal choices tailored to address diverse therapeutic fields.</p>
-            <p>Operating with a core foundation based on ethical marketing, we operate multi-layered frameworks incorporating robust PCD Pharma Franchise distributions and precise Net Rate distribution networks. From major healthcare institutions to specialized pharmacies, our channels guarantee reliable access to crucial treatment compounds nationwide.</p>
+            <h2>Our Journey, Core Values & Market Footprint</h2>
+            <p>Established in the year 2018, Madinal Lifescience has built an elite reputation for healthcare accessibility across India. Over the years, our operation has scaled up into a robust multi-layered manufacturing framework focused heavily on producing highly effective medicinal lines across numerous complex therapeutic categories.</p>
+            <p>Driven by strict, uncompromised standards of ethical marketing, our everyday operations encompass high-performance PCD Pharma Franchise ecosystems alongside precision Net Rate distribution layouts. From large-scale industrial hospitals to modern point-of-care distribution hubs across the nation, we ensure clear access to standard testing formulations and complex healthcare solutions.</p>
+            <p>Through careful selection of materials and persistent testing metrics, we supply premium Tablets, Capsules, specialized Nutra Powders, balanced Liquids, and pure Injectables designed intentionally to preserve health metrics securely.</p>
             
             <div class="story-highlights">
                 <div class="highlight-item">
-                    <h3>2018</h3>
-                    <p>Year of Inception</p>
+                    <h3>Since 2018</h3>
+                    <p>Years of Pharmaceutical Quality</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>PCD Franchise</h3>
+                    <p>Ethical Marketing Layouts</p>
                 </div>
                 <div class="highlight-item">
                     <h3>Pan-India</h3>
-                    <p>Net Rate & PCD Network</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>100% Ethical</h3>
-                    <p>Marketing Operations</p>
+                    <p>Net Rate Distribution Networks</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3D Cascade Roll Panel Formulation Selection Viewport -->
-    <section class="formulation-container">
+    <!-- Product Category Carousel Wrapper -->
+    <section class="formulation-section">
         <h2>Our Formulations & Range</h2>
-        <p class="subtitle">Hover over the stack to spread the card deck, and click any category panel to access individual formulation breakdowns.</p>
+        <p class="subtitle">The carousel automatically rotates. Hover over the widget deck to pause rotation and explore categories.</p>
         
-        <div class="roll-viewport">
-            <!-- 3D Roll-Deck Stack Container -->
-            <div class="roll-deck">
+        <div class="widget-viewport">
+            <!-- OnePlus Style Infinite Rotation Deck -->
+            <div class="widget-carousel">
                 
                 <!-- Card 1: Tablets -->
-                <div class="roll-card">
-                    <span class="badge">Oral Solid</span>
-                    <div class="card-img-placeholder">
-                        [ Tablet Mockup Asset ]
-                    </div>
-                    <div class="card-details">
-                        <h3>Tablets</h3>
-                        <p>Coated, un-coated, rapid-release, and sustained formulations.</p>
-                    </div>
-                    <button class="view-list-btn">Open Product List</button>
+                <div class="product-card">
+                    <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Oral Solid</span>
+                    <div class="cover-image img-tablet"></div>
+                    <h3>Tablets</h3>
+                    <p>Coated, un-coated, rapid-release, and sustained formulations.</p>
+                    <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 2: Capsules -->
-                <div class="roll-card">
-                    <span class="badge">Liquid / Solid Fill</span>
-                    <div class="card-img-placeholder">
-                        [ Capsule Mockup Asset ]
-                    </div>
-                    <div class="card-details">
-                        <h3>Capsules</h3>
-                        <p>Premium hard gelatin and softgel options prepared cleanly.</p>
-                    </div>
-                    <button class="view-list-btn">Open Product List</button>
+                <div class="product-card">
+                    <span class="prod-tag">Liquid / Solid</span>
+                    <div class="cover-image img-capsule"></div>
+                    <h3>Capsules</h3>
+                    <p>Premium hard-gelatin and liquid softgel options prepared cleanly.</p>
+                    <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 3: Powders -->
-                <div class="roll-card">
-                    <span class="badge">Nutritional / Oral</span>
-                    <div class="card-img-placeholder">
-                        [ Powder Mockup Asset ]
-                    </div>
-                    <div class="card-details">
-                        <h3>Powder</h3>
-                        <p>High stability, protein-rich supplements and dry syrups.</p>
-                    </div>
-                    <button class="view-list-btn">Open Product List</button>
+                <div class="product-card">
+                    <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Nutritional</span>
+                    <div class="cover-image img-powder"></div>
+                    <h3>Powder</h3>
+                    <p>High stability dietary supplements, protein mixtures, and dry syrups.</p>
+                    <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 4: Syrups -->
-                <div class="roll-card">
-                    <span class="badge">Oral Liquid</span>
-                    <div class="card-img-placeholder">
-                        [ Syrup Mockup Asset ]
-                    </div>
-                    <div class="card-details">
-                        <h3>Syrups</h3>
-                        <p>Homogeneous oral suspensions optimized for bio-availability.</p>
-                    </div>
-                    <button class="view-list-btn">Open Product List</button>
+                <div class="product-card">
+                    <span class="prod-tag">Oral Liquid</span>
+                    <div class="cover-image img-syrup"></div>
+                    <h3>Syrups</h3>
+                    <p>Homogeneous oral suspensions optimized for maximum bio-availability.</p>
+                    <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 5: Injectables -->
-                <div class="roll-card">
-                    <span class="badge">Sterile Lyophilized</span>
-                    <div class="card-img-placeholder">
-                        [ Injectable Mockup Asset ]
-                    </div>
-                    <div class="card-details">
-                        <h3>Injectables</h3>
-                        <p>Liquid and powder vials built under strict safety standards.</p>
-                    </div>
-                    <button class="view-list-btn">Open Product List</button>
+                <div class="product-card">
+                    <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Sterile Liquid</span>
+                    <div class="cover-image img-injectable"></div>
+                    <h3>Injectables</h3>
+                    <p>Liquid and powder vials built under strict safety guidelines.</p>
+                    <button class="list-action-btn">Product List</button>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Corporate Footer -->
     <footer>
-        <p>&copy; 2026 Mitsan Pharmaceuticals. All Rights Reserved. Product availability varied by region across India networks.</p>
+        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Formulations distributed safely across India.</p>
     </footer>
 
 </body>
