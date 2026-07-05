@@ -40,8 +40,16 @@
             border-bottom: 3px solid var(--brand-red);
         }
 
+        /* Left-side placeholder zone specifically reserved for your corporate logo image */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            min-width: 180px;
+            height: 45px;
+        }
+
         .logo-text {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             letter-spacing: 0.5px;
             color: var(--primary-blue);
@@ -69,62 +77,35 @@
             color: var(--primary-blue);
         }
 
-        /* --- Hero Banner Section --- */
+        /* --- Original Hero Section --- */
         .hero {
-            padding: 100px 8% 80px 8%;
-            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #fef2f2 100%);
+            padding: 80px 8% 60px 8%;
+            background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        /* Medical banner image placeholder integrated cleanly */
-        .hero-banner-image {
-            width: 100%;
-            max-width: 900px;
-            height: 350px;
-            background: linear-gradient(135deg, rgba(37,99,235,0.85), rgba(220,38,38,0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 24px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 4px solid #ffffff;
         }
 
         .hero h1 {
-            font-size: 46px;
+            font-size: 48px;
             color: var(--dark-slate);
             font-weight: 800;
             margin-bottom: 20px;
-            max-width: 850px;
+            max-width: 800px;
             line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--brand-red);
         }
 
         .hero p {
             font-size: 18px;
             color: #475569;
-            max-width: 700px;
+            max-width: 600px;
             line-height: 1.6;
         }
 
-        /* --- Brand Story Section --- */
+        /* --- Corporate Story Section --- */
         .story-section {
-            padding: 80px 8%;
+            padding: 60px 8%;
             background: #ffffff;
             display: flex;
             justify-content: center;
@@ -132,25 +113,24 @@
 
         .story-card {
             background: var(--light-bg);
-            border-top: 4px solid var(--primary-blue);
-            border-bottom: 4px solid var(--brand-red);
-            padding: 50px;
-            border-radius: 16px;
-            max-width: 1000px;
+            border-left: 5px solid var(--primary-blue);
+            padding: 40px;
+            border-radius: 0 16px 16px 0;
+            max-width: 900px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
         .story-card h2 {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--dark-slate);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
         .story-card p {
             font-size: 16px;
             color: #475569;
-            line-height: 1.8;
+            line-height: 1.7;
             margin-bottom: 20px;
         }
 
@@ -158,118 +138,116 @@
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
-            margin-top: 35px;
+            margin-top: 25px;
             border-top: 1px solid #e2e8f0;
-            padding-top: 25px;
+            padding-top: 20px;
         }
 
         .highlight-item {
             flex: 1;
-            min-width: 200px;
+            min-width: 150px;
         }
 
         .highlight-item h3 {
-            color: var(--brand-red);
-            font-size: 26px;
+            color: var(--primary-blue);
+            font-size: 24px;
             margin-bottom: 5px;
         }
 
         .highlight-item p {
             font-size: 14px;
             color: #64748b;
-            font-weight: 500;
         }
 
-        /* --- OnePlus Style Auto-Rotating Widget Loop --- */
+        /* --- Fully Responsive Smooth 3D Cube Showcase --- */
         .formulation-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             text-align: center;
             background: #f1f5f9;
         }
 
         .formulation-section h2 {
-            font-size: 36px;
+            font-size: 32px;
             color: var(--dark-slate);
             margin-bottom: 10px;
         }
 
         .formulation-section .subtitle {
             color: #64748b;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             font-size: 16px;
         }
 
-        /* 3D Viewport window */
-        .widget-viewport {
+        /* Cube 3D Viewport Wrapper */
+        .cube-viewport {
             width: 100%;
-            height: 500px;
+            height: 480px;
             perspective: 1400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
             overflow: hidden;
         }
 
-        /* Carousel Ring */
-        .widget-carousel {
+        /* The core 3D structural cube container */
+        .cube-container {
+            width: 300px;
+            height: 380px;
             position: relative;
-            width: 320px;
-            height: 440px;
             transform-style: preserve-3d;
-            animation: rotateCarousel 25s infinite linear;
+            /* Balanced, medium-paced rotation speed */
+            animation: rotateCube 18s infinite linear;
         }
 
-        /* Pause auto-rotation when user hovers to examine a product */
-        .widget-viewport:hover .widget-carousel {
+        /* Pauses rotation immediately when the user hovers to look or click */
+        .cube-viewport:hover .cube-container {
             animation-play-state: paused;
         }
 
-        /* Smooth Carousel rotation timeline formula */
-        @keyframes rotateCarousel {
+        /* Continuous rotation timeline across a clean Y axis loop */
+        @keyframes rotateCube {
             0% { transform: rotateY(0deg); }
             100% { transform: rotateY(-360deg); }
         }
 
-        /* Individual Card Styling */
-        .product-card {
+        /* Setup for individual faces of our multi-sided formulation asset */
+        .cube-face {
             position: absolute;
-            width: 320px;
-            height: 440px;
+            width: 300px;
+            height: 380px;
             background: #ffffff;
-            border-radius: 24px;
-            padding: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             backface-visibility: visible;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        /* Precise 3D positioning layout around the carousel pivot axis (360 deg / 5 cards = 72 deg increments) */
-        .product-card:nth-child(1) { transform: rotateY(0deg) translateZ(320px); }
-        .product-card:nth-child(2) { transform: rotateY(72deg) translateZ(320px); }
-        .product-card:nth-child(3) { transform: rotateY(144deg) translateZ(320px); }
-        .product-card:nth-child(4) { transform: rotateY(216deg) translateZ(320px); }
-        .product-card:nth-child(5) { transform: rotateY(288deg) translateZ(320px); }
+        /* Precise 3D rotation and side offsets to close the shapes cleanly */
+        .face-1 { transform: rotateY(0deg) translateZ(230px); }
+        .face-2 { transform: rotateY(72deg) translateZ(230px); }
+        .face-3 { transform: rotateY(144deg) translateZ(230px); }
+        .face-4 { transform: rotateY(216deg) translateZ(230px); }
+        .face-5 { transform: rotateY(288deg) translateZ(230px); }
 
-        /* Cover Image containers loaded with high-quality medical illustration layers */
+        /* --- Corrected High-Definition Product Cover Images --- */
         .cover-image {
             width: 100%;
-            height: 180px;
-            border-radius: 16px;
+            height: 160px;
+            border-radius: 12px;
             background-size: cover;
             background-position: center;
-            margin-bottom: 15px;
-            border: 1px solid #f1f5f9;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
         }
 
-        /* Specific clean cover backgrounds for products */
+        /* Highly accurate matching image targets */
         .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
         .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
-        .img-powder { background-image: url('https://images.unsplash.com/photo-1579721525754-526432655518?auto=format&fit=crop&w=400&q=80'); }
+        .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
         .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); }
         .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=400&q=80'); }
 
@@ -280,37 +258,37 @@
             padding: 4px 10px;
             border-radius: 30px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             background: #eff6ff;
             color: var(--primary-blue);
+            margin-bottom: 8px;
         }
 
-        .product-card h3 {
-            font-size: 22px;
+        .cube-face h3 {
+            font-size: 20px;
             color: var(--dark-slate);
-            margin: 10px 0 5px 0;
+            margin-bottom: 6px;
             text-align: left;
         }
 
-        .product-card p {
-            font-size: 14px;
+        .cube-face p {
+            font-size: 13px;
             color: #64748b;
-            line-height: 1.5;
+            line-height: 1.4;
             text-align: left;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .list-action-btn {
             width: 100%;
-            padding: 12px;
+            padding: 11px;
             background: var(--primary-blue);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
+            transition: background 0.2s;
         }
 
         .list-action-btn:hover {
@@ -326,64 +304,99 @@
             font-size: 14px;
             border-top: 4px solid var(--brand-red);
         }
+
+        /* --- Media Queries for Full Mobile & Tablet Layout Support --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .story-card {
+                padding: 25px;
+            }
+            /* Adjust 3D translation radius down slightly for smaller screens to prevent overflow clipping */
+            .face-1 { transform: rotateY(0deg) translateZ(200px); }
+            .face-2 { transform: rotateY(72deg) translateZ(200px); }
+            .face-3 { transform: rotateY(144deg) translateZ(200px); }
+            .face-4 { transform: rotateY(216deg) translateZ(200px); }
+            .face-5 { transform: rotateY(288deg) translateZ(200px); }
+            .cube-container {
+                width: 260px;
+                height: 360px;
+            }
+            .cube-face {
+                width: 260px;
+                height: 360px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav>
-        <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
+        <!-- Top-left reserved area for your official corporate logo file -->
+        <div class="logo-area">
+            <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
+        </div>
         <ul class="nav-links">
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Banner Area -->
+    <!-- Original First Heading Banner Section -->
     <section class="hero">
-        <div class="hero-banner-image">Madinal Lifescience Quality Lab</div>
-        <h1>Advancing Healthcare Through <span>Quality Formulations</span></h1>
-        <p>Delivering premium medical agents, active antibiotics, and tailored corporate healthcare solutions safely across global distribution loops.</p>
+        <h1>Advancing Healthcare through Quality Formulations</h1>
+        <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
     </section>
 
-    <!-- Detailed Corporate Story Section -->
+    <!-- Corrected Interpretation Story Section -->
     <section class="story-section">
         <div class="story-card">
-            <h2>Our Journey, Core Values & Market Footprint</h2>
-            <p>Established in the year 2018, Madinal Lifescience has built an elite reputation for healthcare accessibility across India. Over the years, our operation has scaled up into a robust multi-layered manufacturing framework focused heavily on producing highly effective medicinal lines across numerous complex therapeutic categories.</p>
-            <p>Driven by strict, uncompromised standards of ethical marketing, our everyday operations encompass high-performance PCD Pharma Franchise ecosystems alongside precision Net Rate distribution layouts. From large-scale industrial hospitals to modern point-of-care distribution hubs across the nation, we ensure clear access to standard testing formulations and complex healthcare solutions.</p>
-            <p>Through careful selection of materials and persistent testing metrics, we supply premium Tablets, Capsules, specialized Nutra Powders, balanced Liquids, and pure Injectables designed intentionally to preserve health metrics securely.</p>
+            <h2>Our Journey & Commitment</h2>
+            <p>Established in 2018, Madinal Lifescience has consistently committed itself to improving healthcare accessibility across India. We specialize in producing and developing a comprehensive array of premium medicinal choices tailored to address diverse therapeutic fields.</p>
+            <p>Operating with a core foundation based on ethical marketing, we operate multi-layered frameworks incorporating robust PCD Pharma Franchise distributions and precise Net Rate distribution networks. From major healthcare institutions to specialized pharmacies, our channels guarantee reliable access to crucial treatment compounds nationwide.</p>
             
             <div class="story-highlights">
                 <div class="highlight-item">
-                    <h3>Since 2018</h3>
-                    <p>Years of Pharmaceutical Quality</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>PCD Franchise</h3>
-                    <p>Ethical Marketing Layouts</p>
+                    <h3>2018</h3>
+                    <p>Year of Inception</p>
                 </div>
                 <div class="highlight-item">
                     <h3>Pan-India</h3>
-                    <p>Net Rate Distribution Networks</p>
+                    <p>Net Rate & PCD Network</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>100% Ethical</h3>
+                    <p>Marketing Operations</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Category Carousel Wrapper -->
+    <!-- Smooth 3D Cube Formulations Container -->
     <section class="formulation-section">
-        <h2>Our Formulations & Range</h2>
-        <p class="subtitle">The carousel automatically rotates. Hover over the widget deck to pause rotation and explore categories.</p>
+        <h2>Our Premium Formulations</h2>
+        <p class="subtitle">The 3D gallery rotates smoothly at a medium pace. Hover to pause and inspect product structures closely.</p>
         
-        <div class="widget-viewport">
-            <!-- OnePlus Style Infinite Rotation Deck -->
-            <div class="widget-carousel">
+        <div class="cube-viewport">
+            <div class="cube-container">
                 
-                <!-- Card 1: Tablets -->
-                <div class="product-card">
+                <!-- Side 1: Tablets -->
+                <div class="cube-face face-1">
                     <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Oral Solid</span>
                     <div class="cover-image img-tablet"></div>
                     <h3>Tablets</h3>
@@ -391,39 +404,39 @@
                     <button class="list-action-btn">Product List</button>
                 </div>
 
-                <!-- Card 2: Capsules -->
-                <div class="product-card">
-                    <span class="prod-tag">Liquid / Solid</span>
+                <!-- Side 2: Capsules -->
+                <div class="cube-face face-2">
+                    <span class="prod-tag">Solid Fill</span>
                     <div class="cover-image img-capsule"></div>
                     <h3>Capsules</h3>
-                    <p>Premium hard-gelatin and liquid softgel options prepared cleanly.</p>
+                    <p>Premium hard gelatin and softgel options prepared cleanly.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
-                <!-- Card 3: Powders -->
-                <div class="product-card">
+                <!-- Side 3: Powders -->
+                <div class="cube-face face-3">
                     <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Nutritional</span>
                     <div class="cover-image img-powder"></div>
                     <h3>Powder</h3>
-                    <p>High stability dietary supplements, protein mixtures, and dry syrups.</p>
+                    <p>High stability, protein-rich supplements and dry oral mixes.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
-                <!-- Card 4: Syrups -->
-                <div class="product-card">
+                <!-- Side 4: Syrups -->
+                <div class="cube-face face-4">
                     <span class="prod-tag">Oral Liquid</span>
                     <div class="cover-image img-syrup"></div>
                     <h3>Syrups</h3>
-                    <p>Homogeneous oral suspensions optimized for maximum bio-availability.</p>
+                    <p>Homogeneous oral suspensions optimized for bio-availability.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
-                <!-- Card 5: Injectables -->
-                <div class="product-card">
+                <!-- Side 5: Injectables -->
+                <div class="cube-face face-5">
                     <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Sterile Liquid</span>
                     <div class="cover-image img-injectable"></div>
                     <h3>Injectables</h3>
-                    <p>Liquid and powder vials built under strict safety guidelines.</p>
+                    <p>Liquid and powder vials built under strict safety standards.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
@@ -431,9 +444,9 @@
         </div>
     </section>
 
-    <!-- Corporate Footer -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Formulations distributed safely across India.</p>
+        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
     </footer>
 
 </body>
