@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madinal Lifescience | Quality Formulations</title>
     <style>
+        /* --- Core Theme Reset & Variables --- */
         * {
             margin: 0;
             padding: 0;
@@ -76,34 +77,49 @@
             color: var(--primary-blue);
         }
 
-        /* --- Banner: Blue Background + Assorted Medicines --- */
+        /* --- Clear Pharma Identity Banner Layer --- */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 32, 67, 0.95), rgba(37, 99, 235, 0.9)), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            padding: 130px 8% 110px 8%;
+            /* High-contrast solid professional blue gradient layered with absolute fallback color to ensure it never turns up blank */
+            background: linear-gradient(135deg, #0d2b66 0%, #1e40af 100%);
+            padding: 140px 8% 120px 8%;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            border-bottom: 4px solid #e2e8f0;
+        }
+
+        /* Decorative pharmaceutical molecule pattern background effect using pure CSS so it never fails to load */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background-image: radial-gradient(#ffffff 2px, transparent 2px), radial-gradient(#ffffff 2px, #0d2b66 2px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
         }
 
         .hero h1 {
+            position: relative;
             color: #ffffff;
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 800;
             margin-bottom: 20px;
-            max-width: 800px;
+            max-width: 850px;
             line-height: 1.2;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            color: #e2e8f0;
-            font-size: 18px;
-            max-width: 600px;
+            position: relative;
+            color: #93c5fd;
+            font-size: 19px;
+            font-weight: 500;
+            max-width: 650px;
             line-height: 1.6;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.3);
         }
 
         /* --- Corporate Story Section --- */
@@ -162,12 +178,11 @@
             color: #64748b;
         }
 
-        /* --- Sliding Section --- */
+        /* --- True Hide & Slide Masked Viewport Slider Section --- */
         .formulation-section {
             padding: 80px 5%;
             text-align: center;
             background: #f1f5f9;
-            overflow: hidden;
         }
 
         .formulation-section h2 {
@@ -176,7 +191,7 @@
             margin-bottom: 10px;
         }
 
-        /* Central Tabs Buttons */
+        /* Tabs Control Area */
         .tab-navigation {
             display: flex;
             justify-content: center;
@@ -195,117 +210,106 @@
             font-size: 14px;
             color: #475569;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
         }
 
         .nav-tab-btn:hover, .nav-tab-btn.active {
             background: var(--primary-blue);
             color: #ffffff;
             border-color: var(--primary-blue);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
         }
 
-        /* Viewport Window */
+        /* THE FIX: Rigidly bounded slider window box that cuts off/hides out-of-bounds cards */
         .slider-viewport {
             width: 100%;
-            max-width: 1140px;
+            max-width: 350px; /* Only allow exactly one card view width to slide dynamically inside */
             margin: 0 auto;
-            overflow: hidden;
+            overflow: hidden; /* This completely hides the other categories behind the visible card */
             padding: 20px 0;
         }
 
+        /* Clean single row string that moves horizontally via transform actions */
         .slider-row {
             display: flex;
             gap: 30px;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
             width: max-content;
         }
 
-        /* Cards Layout */
+        /* Individual Product Card Definition */
         .slide-card {
-            width: 290px;
+            width: 350px; /* Fixed robust card geometry matching the viewport master mask */
             background: #ffffff;
             border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
             border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-        }
-
-        /* Dim neighboring cards when focusing */
-        .slider-row.focus-mode .slide-card {
-            opacity: 0.4;
-            transform: scale(0.95);
-        }
-
-        .slider-row.focus-mode .slide-card.highlighted-target {
-            opacity: 1;
-            transform: scale(1.03) translateY(-8px);
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.18);
-            border-color: var(--primary-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .slide-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
         }
 
-        /* --- Fixed Medical Images --- */
+        /* --- Clear High-Res Medicine Category Images --- */
         .cover-image {
             width: 100%;
-            height: 160px;
+            height: 190px;
             border-radius: 14px;
             background-size: cover;
             background-position: center;
-            margin-bottom: 14px;
+            margin-bottom: 18px;
             border: 1px solid #e2e8f0;
         }
 
-        .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
-        .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
-        .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
-        .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); }
-        .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=400&q=80'); }
+        /* Directly referenced reliable image nodes from unsplash */
+        .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=500&q=80'); }
+        .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=500&q=80'); }
+        .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=500&q=80'); }
+        .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=500&q=80'); }
+        .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=500&q=80'); }
 
         .prod-tag {
             align-self: flex-start;
             font-size: 11px;
             font-weight: 700;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 30px;
             text-transform: uppercase;
             background: #eff6ff;
             color: var(--primary-blue);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .slide-card h3 {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--dark-slate);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             text-align: left;
         }
 
         .slide-card p {
-            font-size: 13px;
+            font-size: 14px;
             color: #64748b;
-            line-height: 1.4;
+            line-height: 1.5;
             text-align: left;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .list-action-btn {
             width: 100%;
-            padding: 11px;
+            padding: 12px;
             background: var(--primary-blue);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 14px;
             cursor: pointer;
             transition: background 0.2s;
         }
@@ -314,6 +318,7 @@
             background: var(--brand-red);
         }
 
+        /* --- Footer --- */
         footer {
             background: var(--dark-slate);
             color: #94a3b8;
@@ -354,7 +359,7 @@
         </ul>
     </nav>
 
-    <!-- Blue Corporate Banner with Real Medical Image Background -->
+    <!-- Deep Tech-Free Pharmaceutical Blue Pattern Banner -->
     <section class="hero">
         <h1>Advancing Healthcare through Quality Formulations</h1>
         <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
@@ -384,20 +389,20 @@
         </div>
     </section>
 
-    <!-- Dynamic Slider Section -->
+    <!-- Pure Sliding Mask Block Section -->
     <section class="formulation-section">
         <h2>Our Premium Formulations</h2>
         
-        <!-- Tab triggers for animation -->
+        <!-- Interactive Trigger Controls -->
         <div class="tab-navigation">
-            <button class="nav-tab-btn active" onmouseover="animateSlider(0)" onclick="animateSlider(0)">All Products</button>
-            <button class="nav-tab-btn" onmouseover="animateSlider(1)" onclick="animateSlider(1)">Tablets</button>
-            <button class="nav-tab-btn" onmouseover="animateSlider(2)" onclick="animateSlider(2)">Capsules</button>
-            <button class="nav-tab-btn" onmouseover="animateSlider(3)" onclick="animateSlider(3)">Powder</button>
-            <button class="nav-tab-btn" onmouseover="animateSlider(4)" onclick="animateSlider(4)">Syrups</button>
-            <button class="nav-tab-btn" onmouseover="animateSlider(5)" onclick="animateSlider(5)">Injectables</button>
+            <button class="nav-tab-btn active" onmouseover="slideDeck(0)" onclick="slideDeck(0)">Tablets</button>
+            <button class="nav-tab-btn" onmouseover="slideDeck(1)" onclick="slideDeck(1)">Capsules</button>
+            <button class="nav-tab-btn" onmouseover="slideDeck(2)" onclick="slideDeck(2)">Powder</button>
+            <button class="nav-tab-btn" onmouseover="slideDeck(3)" onclick="slideDeck(3)">Syrups</button>
+            <button class="nav-tab-btn" onmouseover="slideDeck(4)" onclick="slideDeck(4)">Injectables</button>
         </div>
         
+        <!-- The Viewport bounds that completely hides cards behind the curtain -->
         <div class="slider-viewport">
             <div class="slider-row" id="productRow">
                 
@@ -455,33 +460,19 @@
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
     </footer>
 
-    <!-- Animation Logic -->
+    <!-- Absolute Precision Sliding Script Box -->
     <script>
-        function animateSlider(index) {
+        function slideDeck(index) {
             const row = document.getElementById('productRow');
             const tabs = document.querySelectorAll('.nav-tab-btn');
-            const cards = document.querySelectorAll('.slide-card');
             
-            tabs.forEach(tab => tab.classList.remove('active'));
+            // Sync selected visual state over the nodes
+            tabs.forEach(t => t.classList.remove('active'));
             tabs[index].classList.add('active');
             
-            if (index === 0) {
-                row.classList.remove('focus-mode');
-                cards.forEach(c => c.classList.remove('highlighted-target'));
-                row.style.transform = "translateX(0px)";
-            } else {
-                row.classList.add('focus-mode');
-                cards.forEach((c, idx) => {
-                    if (idx === (index - 1)) {
-                        c.classList.add('highlighted-target');
-                    } else {
-                        c.classList.remove('highlighted-target');
-                    }
-                });
-                
-                const centerShift = (index - 1) * 320;
-                row.style.transform = `translateX(-${centerShift}px)`;
-            }
+            // Card width (350px) + Gap (30px) = 380px shift interval
+            const calculatedShift = index * 380;
+            row.style.transform = `translateX(-${calculatedShift}px)`;
         }
     </script>
 
