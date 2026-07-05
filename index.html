@@ -63,37 +63,56 @@
             font-size: 15px;
         }
 
-        /* --- Updated Premium Pharma Hero Banner --- */
-        .hero {
-            position: relative;
-            /* Verified High-Resolution Medical/Medicine Production Background */
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(37, 99, 235, 0.75) 100%), 
-                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            padding: 150px 8% 130px 8%;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
+        /* --- Updated Premium Light-Teal Responsive Hero Layout --- */
+        .hero-container {
+            /* Loads your chosen medicine image directly as the main hero background */
+            background: url('medicine-capsules.jpg') center/cover no-repeat;
+            padding: 90px 8%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
             align-items: center;
-            text-align: center;
-            box-shadow: inset 0 -50px 50px rgba(0,0,0,0.2);
+            min-height: 540px;
+            position: relative;
         }
 
-        .hero h1 {
-            font-size: 48px;
+        /* Light subtle overlay over the image to keep the clean medical laboratory vibe */
+        .hero-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.4) 100%);
+            z-index: 1;
+        }
+
+        /* High-contrast font treatment so text is crystal clear over the bright background image */
+        .hero-text-side {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+
+        .hero-text-side h1 {
+            font-size: 46px;
             font-weight: 800;
+            line-height: 1.25;
             margin-bottom: 20px;
-            max-width: 850px;
-            line-height: 1.2;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            color: #0f172a; /* Strong deep slate navy for high legibility */
         }
 
-        .hero p {
-            color: #e0f2fe;
-            font-size: 20px;
-            max-width: 650px;
+        .hero-text-side p {
+            color: #1e3a8a; /* Deep blue accent paragraph color */
+            font-size: 19px;
             line-height: 1.6;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            font-weight: 500;
+            font-weight: 600;
+        }
+
+        /* Placeholder container to keep the right grid clean and responsive */
+        .hero-space-side {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
         }
 
         /* --- Corporate Story Section --- */
@@ -166,7 +185,6 @@
             margin-bottom: 40px;
         }
 
-        /* 3D Stage Container */
         .carousel-stage {
             position: relative;
             width: 100%;
@@ -176,14 +194,12 @@
             perspective: 1200px; 
         }
 
-        /* Track Container holding all hidden/moving cards */
         .carousel-track {
             position: relative;
             width: 100%;
             height: 100%;
         }
 
-        /* Absolute positioning rules for active physics positions */
         .slide-card {
             position: absolute;
             width: 340px;
@@ -201,13 +217,9 @@
             margin-left: -170px; 
             opacity: 0;
             pointer-events: none;
-            /* Medium pace transition timing (0.45s instead of 0.6s) */
             transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease, z-index 0.45s ease;
         }
-
-        /* --- The 3 Visible States running in a circle --- */
         
-        /* Middle (Forward & Prominent) */
         .slide-card.active-middle {
             opacity: 1;
             pointer-events: auto;
@@ -217,7 +229,6 @@
             border-color: #2563eb;
         }
 
-        /* Left Position (Pushed back, shifted left) */
         .slide-card.active-left {
             opacity: 0.65;
             pointer-events: auto;
@@ -225,7 +236,6 @@
             transform: translateX(-300px) scale(0.85);
         }
 
-        /* Right Position (Pushed back, shifted right) */
         .slide-card.active-right {
             opacity: 0.65;
             pointer-events: auto;
@@ -233,7 +243,6 @@
             transform: translateX(300px) scale(0.85);
         }
 
-        /* --- Card Content Interior Layout --- */
         .cover-image {
             width: 100%;
             height: 180px;
@@ -294,7 +303,6 @@
             background: #dc2626;
         }
 
-        /* --- Footer --- */
         footer {
             background: #0f172a;
             color: #94a3b8;
@@ -304,10 +312,11 @@
             border-top: 4px solid #dc2626;
         }
 
-        @media (max-width: 768px) {
-            .carousel-stage { height: 460px; }
-            .slide-card.active-left { transform: translateX(-150px) scale(0.75); opacity: 0.3; }
-            .slide-card.active-right { transform: translateX(150px) scale(0.75); opacity: 0.3; }
+        @media (max-width: 992px) {
+            .hero-container { grid-template-columns: 1fr; padding: 60px 5%; }
+            .hero-container::before { background: rgba(255, 255, 255, 0.95); }
+            .hero-text-side { text-align: center; }
+            .hero-space-side { display: none; }
         }
     </style>
 </head>
@@ -327,10 +336,13 @@
         </ul>
     </nav>
 
-    <!-- Professional Pharma Medicine Background Banner Layer -->
-    <section class="hero">
-        <h1>Advancing Healthcare through Quality Formulations</h1>
-        <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
+    <!-- Main Hero Section -->
+    <section class="hero-container">
+        <div class="hero-text-side">
+            <h1>Advancing Healthcare through Quality Formulations</h1>
+            <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
+        </div>
+        <div class="hero-space-side"></div>
     </section>
 
     <!-- Corporate Story Section -->
@@ -425,17 +437,14 @@
         const totalCards = cards.length;
 
         function update3DCarousel() {
-            // Clean up old classes
             cards.forEach(card => {
                 card.classList.remove('active-left', 'active-middle', 'active-right');
             });
 
-            // Calculate precise continuous circular indexes 
             const middleIdx = currentIndex;
             const leftIdx = (currentIndex - 1 + totalCards) % totalCards;
             const rightIdx = (currentIndex + 1) % totalCards;
 
-            // Inject positioning styles dynamically
             cards[middleIdx].classList.add('active-middle');
             cards[leftIdx].classList.add('active-left');
             cards[rightIdx].classList.add('active-right');
@@ -446,13 +455,9 @@
             update3DCarousel();
         }
 
-        // Initialize Carousel
         update3DCarousel();
-
-        // Medium rotation pace: fires a transition every 1.8 seconds (1800ms)
         let autoRotate = setInterval(nextSlide, 1800);
 
-        // Pause rotation on mouse hover so clients can read comfortably
         const stage = document.querySelector('.carousel-stage');
         stage.addEventListener('mouseenter', () => clearInterval(autoRotate));
         stage.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, 1800));
