@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madinal Lifescience | Quality Formulations</title>
     <style>
-        /* --- Core Theme Reset & Variables --- */
         * {
             margin: 0;
             padding: 0;
@@ -80,7 +79,7 @@
         /* --- Banner: Blue Background + Assorted Medicines --- */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 32, 67, 0.9), rgba(37, 99, 235, 0.85)), url('https://images.unsplash.com/photos/RS0-h_pyByk/download?ixlib=rb-4.0.3&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(15, 32, 67, 0.95), rgba(37, 99, 235, 0.9)), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             padding: 130px 8% 110px 8%;
             color: #ffffff;
             display: flex;
@@ -163,7 +162,7 @@
             color: #64748b;
         }
 
-        /* --- Professional Animation Cinematic Sliding Section --- */
+        /* --- Sliding Section --- */
         .formulation-section {
             padding: 80px 5%;
             text-align: center;
@@ -177,7 +176,7 @@
             margin-bottom: 10px;
         }
 
-        /* Central Tabs */
+        /* Central Tabs Buttons */
         .tab-navigation {
             display: flex;
             justify-content: center;
@@ -196,7 +195,7 @@
             font-size: 14px;
             color: #475569;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-tab-btn:hover, .nav-tab-btn.active {
@@ -206,7 +205,7 @@
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
         }
 
-        /* Sliding Viewport */
+        /* Viewport Window */
         .slider-viewport {
             width: 100%;
             max-width: 1140px;
@@ -218,11 +217,11 @@
         .slider-row {
             display: flex;
             gap: 30px;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Ultra smooth ease-out */
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             width: max-content;
         }
 
-        /* Clean Cards with Smooth Hover Effects */
+        /* Cards Layout */
         .slide-card {
             width: 290px;
             background: #ffffff;
@@ -236,17 +235,17 @@
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
         }
 
-        /* Dim neighboring cards slightly when one is isolated/active */
+        /* Dim neighboring cards when focusing */
         .slider-row.focus-mode .slide-card {
             opacity: 0.4;
             transform: scale(0.95);
         }
 
         .slider-row.focus-mode .slide-card.highlighted-target {
-            opacity: 1 !important;
-            transform: scale(1.03) translateY(-8px) !important;
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.18) !important;
-            border-color: var(--primary-blue) !important;
+            opacity: 1;
+            transform: scale(1.03) translateY(-8px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.18);
+            border-color: var(--primary-blue);
         }
 
         .slide-card:hover {
@@ -254,7 +253,7 @@
             box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
         }
 
-        /* --- Verified Medical Image Assets --- */
+        /* --- Fixed Medical Images --- */
         .cover-image {
             width: 100%;
             height: 160px;
@@ -265,7 +264,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Direct Unsplash downloads to bypass default landscape placeholders completely */
         .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
         .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
         .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
@@ -316,7 +314,6 @@
             background: var(--brand-red);
         }
 
-        /* --- Footer --- */
         footer {
             background: var(--dark-slate);
             color: #94a3b8;
@@ -357,7 +354,7 @@
         </ul>
     </nav>
 
-    <!-- Corrected Deep Blue Banner Layer with Assorted Medicines Background -->
+    <!-- Blue Corporate Banner with Real Medical Image Background -->
     <section class="hero">
         <h1>Advancing Healthcare through Quality Formulations</h1>
         <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
@@ -387,11 +384,11 @@
         </div>
     </section>
 
-    <!-- Interactive Cinematic Sliding Section -->
+    <!-- Dynamic Slider Section -->
     <section class="formulation-section">
         <h2>Our Premium Formulations</h2>
         
-        <!-- Hover or Touch tab menu to trigger custom slide deck animation parameters -->
+        <!-- Tab triggers for animation -->
         <div class="tab-navigation">
             <button class="nav-tab-btn active" onmouseover="animateSlider(0)" onclick="animateSlider(0)">All Products</button>
             <button class="nav-tab-btn" onmouseover="animateSlider(1)" onclick="animateSlider(1)">Tablets</button>
@@ -458,24 +455,21 @@
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
     </footer>
 
-    <!-- Advanced Animation Physics Script Layer -->
+    <!-- Animation Logic -->
     <script>
         function animateSlider(index) {
             const row = document.getElementById('productRow');
             const tabs = document.querySelectorAll('.nav-tab-btn');
             const cards = document.querySelectorAll('.slide-card');
             
-            // Sync active visual state on tab nodes
             tabs.forEach(tab => tab.classList.remove('active'));
             tabs[index].classList.add('active');
             
             if (index === 0) {
-                // Clear active focus modes and pull deck back to base alignment smoothly
                 row.classList.remove('focus-mode');
                 cards.forEach(c => c.classList.remove('highlighted-target'));
                 row.style.transform = "translateX(0px)";
             } else {
-                // Engage modern focus isolation layer
                 row.classList.add('focus-mode');
                 cards.forEach((c, idx) => {
                     if (idx === (index - 1)) {
@@ -485,7 +479,6 @@
                     }
                 });
                 
-                // Track width metrics: 290px card width + 30px margin gaps
                 const centerShift = (index - 1) * 320;
                 row.style.transform = `translateX(-${centerShift}px)`;
             }
