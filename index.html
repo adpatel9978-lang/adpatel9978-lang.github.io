@@ -63,18 +63,19 @@
             font-size: 15px;
         }
 
-        /* --- Fixed High-End Pharma Hero Banner --- */
+        /* --- Updated Premium Pharma Hero Banner --- */
         .hero {
             position: relative;
-            /* High-definition premium medical production line backdrop */
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(37, 99, 235, 0.8)), 
-                        url('https://images.unsplash.com/photo-1587854692152-cbe660db0969?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            padding: 140px 8% 120px 8%;
+            /* Verified High-Resolution Medical/Medicine Production Background */
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(37, 99, 235, 0.75) 100%), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 150px 8% 130px 8%;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            box-shadow: inset 0 -50px 50px rgba(0,0,0,0.2);
         }
 
         .hero h1 {
@@ -83,15 +84,16 @@
             margin-bottom: 20px;
             max-width: 850px;
             line-height: 1.2;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            color: #bfdbfe;
-            font-size: 19px;
+            color: #e0f2fe;
+            font-size: 20px;
             max-width: 650px;
             line-height: 1.6;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            font-weight: 500;
         }
 
         /* --- Corporate Story Section --- */
@@ -171,7 +173,7 @@
             max-width: 1000px;
             height: 480px;
             margin: 0 auto;
-            perspective: 1000px; /* Gives depth perspective to the rotating effect */
+            perspective: 1200px; 
         }
 
         /* Track Container holding all hidden/moving cards */
@@ -196,10 +198,11 @@
             justify-content: space-between;
             top: 0;
             left: 50%;
-            margin-left: -170px; /* Perfectly centers card layout base */
+            margin-left: -170px; 
             opacity: 0;
             pointer-events: none;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease, z-index 0.6s ease;
+            /* Medium pace transition timing (0.45s instead of 0.6s) */
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease, z-index 0.45s ease;
         }
 
         /* --- The 3 Visible States running in a circle --- */
@@ -324,7 +327,7 @@
         </ul>
     </nav>
 
-    <!-- Professional Pharma Background Banner Layer -->
+    <!-- Professional Pharma Medicine Background Banner Layer -->
     <section class="hero">
         <h1>Advancing Healthcare through Quality Formulations</h1>
         <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
@@ -446,13 +449,13 @@
         // Initialize Carousel
         update3DCarousel();
 
-        // Run cyclic rotation automatically every 3 seconds (3000ms)
-        let autoRotate = setInterval(nextSlide, 3000);
+        // Medium rotation pace: fires a transition every 1.8 seconds (1800ms)
+        let autoRotate = setInterval(nextSlide, 1800);
 
-        // Pause rotation on mouse hover so clients can read the product card text comfortably
+        // Pause rotation on mouse hover so clients can read comfortably
         const stage = document.querySelector('.carousel-stage');
         stage.addEventListener('mouseenter', () => clearInterval(autoRotate));
-        stage.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, 3000));
+        stage.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, 1800));
     </script>
 
 </body>
