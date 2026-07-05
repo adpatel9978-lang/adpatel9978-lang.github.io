@@ -77,10 +77,10 @@
             color: var(--primary-blue);
         }
 
-        /* --- Rich Corporate Background Hero Banner --- */
+        /* --- Custom Blue Corporate Banner with Medical Background --- */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(37, 99, 235, 0.75)), url('https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
             padding: 120px 8% 100px 8%;
             color: #ffffff;
             display: flex;
@@ -100,7 +100,7 @@
         }
 
         .hero p {
-            color: #cbd5e1;
+            color: #e2e8f0;
             font-size: 18px;
             max-width: 600px;
             line-height: 1.6;
@@ -163,7 +163,7 @@
             color: #64748b;
         }
 
-        /* --- OnePlus Horizontal Sliding Grid Section --- */
+        /* --- Tab Controlled Sliding Grid Section --- */
         .formulation-section {
             padding: 80px 5%;
             text-align: center;
@@ -177,34 +177,54 @@
             margin-bottom: 10px;
         }
 
-        .subtitle {
-            color: #64748b;
-            margin-bottom: 40px;
-            font-size: 16px;
+        /* Interactive Navigation Tabs in Center */
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px auto 40px auto;
+            flex-wrap: wrap;
+            max-width: 800px;
         }
 
-        /* Side-by-side sliding deck track */
-        .slider-wrapper {
+        .nav-tab-btn {
+            padding: 10px 20px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab-btn:hover, .nav-tab-btn.active {
+            background: var(--primary-blue);
+            color: #ffffff;
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Controlled Sliding Viewport Window */
+        .slider-viewport {
             width: 100%;
-            overflow-x: auto;
-            padding: 20px 10px;
-            display: flex;
-            justify-content: flex-start;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
+            max-width: 1160px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 10px 0;
         }
 
         .slider-row {
             display: flex;
-            gap: 24px;
-            margin: 0 auto;
-            padding-bottom: 10px;
+            gap: 20px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            width: max-content;
         }
 
-        /* Individual Clean Sliding Cards */
+        /* Precise Fixed Card Widths */
         .slide-card {
-            flex: 0 0 290px;
-            width: 290px;
+            width: 270px;
             background: #ffffff;
             border-radius: 16px;
             padding: 24px;
@@ -213,16 +233,15 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .slide-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
-            border-color: var(--primary-blue);
         }
 
-        /* Clean High-Res Image Placeholders */
+        /* --- Perfect Image Selectors --- */
         .cover-image {
             width: 100%;
             height: 160px;
@@ -233,10 +252,11 @@
             border: 1px solid #e2e8f0;
         }
 
+        /* Corrected and updated targeted medical image asset layers */
         .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
-        .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
+        .img-capsule { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); } /* Real medical capsules fill */
         .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
-        .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); }
+        .img-syrup { background-image: url('https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?auto=format&fit=crop&w=400&q=80'); }  /* Liquid amber medicine bottles fill */
         .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=400&q=80'); }
 
         .prod-tag {
@@ -283,15 +303,6 @@
             background: var(--brand-red);
         }
 
-        /* Custom Scrollbar Styling for Slider Layout */
-        .slider-wrapper::-webkit-scrollbar {
-            height: 6px;
-        }
-        .slider-wrapper::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-
         /* --- Footer --- */
         footer {
             background: var(--dark-slate);
@@ -302,7 +313,6 @@
             border-top: 4px solid var(--brand-red);
         }
 
-        /* --- Full Responsiveness Query Loop --- */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -314,15 +324,6 @@
             }
             .hero h1 {
                 font-size: 32px;
-            }
-            .hero p {
-                font-size: 15px;
-            }
-            .story-card {
-                padding: 25px;
-            }
-            .slider-wrapper {
-                justify-content: flex-start;
             }
         }
     </style>
@@ -343,7 +344,7 @@
         </ul>
     </nav>
 
-    <!-- Hero Section with Custom Medical Background Image Layer -->
+    <!-- Upgraded True Blue Hero Banner Layer -->
     <section class="hero">
         <h1>Advancing Healthcare through Quality Formulations</h1>
         <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
@@ -373,13 +374,22 @@
         </div>
     </section>
 
-    <!-- OnePlus Horizontal Category Slider -->
+    <!-- Interactive Tabs Category Slider Section -->
     <section class="formulation-section">
         <h2>Our Premium Formulations</h2>
-        <p class="subtitle">Swipe or scroll horizontally to explore our category rows smoothly.</p>
         
-        <div class="slider-wrapper">
-            <div class="slider-row">
+        <!-- Center navigation tabs to seamlessly move rows side-by-side -->
+        <div class="tab-navigation">
+            <button class="nav-tab-btn active" onclick="moveToCard(0)">All Products</button>
+            <button class="nav-tab-btn" onclick="moveToCard(1)">Tablets</button>
+            <button class="nav-tab-btn" onclick="moveToCard(2)">Capsules</button>
+            <button class="nav-tab-btn" onclick="moveToCard(3)">Powder</button>
+            <button class="nav-tab-btn" onclick="moveToCard(4)">Syrups</button>
+            <button class="nav-tab-btn" onclick="moveToCard(5)">Injectables</button>
+        </div>
+        
+        <div class="slider-viewport">
+            <div class="slider-row" id="productRow">
                 
                 <!-- Card 1: Tablets -->
                 <div class="slide-card">
@@ -434,6 +444,28 @@
     <footer>
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
     </footer>
+
+    <!-- Active Sliding Logic Script Engine -->
+    <script>
+        function moveToCard(index) {
+            const row = document.getElementById('productRow');
+            const tabs = document.querySelectorAll('.nav-tab-btn');
+            
+            // Remove active classes across tabs
+            tabs.forEach(tab => tab.classList.remove('active'));
+            // Highlight chosen tab index target
+            tabs[index].classList.add('active');
+            
+            if (index === 0) {
+                // Shift back to start to see all cards
+                row.style.transform = "translateX(0px)";
+            } else {
+                // Calculate position offsets precisely based on 270px card width + 20px gap spacing parameters
+                const shiftWidth = (index - 1) * 290;
+                row.style.transform = `translateX(-${shiftWidth}px)`;
+            }
+        }
+    </script>
 
 </body>
 </html>
