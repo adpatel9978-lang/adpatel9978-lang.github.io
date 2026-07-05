@@ -1,8 +1,339 @@
-<!-- Navigation Bar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madinal Lifescience | Quality Formulations</title>
+    <style>
+        /* --- Core Theme Reset & Variables --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --brand-red: #dc2626;
+            --dark-slate: #0f172a;
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-slate);
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #ffffff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--brand-red);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: max-content;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #dc2626;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        /* --- Rich Corporate Background Hero Banner --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(37, 99, 235, 0.75)), url('https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 120px 8% 100px 8%;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            max-width: 800px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.6;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+        }
+
+        /* --- Corporate Story Section --- */
+        .story-section {
+            padding: 60px 8%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .story-card {
+            background: var(--light-bg);
+            border-left: 5px solid var(--primary-blue);
+            padding: 40px;
+            border-radius: 0 16px 16px 0;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .story-card h2 {
+            font-size: 28px;
+            color: var(--dark-slate);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .story-card p {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .story-highlights {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+
+        .highlight-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .highlight-item h3 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .highlight-item p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* --- OnePlus Horizontal Sliding Grid Section --- */
+        .formulation-section {
+            padding: 80px 5%;
+            text-align: center;
+            background: #f1f5f9;
+            overflow: hidden;
+        }
+
+        .formulation-section h2 {
+            font-size: 32px;
+            color: var(--dark-slate);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        /* Side-by-side sliding deck track */
+        .slider-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            padding: 20px 10px;
+            display: flex;
+            justify-content: flex-start;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .slider-row {
+            display: flex;
+            gap: 24px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+
+        /* Individual Clean Sliding Cards */
+        .slide-card {
+            flex: 0 0 290px;
+            width: 290px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .slide-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+            border-color: var(--primary-blue);
+        }
+
+        /* Clean High-Res Image Placeholders */
+        .cover-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
+        .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
+        .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
+        .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); }
+        .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=400&q=80'); }
+
+        .prod-tag {
+            align-self: flex-start;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            background: #eff6ff;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .slide-card h3 {
+            font-size: 20px;
+            color: var(--dark-slate);
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .slide-card p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.4;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .list-action-btn {
+            width: 100%;
+            padding: 11px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .list-action-btn:hover {
+            background: var(--brand-red);
+        }
+
+        /* Custom Scrollbar Styling for Slider Layout */
+        .slider-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+        .slider-wrapper::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark-slate);
+            color: #94a3b8;
+            padding: 40px 8%;
+            text-align: center;
+            font-size: 14px;
+            border-top: 4px solid var(--brand-red);
+        }
+
+        /* --- Full Responsiveness Query Loop --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            .story-card {
+                padding: 25px;
+            }
+            .slider-wrapper {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
     <nav>
-        <div class="logo-area" style="display: flex; align-items: center; gap: 12px; min-width: max-content;">
+        <div class="logo-area">
             <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 50px; width: auto; object-fit: contain;">
-            <div class="logo-text" style="font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #dc2626; line-height: 1;">MADINAL <span style="color: #2563eb;">LIFESCIENCE</span></div>
+            <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">Home</a></li>
@@ -12,10 +343,10 @@
         </ul>
     </nav>
 
-    <!-- Upgraded Hero Section with Corporate Background Image -->
-    <section class="hero" style="position: relative; background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(37, 99, 235, 0.75)), url('https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; padding: 120px 8% 100px 8%; color: #ffffff;">
-        <h1 style="color: #ffffff; font-size: 48px; font-weight: 800; margin-bottom: 20px; max-width: 800px; line-height: 1.2; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Advancing Healthcare through Quality Formulations</h1>
-        <p style="color: #cbd5e1; font-size: 18px; max-width: 600px; line-height: 1.6; text-shadow: 0 1px 5px rgba(0,0,0,0.2);">Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
+    <!-- Hero Section with Custom Medical Background Image Layer -->
+    <section class="hero">
+        <h1>Advancing Healthcare through Quality Formulations</h1>
+        <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
     </section>
 
     <!-- Corporate Story Section -->
@@ -42,57 +373,56 @@
         </div>
     </section>
 
-    <!-- OnePlus-Style Side-by-Side Sliding Row Formulation Container -->
-    <section class="formulation-section" style="padding: 80px 5%; text-align: center; background: #f1f5f9; overflow: hidden;">
+    <!-- OnePlus Horizontal Category Slider -->
+    <section class="formulation-section">
         <h2>Our Premium Formulations</h2>
-        <p class="subtitle" style="color: #64748b; margin-bottom: 40px; font-size: 16px;">Swipe or scroll horizontally to explore our category rows smoothly.</p>
+        <p class="subtitle">Swipe or scroll horizontally to explore our category rows smoothly.</p>
         
-        <!-- Horizontal Sliding Flex Container Wrapper -->
-        <div class="slider-wrapper" style="width: 100%; overflow-x: auto; padding: 20px 10px; display: flex; gap: 24px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch;">
-            <div class="slider-row" style="display: flex; gap: 24px; margin: 0 auto; padding-bottom: 10px;">
+        <div class="slider-wrapper">
+            <div class="slider-row">
                 
                 <!-- Card 1: Tablets -->
-                <div class="slide-card" style="flex: 0 0 280px; width: 280px; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <span class="prod-tag" style="align-self: flex-start; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 30px; text-transform: uppercase; background:#fef2f2; color:var(--brand-red); margin-bottom: 8px;">Oral Solid</span>
+                <div class="slide-card">
+                    <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Oral Solid</span>
                     <div class="cover-image img-tablet"></div>
-                    <h3 style="font-size: 20px; color: var(--dark-slate); margin-bottom: 6px; text-align: left;">Tablets</h3>
-                    <p style="font-size: 13px; color: #64748b; line-height: 1.4; text-align: left; margin-bottom: 12px;">Coated, un-coated, rapid-release, and sustained formulations.</p>
+                    <h3>Tablets</h3>
+                    <p>Coated, un-coated, rapid-release, and sustained formulations.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 2: Capsules -->
-                <div class="slide-card" style="flex: 0 0 280px; width: 280px; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <span class="prod-tag" style="align-self: flex-start; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 30px; text-transform: uppercase; background: #eff6ff; color: var(--primary-blue); margin-bottom: 8px;">Solid Fill</span>
+                <div class="slide-card">
+                    <span class="prod-tag">Solid Fill</span>
                     <div class="cover-image img-capsule"></div>
-                    <h3 style="font-size: 20px; color: var(--dark-slate); margin-bottom: 6px; text-align: left;">Capsules</h3>
-                    <p style="font-size: 13px; color: #64748b; line-height: 1.4; text-align: left; margin-bottom: 12px;">Premium hard gelatin and softgel options prepared cleanly.</p>
+                    <h3>Capsules</h3>
+                    <p>Premium hard gelatin and softgel options prepared cleanly.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 3: Powders -->
-                <div class="slide-card" style="flex: 0 0 280px; width: 280px; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <span class="prod-tag" style="align-self: flex-start; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 30px; text-transform: uppercase; background:#fef2f2; color:var(--brand-red); margin-bottom: 8px;">Nutritional</span>
+                <div class="slide-card">
+                    <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Nutritional</span>
                     <div class="cover-image img-powder"></div>
-                    <h3 style="font-size: 20px; color: var(--dark-slate); margin-bottom: 6px; text-align: left;">Powder</h3>
-                    <p style="font-size: 13px; color: #64748b; line-height: 1.4; text-align: left; margin-bottom: 12px;">High stability, protein-rich supplements and dry oral mixes.</p>
+                    <h3>Powder</h3>
+                    <p>High stability, protein-rich supplements and dry oral mixes.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 4: Syrups -->
-                <div class="slide-card" style="flex: 0 0 280px; width: 280px; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <span class="prod-tag" style="align-self: flex-start; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 30px; text-transform: uppercase; background: #eff6ff; color: var(--primary-blue); margin-bottom: 8px;">Oral Liquid</span>
+                <div class="slide-card">
+                    <span class="prod-tag">Oral Liquid</span>
                     <div class="cover-image img-syrup"></div>
-                    <h3 style="font-size: 20px; color: var(--dark-slate); margin-bottom: 6px; text-align: left;">Syrups</h3>
-                    <p style="font-size: 13px; color: #64748b; line-height: 1.4; text-align: left; margin-bottom: 12px;">Homogeneous oral suspensions optimized for bio-availability.</p>
+                    <h3>Syrups</h3>
+                    <p>Homogeneous oral suspensions optimized for bio-availability.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
                 <!-- Card 5: Injectables -->
-                <div class="slide-card" style="flex: 0 0 280px; width: 280px; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <span class="prod-tag" style="align-self: flex-start; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 30px; text-transform: uppercase; background:#fef2f2; color:var(--brand-red); margin-bottom: 8px;">Sterile Liquid</span>
+                <div class="slide-card">
+                    <span class="prod-tag" style="background:#fef2f2; color:var(--brand-red);">Sterile Liquid</span>
                     <div class="cover-image img-injectable"></div>
-                    <h3 style="font-size: 20px; color: var(--dark-slate); margin-bottom: 6px; text-align: left;">Injectables</h3>
-                    <p style="font-size: 13px; color: #64748b; line-height: 1.4; text-align: left; margin-bottom: 12px;">Liquid and powder vials built under strict safety standards.</p>
+                    <h3>Injectables</h3>
+                    <p>Liquid and powder vials built under strict safety standards.</p>
                     <button class="list-action-btn">Product List</button>
                 </div>
 
@@ -100,18 +430,10 @@
         </div>
     </section>
 
-    <!-- Custom CSS Hover Addition for the Sliding Deck -->
-    <style>
-        .slider-wrapper::-webkit-scrollbar {
-            height: 6px;
-        }
-        .slider-wrapper::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        .slide-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15) !important;
-            border-color: var(--primary-blue) !important;
-        }
-    </style>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
+    </footer>
+
+</body>
+</html>
