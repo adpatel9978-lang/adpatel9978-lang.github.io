@@ -40,23 +40,11 @@
             border-bottom: 3px solid var(--brand-red);
         }
 
-        /* Left-side placeholder zone specifically reserved for your corporate logo image */
         .logo-area {
             display: flex;
             align-items: center;
             min-width: 180px;
             height: 45px;
-        }
-
-        .logo-text {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            color: var(--primary-blue);
-        }
-
-        .logo-text span {
-            color: var(--brand-red);
         }
 
         .nav-links {
@@ -77,7 +65,7 @@
             color: var(--primary-blue);
         }
 
-        /* --- Original Hero Section --- */
+        /* --- Hero Section --- */
         .hero {
             padding: 80px 8% 60px 8%;
             background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
@@ -159,7 +147,7 @@
             color: #64748b;
         }
 
-        /* --- Fully Responsive Smooth 3D Cube Showcase --- */
+        /* --- Responsive Smooth 3D Cube Showcase --- */
         .formulation-section {
             padding: 80px 5%;
             text-align: center;
@@ -178,7 +166,6 @@
             font-size: 16px;
         }
 
-        /* Cube 3D Viewport Wrapper */
         .cube-viewport {
             width: 100%;
             height: 480px;
@@ -189,28 +176,23 @@
             overflow: hidden;
         }
 
-        /* The core 3D structural cube container */
         .cube-container {
             width: 300px;
             height: 380px;
             position: relative;
             transform-style: preserve-3d;
-            /* Balanced, medium-paced rotation speed */
             animation: rotateCube 18s infinite linear;
         }
 
-        /* Pauses rotation immediately when the user hovers to look or click */
         .cube-viewport:hover .cube-container {
             animation-play-state: paused;
         }
 
-        /* Continuous rotation timeline across a clean Y axis loop */
         @keyframes rotateCube {
             0% { transform: rotateY(0deg); }
             100% { transform: rotateY(-360deg); }
         }
 
-        /* Setup for individual faces of our multi-sided formulation asset */
         .cube-face {
             position: absolute;
             width: 300px;
@@ -226,14 +208,12 @@
             backface-visibility: visible;
         }
 
-        /* Precise 3D rotation and side offsets to close the shapes cleanly */
         .face-1 { transform: rotateY(0deg) translateZ(230px); }
         .face-2 { transform: rotateY(72deg) translateZ(230px); }
         .face-3 { transform: rotateY(144deg) translateZ(230px); }
         .face-4 { transform: rotateY(216deg) translateZ(230px); }
         .face-5 { transform: rotateY(288deg) translateZ(230px); }
 
-        /* --- Corrected High-Definition Product Cover Images --- */
         .cover-image {
             width: 100%;
             height: 160px;
@@ -244,7 +224,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Highly accurate matching image targets */
         .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
         .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
         .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
@@ -305,7 +284,7 @@
             border-top: 4px solid var(--brand-red);
         }
 
-        /* --- Media Queries for Full Mobile & Tablet Layout Support --- */
+        /* --- Media Queries --- */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -324,7 +303,6 @@
             .story-card {
                 padding: 25px;
             }
-            /* Adjust 3D translation radius down slightly for smaller screens to prevent overflow clipping */
             .face-1 { transform: rotateY(0deg) translateZ(200px); }
             .face-2 { transform: rotateY(72deg) translateZ(200px); }
             .face-3 { transform: rotateY(144deg) translateZ(200px); }
@@ -345,9 +323,8 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <!-- Top-left area displaying your official corporate logo file -->
         <div class="logo-area">
-            <!-- This points exactly to your uppercase file name with the space handled -->
+            <!-- Points to your exact uppercase file name with space -->
             <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 55px; width: auto; object-fit: contain;">
         </div>
         <ul class="nav-links">
@@ -364,7 +341,7 @@
         <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
     </section>
 
-    <!-- Corrected Interpretation Story Section -->
+    <!-- Corporate Story Section -->
     <section class="story-section">
         <div class="story-card">
             <h2>Our Journey & Commitment</h2>
