@@ -19,28 +19,31 @@
             overflow-x: hidden;
         }
 
-        /* --- Navigation Bar --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
+        /* --- New Dedicated Navigation Header Setup --- */
+        header {
             background: #ffffff;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid #dc2626;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Top Row: Clean Branding Space */
+        .logo-branding-row {
+            display: flex;
+            align-items: center;
+            padding: 15px 8%;
+            border-bottom: 1px solid #f1f5f9;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
             letter-spacing: 0.5px;
             color: #dc2626;
@@ -50,22 +53,45 @@
             color: #2563eb;
         }
 
+        /* Bottom Row: Full-Width Translucent/Glass Navigation Bar */
+        .translucent-nav-bar {
+            width: 100%;
+            /* Semi-transparent white tint */
+            background: rgba(255, 255, 255, 0.75); 
+            /* Premium frosted glass blur effect */
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            padding: 12px 8%;
+            border-bottom: 3px solid #dc2626;
+            display: flex;
+            justify-content: flex-start; /* Aligns links cleanly beneath branding */
+        }
+
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 40px; /* Generous spacing between items */
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #64748b;
-            font-weight: 600;
-            font-size: 15px;
+            color: #1e293b; /* Strong, dark slate for excellent legibility */
+            font-weight: 700; /* Bold text */
+            font-size: 16px; /* Medium sizing */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+            position: relative;
+            padding: 4px 0;
         }
 
-        /* --- Updated Premium Light-Teal Responsive Hero Layout --- */
+        /* Clean hover accent line */
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+        }
+
+        /* --- Premium Light-Teal Hero Layout --- */
         .hero-container {
-            /* Loads your chosen medicine image directly as the main hero background */
             background: url('medicine-capsules.jpg') center/cover no-repeat;
             padding: 90px 8%;
             display: grid;
@@ -76,7 +102,7 @@
             position: relative;
         }
 
-        /* Light subtle overlay over the image to keep the clean medical laboratory vibe */
+        /* Subtle overlay to blend perfectly with the light-teal image theme */
         .hero-container::before {
             content: '';
             position: absolute;
@@ -85,7 +111,6 @@
             z-index: 1;
         }
 
-        /* High-contrast font treatment so text is crystal clear over the bright background image */
         .hero-text-side {
             position: relative;
             z-index: 2;
@@ -97,17 +122,16 @@
             font-weight: 800;
             line-height: 1.25;
             margin-bottom: 20px;
-            color: #0f172a; /* Strong deep slate navy for high legibility */
+            color: #0f172a;
         }
 
         .hero-text-side p {
-            color: #1e3a8a; /* Deep blue accent paragraph color */
+            color: #1e3a8a;
             font-size: 19px;
             line-height: 1.6;
             font-weight: 600;
         }
 
-        /* Placeholder container to keep the right grid clean and responsive */
         .hero-space-side {
             position: relative;
             z-index: 2;
@@ -317,24 +341,34 @@
             .hero-container::before { background: rgba(255, 255, 255, 0.95); }
             .hero-text-side { text-align: center; }
             .hero-space-side { display: none; }
+            .translucent-nav-bar { justify-content: center; }
+            .logo-branding-row { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo-area">
-            <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 50px; width: auto; object-fit: contain;">
-            <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
+    <!-- Combined Branding and Translucent Navigation Header -->
+    <header>
+        <!-- Row 1: Logo and Company Text -->
+        <div class="logo-branding-row">
+            <div class="logo-area">
+                <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 55px; width: auto; object-fit: contain;">
+                <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+        
+        <!-- Row 2: Translucent Aesthetic Navigation Bar Below Branding -->
+        <div class="translucent-nav-bar">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">PCD Franchise</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
 
     <!-- Main Hero Section -->
     <section class="hero-container">
@@ -465,4 +499,3 @@
 
 </body>
 </html>
- 
