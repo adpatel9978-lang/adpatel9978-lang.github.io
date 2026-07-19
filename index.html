@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madinal Lifescience | Premium Corporate</title>
+    <title>Madinal Lifescience | Premium Showcase</title>
     <style>
         /* --- Core Reset --- */
         * {
@@ -246,7 +246,6 @@
             transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* Center Hub Disc Placed in 3D Space */
         .center-core-disc {
             position: absolute;
             width: 140px;
@@ -257,7 +256,7 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transform: translateZ(35px); /* Pops forward slightly */
+            transform: translateZ(35px);
             box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15), inset 0 0 0 3px #1e3a8a;
             font-weight: 700;
             color: #1e3a8a;
@@ -265,7 +264,6 @@
             line-height: 1.3;
         }
 
-        /* The Rectangular Segments that turn circular */
         .unfold-panel-rect {
             position: absolute;
             width: 100px;
@@ -280,36 +278,21 @@
             font-weight: 600;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             transform-style: preserve-3d;
-            
-            /* Initial Closed Stacked State */
             opacity: 0.8;
             transform: rotate(0deg) translateX(0px) rotateY(0deg);
-            transition: transform 1.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 1s ease, box-shadow 0.3s ease;
+            transition: transform 1.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 1s ease;
         }
 
         .unfold-panel-rect svg {
             width: 32px;
             height: 32px;
             fill: #ffffff;
-            transition: transform 0.3s;
-        }
-
-        .unfold-panel-rect:hover {
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            cursor: pointer;
-        }
-        .unfold-panel-rect:hover svg {
-            transform: scale(1.15) translateZ(10px);
         }
 
         .panel-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
         .panel-red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
 
-        /* ACTIVE TRIGGER STATE: Spreads out beautifully into an exact circular coordinate ring */
-        .stage-3d-viewport.activated .unfold-hub-3d {
-            transform: rotateX(15deg);
-        }
-
+        .stage-3d-viewport.activated .unfold-hub-3d { transform: rotateX(15deg); }
         .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-155px) rotateX(-15deg); opacity: 1; }
         .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-155px) rotateX(-15deg) rotateZ(-60deg); opacity: 1; }
         .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-155px) rotateX(-15deg) rotateZ(-120deg); opacity: 1; }
@@ -317,137 +300,113 @@
         .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-155px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
         .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-155px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
 
-        /* --- PREMIUM 3D CUBIC PRODUCT GALLERY --- */
-        .gallery-3d-section {
-            padding: 100px 5%;
+
+        /* --- MULTI-BOX CUBICAL FLIPPING GALLERY --- */
+        .cubical-gallery-section {
+            padding: 80px 8%;
             background: #f1f5f9;
             text-align: center;
-            overflow: hidden;
         }
 
-        .gallery-3d-section h2 {
-            font-size: 34px;
+        .cubical-gallery-section h2 {
+            font-size: 32px;
             color: #0f172a;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .gallery-3d-section p.subtitle {
-            color: #64748b;
+        .cubical-gallery-section p.section-desc {
             font-size: 16px;
-            margin-bottom: 80px;
+            color: #64748b;
+            margin-bottom: 60px;
         }
 
-        /* 3D Scene Viewport for the Cube */
-        .cube-viewport-3d {
-            width: 300px;
-            height: 300px;
-            perspective: 1200px;
-            margin: 0 auto 40px auto;
+        /* Grid Layout holding the mid-sized square blocks */
+        .cubical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* The Actual Cube Container */
-        .product-cube-3d {
+        /* Viewport scene for individual cubical box */
+        .cube-box-scene {
+            width: 260px;
+            height: 260px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Multi-faced square element box */
+        .cubical-box {
             width: 100%;
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            transform: rotateX(-20deg) rotateY(25deg);
-            animation: continuousCubeRotation 16s infinite linear;
-            transition: transform 0.5s ease-out;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Pause rotation on mouse hover so users can examine details */
-        .cube-viewport-3d:hover .product-cube-3d {
-            animation-play-state: paused;
-        }
-
-        /* Universal Side Blueprint */
-        .cube-face {
+        /* Absolute square face layers */
+        .box-face {
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.96);
-            border: 2px solid #e2e8f0;
+            width: 260px;
+            height: 260px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 30px;
-            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.03);
-            border-radius: 8px;
-            backface-visibility: visible;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            backface-visibility: hidden; /* Smooth clean rotation without bleeding */
         }
 
-        /* Precise 3D Spatial Transforms for standard 300px Cube */
-        .face-front  { transform: rotateY(0deg) translateZ(150px); border-top: 5px solid #2563eb; }
-        .face-back   { transform: rotateY(180deg) translateZ(150px); border-top: 5px solid #dc2626; }
-        .face-left   { transform: rotateY(-90deg) translateZ(150px); border-top: 5px solid #2563eb; }
-        .face-right  { transform: rotateY(90deg) translateZ(150px); border-top: 5px solid #dc2626; }
-        .face-top    { transform: rotateX(90deg) translateZ(150px); background: #f8fafc; }
-        .face-bottom { transform: rotateX(-90deg) translateZ(150px); background: #f8fafc; }
+        .box-face.face-front {
+            transform: rotateY(0deg) translateZ(5px); /* minimal separation layer offset */
+            border-top: 5px solid #2563eb;
+        }
 
-        /* Inside Face UI Styling placeholders */
-        .placeholder-image-slot {
+        .box-face.face-back {
+            transform: rotateY(180deg) translateZ(5px);
+            border-top: 5px solid #dc2626;
+        }
+
+        .img-placeholder-square {
             width: 100%;
-            height: 140px;
+            height: 120px;
             background: #f8fafc;
             border: 2px dashed #cbd5e1;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 12px;
             color: #94a3b8;
-            font-weight: 500;
-            font-size: 13px;
-            margin-bottom: 20px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 16px;
         }
 
-        .cube-face h4 {
-            font-size: 20px;
+        .box-face h4 {
+            font-size: 18px;
             color: #0f172a;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 700;
         }
 
-        .cube-face p {
+        .box-face p {
             font-size: 13px;
             color: #64748b;
             text-align: center;
             line-height: 1.4;
         }
 
-        /* Rotation Animation Formula */
-        @keyframes continuousCubeRotation {
-            0%   { transform: rotateX(0deg) rotateY(0deg); }
-            100% { transform: rotateX(360deg) rotateY(720deg); }
-        }
-
-        /* Controls Panel */
-        .cube-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .control-btn {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #475569;
-            transition: all 0.2s;
-        }
-
-        .control-btn:hover {
-            background: #2563eb;
-            color: white;
-            border-color: #2563eb;
+        /* Dynamic classes loaded by engine to trigger staggering rotational offsets */
+        .rotated-flipped {
+            transform: rotateY(180deg);
         }
 
         footer {
@@ -513,7 +472,6 @@
         <h2 class="main-title">Who We Are</h2>
         
         <div class="infographic-container">
-            
             <!-- Left Text Column -->
             <div class="info-column left-side">
                 <div class="info-block">
@@ -533,43 +491,28 @@
             <!-- Central 3D Interactive Unfolding Stage -->
             <div class="stage-3d-viewport" id="unfoldStage">
                 <div class="unfold-hub-3d">
-                    
-                    <!-- Floating Center Label Core -->
                     <div class="center-core-disc">
                         <span>Who<br>We Are</span>
                     </div>
 
-                    <!-- Rectangular Blocks that morph/unfold out into a circle via CSS transforms -->
-                    <!-- Top Panel -->
                     <div class="unfold-panel-rect rect-node-1 panel-blue">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
                     </div>
-
-                    <!-- Top Right Panel -->
                     <div class="unfold-panel-rect rect-node-2 panel-red">
                         <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S11.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
                     </div>
-
-                    <!-- Bottom Right Panel -->
                     <div class="unfold-panel-rect rect-node-3 panel-blue">
                         <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                     </div>
-
-                    <!-- Bottom Panel -->
                     <div class="unfold-panel-rect rect-node-4 panel-red">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
                     </div>
-
-                    <!-- Bottom Left Panel -->
                     <div class="unfold-panel-rect rect-node-5 panel-blue">
                         <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                     </div>
-
-                    <!-- Top Left Panel -->
                     <div class="unfold-panel-rect rect-node-6 panel-red">
                         <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     </div>
-
                 </div>
             </div>
 
@@ -588,112 +531,117 @@
                     <p>We are engaged in formulating, supplying, and trading approved arrays.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- PREMIUM 3D CUBIC PRODUCT GALLERY -->
-    <section class="gallery-3d-section">
-        <h2>Corporate Product Showcase</h2>
-        <p class="subtitle">Hover to pause rotation. Future asset images drop directly into front structural faces.</p>
-
-        <!-- The Viewport -->
-        <div class="cube-viewport-3d">
-            <!-- The 3D Rotating Cube Component -->
-            <div class="product-cube-3d" id="productCube">
-                
-                <!-- Front Side -->
-                <div class="cube-face face-front">
-                    <div class="placeholder-image-slot">Image Face Front</div>
-                    <h4>Tablets Range</h4>
-                    <p>Premium coated and rapid action formulation lines.</p>
+    <!-- NEW MULTI-BOX ROTATING CARD GALLERY -->
+    <section class="cubical-gallery-section">
+        <h2>Premium Product Portfolio</h2>
+        <p class="section-desc">Mid-sized independent square boxes rotating dynamically to showcase product selections.</p>
+        
+        <div class="cubical-grid">
+            
+            <!-- Box 1 -->
+            <div class="cube-box-scene">
+                <div class="cubical-box">
+                    <div class="box-face face-front">
+                        <div class="img-placeholder-square">Tablet Image Front</div>
+                        <h4>Analgesics</h4>
+                        <p>Advanced pain relief formulation lines.</p>
+                    </div>
+                    <div class="box-face face-back">
+                        <div class="img-placeholder-square">Tablet Image Back</div>
+                        <h4>Anti-Inflammatory</h4>
+                        <p>Targeted tissue healing capsules.</p>
+                    </div>
                 </div>
-                
-                <!-- Back Side -->
-                <div class="cube-face face-back">
-                    <div class="placeholder-image-slot">Image Face Back</div>
-                    <h4>Capsules Solid</h4>
-                    <p>Advanced hard gelatin multi-dosage units.</p>
-                </div>
-                
-                <!-- Left Side -->
-                <div class="cube-face face-left">
-                    <div class="placeholder-image-slot">Image Face Left</div>
-                    <h4>Syrup Suspensions</h4>
-                    <p>High bio-availability liquid therapeutic lines.</p>
-                </div>
-                
-                <!-- Right Side -->
-                <div class="cube-face face-right">
-                    <div class="placeholder-image-slot">Image Face Right</div>
-                    <h4>Dry Powders</h4>
-                    <p>Stabilized custom-formulation antibiotic solutions.</p>
-                </div>
-                
-                <!-- Top Side -->
-                <div class="cube-face face-top">
-                    <div class="placeholder-image-slot">Top Cap View</div>
-                    <h4>Injections</h4>
-                    <p>Sterile ampoules.</p>
-                </div>
-                
-                <!-- Bottom Side -->
-                <div class="cube-face face-bottom">
-                    <div class="placeholder-image-slot">Bottom Cap View</div>
-                    <h4>Madinal Labs</h4>
-                    <p>Quality Inspected.</p>
-                </div>
-
             </div>
-        </div>
 
-        <!-- Manual Navigation Interactions -->
-        <div class="cube-controls">
-            <button class="control-btn" onclick="rotateCube('left')">Spin Left</button>
-            <button class="control-btn" onclick="rotateCube('right')">Spin Right</button>
+            <!-- Box 2 -->
+            <div class="cube-box-scene">
+                <div class="cubical-box">
+                    <div class="box-face face-front">
+                        <div class="img-placeholder-square">Liquid Image Front</div>
+                        <h4>Pediatric Syrups</h4>
+                        <p>High bio-availability liquid options.</p>
+                    </div>
+                    <div class="box-face face-back">
+                        <div class="img-placeholder-square">Liquid Image Back</div>
+                        <h4>Cough Suspensions</h4>
+                        <p>Stabilized oral respiratory blends.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box 3 -->
+            <div class="cube-box-scene">
+                <div class="cubical-box">
+                    <div class="box-face face-front">
+                        <div class="img-placeholder-square">Powder Image Front</div>
+                        <h4>Dry Injections</h4>
+                        <p>Sterile responsive critical care line.</p>
+                    </div>
+                    <div class="box-face face-back">
+                        <div class="img-placeholder-square">Powder Image Back</div>
+                        <h4>Protein Mixes</h4>
+                        <p>Nutritional stability health options.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Box 4 -->
+            <div class="cube-box-scene">
+                <div class="cubical-box">
+                    <div class="box-face face-front">
+                        <div class="img-placeholder-square">Capsule Image Front</div>
+                        <h4>Antibiotics</h4>
+                        <p>Premium systemic infection defenses.</p>
+                    </div>
+                    <div class="box-face face-back">
+                        <div class="img-placeholder-square">Capsule Image Back</div>
+                        <h4>Multivitamins</h4>
+                        <p>Daily essential health softgels.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Premium 3D Digital Presentation Deck.</p>
+        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Premium Responsive Web Presentation Design.</p>
     </footer>
 
-    <!-- Logic Processing Core Scripts -->
     <script>
-        // Scroll Intersection Observer to Trigger the Unfolding Action dynamically
+        // Unfolding Circle Intersector Engine
         const viewportStage = document.getElementById('unfoldStage');
-        
         const scrollTracker = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // Activate unfolding transformation
                     viewportStage.classList.add('activated');
                 } else {
-                    // Refold cleanly back to rectangular column stack when scrolled away
                     viewportStage.classList.remove('activated');
                 }
             });
         }, { threshold: 0.25 });
-
         scrollTracker.observe(viewportStage);
 
-        // Cube Manual Manipulation Rotation Engine
-        let targetYRotation = 25;
-        const cubeElement = document.getElementById('productCube');
-
-        function rotateCube(direction) {
-            // Temporarily pause default continuous keyframe execution loop to apply manual offset override smoothly
-            cubeElement.style.animation = 'none';
-            
-            if (direction === 'left') {
-                targetYRotation -= 90;
-            } else if (direction === 'right') {
-                targetYRotation += 90;
-            }
-            
-            cubeElement.style.transform = `rotateX(-20deg) rotateY(${targetYRotation}deg)`;
+        // Independent Square Box Auto Flip-Rotation Automation Script
+        const cubicalBoxes = document.querySelectorAll('.cubical-box');
+        
+        function startStaggeredFlippingEngine() {
+            cubicalBoxes.forEach((box, index) => {
+                // Stagger flip timings dynamically so they don't all flip at the absolute same exact millisecond
+                setTimeout(() => {
+                    setInterval(() => {
+                        box.classList.toggle('rotated-flipped');
+                    }, 3000 + (index * 400)); // Staggers flipping frequency
+                }, index * 250); // Initial delay stack offset
+            });
         }
+        
+        window.addEventListener('DOMContentLoaded', startStaggeredFlippingEngine);
     </script>
 </body>
 </html>
