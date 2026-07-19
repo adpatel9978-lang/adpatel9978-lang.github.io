@@ -42,15 +42,16 @@
             gap: 14px;
         }
 
+        /* Nav Text Colors: Fixed Madinal to Red, Lifescience to Blue */
         .logo-text {
             font-size: 24px;
             font-weight: 800;
             letter-spacing: 0.5px;
-            color: #dc2626;
+            color: #dc2626; /* Madinal = Red */
         }
 
         .logo-text span {
-            color: #2563eb;
+            color: #2563eb; /* Lifescience = Blue */
         }
 
         .translucent-nav-bar {
@@ -88,11 +89,11 @@
             color: #2563eb;
         }
 
-        /* --- Original Full Screen Slider Container --- */
+        /* --- Animated Slideshow Container --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
-            height: 600px;
+            min-height: 600px;
             overflow: hidden;
             background: #f1f5f9;
         }
@@ -117,61 +118,61 @@
         .hero-slide.active {
             opacity: 1;
             visibility: visible;
-            z-index: 5;
+            z-index: 2;
         }
 
+        /* Un-faded, bright image on Slide 1 */
         .slide-one {
             background-image: url('medicine-capsules.jpg');
         }
 
+        /* Premium, un-faded Laboratory background for Slide 2 (Fixes duplicate image) */
         .slide-two {
-            background-image: url('medicine-capsules.jpg');
+            background-image: url('https://images.unsplash.com/photo-1579165466541-74e2b49699f4?auto=format&fit=crop&w=1600&q=80');
         }
 
+        /* Clean gradient overlay, no ugly fog effect over the images */
         .hero-slide::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.4) 100%);
             z-index: 1;
         }
 
         .slide-content-box {
             position: relative;
-            z-index: 10;
+            z-index: 3;
             max-width: 750px;
             text-align: left;
         }
 
-        .welcome-badge {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #dc2626;
-            margin-bottom: 12px;
-        }
-
-        /* Exact original text sizing styles */
-        .hero-title-large {
-            font-size: 52px;
+        /* --- NEW: Primary Headline Style (Relocated and Boosted) --- */
+        .hero-title-headline {
+            font-size: 48px; /* Boosted sizing */
             font-weight: 800;
             line-height: 1.15;
+            color: #0f172a; /* Slate color for 'Welcome to' */
             margin-bottom: 20px;
-            color: #0f172a;
         }
 
-        .hero-title-large span {
-            color: #2563eb;
-        }
+        /* Primary Colors for corporate name in headline */
+        .hero-title-headline .red-text { color: #dc2626; }
+        .hero-title-headline .blue-text { color: #2563eb; }
 
-        .hero-subtitle-text {
-            color: #475569;
+        /* Boosted, clear tagline text (Restored and Spaced) */
+        .hero-tag-line {
+            color: #1e3a8a; /* Deep navy corporate color */
             font-size: 20px;
             line-height: 1.6;
-            font-weight: 600;
+            font-weight: 700; /* Robust bold weight */
             margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Slide 2 Specific Headline styling */
+        .slide-two .hero-title-headline {
+            color: #0f172a;
         }
 
         /* --- Badge Tags Layout --- */
@@ -191,13 +192,15 @@
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
         }
 
         .premium-contrast-badge.alt-color {
             background: #dc2626;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
         }
 
-        /* --- Integrated Contact Info Strip Shapes --- */
+        /* --- Deep Contrast Corporate Contact Info Shape (Reference SS) --- */
         .corporate-contact-strip {
             display: inline-flex;
             align-items: center;
@@ -425,8 +428,9 @@
         }
 
         @media (max-width: 992px) {
-            .hero-slider-wrapper { height: 580px; }
+            .hero-slider-wrapper { min-height: 580px; }
             .hero-slide { padding: 160px 5% 40px 5%; }
+            .hero-title-headline { font-size: 36px; }
             .slide-content-box { text-align: center; }
             .badge-group-row { justify-content: center; }
             .corporate-contact-strip { justify-content: center; width: 100%; }
@@ -442,6 +446,7 @@
         <div class="logo-branding-row">
             <div class="logo-area">
                 <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 55px; width: auto; object-fit: contain;">
+                <!-- Nav Text Fixed: Madinal Red, Lifescience Blue -->
                 <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
             </div>
         </div>
@@ -457,28 +462,32 @@
         </div>
     </header>
 
-    <!-- Original Full Screen Slider Container -->
+    <!-- Main Rotating Banner System -->
     <section class="hero-slider-wrapper">
         
         <!-- Slide 1: Welcome Corporate Headline -->
         <div class="hero-slide slide-one active">
             <div class="slide-content-box">
-                <h1 class="hero-title-large">Welcome to <span>Madinal Lifesciences</span></h1>
-                <p class="hero-subtitle-text">Advancing Healthcare through Quality Formulations</p>
+                <!-- Welcome headline boost, top left position, proper corporate colors -->
+                <h1 class="hero-title-headline">Welcome to <span class="red-text">Madinal</span> <span class="blue-text">Lifesciences</span></h1>
+                <!-- Full original tagline highlighted and spaced correctly -->
+                <p class="hero-tag-line">Advancing Healthcare through Quality Formulations: Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
             </div>
         </div>
 
-        <!-- Slide 2: PCD Pharma Franchise Presentation -->
+        <!-- Slide 2: PCD Pharma Franchise Business Opportunity -->
         <div class="hero-slide slide-two">
             <div class="slide-content-box">
-                <h1 class="hero-title-large">PCD PHARMA FRANCHISE<br><span>BUSINESS OPPORTUNITY</span></h1>
-                <p class="hero-subtitle-text">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
+                <h1 class="hero-title-headline">PCD PHARMA FRANCHISE<br>BUSINESS OPPORTUNITY</h1>
+                <p class="hero-tag-line" style="color:#0f172a;">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
                 
+                <!-- Reference Style Shape Badges -->
                 <div class="badge-group-row">
                     <div class="premium-contrast-badge">Quality Range</div>
                     <div class="premium-contrast-badge alt-color">All Over India</div>
                 </div>
 
+                <!-- Custom High-Contrast Contact Shape Blocks -->
                 <div class="corporate-contact-strip">
                     <div class="contact-pill-item">
                         <span class="label-icon">Call:</span> +91 9913977154
@@ -579,7 +588,7 @@
 
     <!-- Banner Fading Slider & 3D Carousel Logic Systems -->
     <script>
-        // Hero Slider Logic Engine
+        // Hero Crossfade Engine
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
         const totalSlides = slides.length;
