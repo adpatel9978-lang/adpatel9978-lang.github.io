@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madinal Lifescience | Quality Formulations</title>
+    <title>Madinal Lifescience | Premium Corporate</title>
     <style>
         /* --- Core Reset --- */
         * {
@@ -55,7 +55,7 @@
 
         .translucent-nav-bar {
             width: 100%;
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 16px 8%;
@@ -125,10 +125,6 @@
             background-image: url('medicine-capsules.jpg');
         }
 
-        .slide-two {
-            background-image: url('photo 2.jpg');
-        }
-
         .slide-content-box {
             position: relative;
             z-index: 10;
@@ -151,59 +147,6 @@
             line-height: 1.5;
             font-weight: 700;
             margin-bottom: 25px;
-        }
-
-        /* --- Badge Tags Layout --- */
-        .badge-group-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .premium-contrast-badge {
-            background: #2563eb;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 15px;
-            padding: 10px 22px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .premium-contrast-badge.alt-color {
-            background: #dc2626;
-        }
-
-        /* --- Contact Info Strip --- */
-        .corporate-contact-strip {
-            display: inline-flex;
-            align-items: center;
-            gap: 25px;
-            background: #0f172a;
-            padding: 14px 28px;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
-            border-left: 5px solid #dc2626;
-            flex-wrap: wrap;
-        }
-
-        .contact-pill-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        .contact-pill-item span.label-icon {
-            color: #94a3b8;
-            font-weight: 400;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         /* --- Corporate Story Section --- */
@@ -237,34 +180,9 @@
             margin-bottom: 20px;
         }
 
-        .story-highlights {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 25px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 20px;
-        }
-
-        .highlight-item {
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .highlight-item h3 {
-            color: #2563eb;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .highlight-item p {
-            font-size: 14px;
-            color: #64748b;
-        }
-
-        /* --- Who We Are Section (Exact Match to Reference Layout) --- */
+        /* --- PREMIUM 3D UNFOLDING SECTION --- */
         .who-we-are-section {
-            padding: 80px 5%;
+            padding: 100px 5%;
             background: #ffffff;
             text-align: center;
         }
@@ -272,8 +190,8 @@
         .who-we-are-section h2.main-title {
             font-size: 38px;
             color: #1e3a8a;
-            margin-bottom: 60px;
-            font-weight: 600;
+            margin-bottom: 80px;
+            font-weight: 700;
         }
 
         .infographic-container {
@@ -282,282 +200,254 @@
             justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 40px;
+            gap: 20px;
         }
 
-        /* Text Columns */
         .info-column {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 45px;
+            gap: 60px;
         }
 
-        .info-column.left-side {
-            text-align: right;
-        }
-
-        .info-column.right-side {
-            text-align: left;
-        }
+        .info-column.left-side { text-align: right; }
+        .info-column.right-side { text-align: left; }
 
         .info-block h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: #1e3a8a;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .info-block p {
-            font-size: 14px;
+            font-size: 15px;
             color: #64748b;
             line-height: 1.6;
         }
 
-        /* Central Hexagon Ring Graphic */
-        .hexagon-graphic-wrap {
-            position: relative;
-            width: 420px;
-            height: 420px;
+        /* 3D Unfolding Stage Blueprint */
+        .stage-3d-viewport {
+            width: 460px;
+            height: 460px;
+            perspective: 1500px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            position: relative;
         }
 
-        /* Outer Thin Ring from image */
-        .hexagon-graphic-wrap::before {
-            content: '';
+        .unfold-hub-3d {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Center Hub Disc Placed in 3D Space */
+        .center-core-disc {
             position: absolute;
-            width: 390px;
-            height: 390px;
-            border: 2px solid #cbd5e1;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .hex-node {
-            position: absolute;
-            width: 120px;
-            height: 138px;
-            background: #2563eb;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 3;
-            transition: transform 0.3s ease;
-        }
-
-        /* Alternating Theme: Blue & Red */
-        .hex-blue { background: #2563eb; }
-        .hex-red { background: #dc2626; }
-
-        /* Exact Layout Coordinates around the hub */
-        .hex-top       { top: 10px;  left: 150px; }
-        .hex-top-right { top: 78px;  left: 270px; }
-        .hex-bot-right { top: 212px; left: 270px; }
-        .hex-bottom    { top: 280px; left: 150px; }
-        .hex-bot-left  { top: 212px; left: 30px; }
-        .hex-top-left  { top: 78px;  left: 30px; }
-
-        /* Icon Styling inside Hexagons */
-        .hex-node svg {
-            width: 42px;
-            height: 42px;
-            fill: #ffffff;
-        }
-
-        /* Central White Hexagon Hub */
-        .hex-center-hub {
-            position: absolute;
-            width: 130px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             background: #ffffff;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            z-index: 4;
-            box-shadow: 0 0 0 4px #1e3a8a;
-        }
-
-        /* Inner line boundary for center hub */
-        .hex-center-hub::after {
-            content: '';
-            position: absolute;
-            top: 4px; left: 4px; right: 4px; bottom: 4px;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            border: 2px solid #1e3a8a;
-            pointer-events: none;
-        }
-
-        .hex-center-hub span {
-            font-size: 15px;
+            z-index: 10;
+            transform: translateZ(35px); /* Pops forward slightly */
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15), inset 0 0 0 3px #1e3a8a;
             font-weight: 700;
             color: #1e3a8a;
-            text-align: center;
+            font-size: 16px;
             line-height: 1.3;
-            z-index: 5;
         }
 
-        /* --- Scroll Animation (Up Entrance Effect) --- */
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        /* The Rectangular Segments that turn circular */
+        .unfold-panel-rect {
+            position: absolute;
+            width: 100px;
+            height: 70px;
+            left: 20px;
+            top: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform-style: preserve-3d;
+            
+            /* Initial Closed Stacked State */
+            opacity: 0.8;
+            transform: rotate(0deg) translateX(0px) rotateY(0deg);
+            transition: transform 1.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 1s ease, box-shadow 0.3s ease;
         }
 
-        .reveal-up.animated {
-            opacity: 1;
-            transform: translateY(0);
+        .unfold-panel-rect svg {
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
+            transition: transform 0.3s;
         }
 
-        /* Responsive Breakpoint */
-        @media (max-width: 992px) {
-            .infographic-container {
-                flex-direction: column;
-                gap: 50px;
-            }
-            .hexagon-graphic-wrap {
-                order: -1;
-            }
-            .info-column.left-side, .info-column.right-side {
-                text-align: center;
-            }
+        .unfold-panel-rect:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+        .unfold-panel-rect:hover svg {
+            transform: scale(1.15) translateZ(10px);
         }
 
-        /* --- 3D Rotating Cycle Carousel Section --- */
-        .formulation-section {
-            padding: 80px 5%;
-            text-align: center;
+        .panel-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .panel-red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+
+        /* ACTIVE TRIGGER STATE: Spreads out beautifully into an exact circular coordinate ring */
+        .stage-3d-viewport.activated .unfold-hub-3d {
+            transform: rotateX(15deg);
+        }
+
+        .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-155px) rotateX(-15deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-155px) rotateX(-15deg) rotateZ(-60deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-155px) rotateX(-15deg) rotateZ(-120deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-155px) rotateX(-15deg) rotateZ(-180deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-155px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-155px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
+
+        /* --- PREMIUM 3D CUBIC PRODUCT GALLERY --- */
+        .gallery-3d-section {
+            padding: 100px 5%;
             background: #f1f5f9;
+            text-align: center;
             overflow: hidden;
         }
 
-        .formulation-section h2 {
-            font-size: 32px;
+        .gallery-3d-section h2 {
+            font-size: 34px;
             color: #0f172a;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
-        .carousel-stage {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            height: 480px;
-            margin: 0 auto;
-            perspective: 1200px; 
+        .gallery-3d-section p.subtitle {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 80px;
         }
 
-        .carousel-track {
-            position: relative;
+        /* 3D Scene Viewport for the Cube */
+        .cube-viewport-3d {
+            width: 300px;
+            height: 300px;
+            perspective: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* The Actual Cube Container */
+        .product-cube-3d {
             width: 100%;
             height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-20deg) rotateY(25deg);
+            animation: continuousCubeRotation 16s infinite linear;
+            transition: transform 0.5s ease-out;
         }
 
-        .slide-card {
+        /* Pause rotation on mouse hover so users can examine details */
+        .cube-viewport-3d:hover .product-cube-3d {
+            animation-play-state: paused;
+        }
+
+        /* Universal Side Blueprint */
+        .cube-face {
             position: absolute;
-            width: 340px;
-            height: 440px;
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.96);
+            border: 2px solid #e2e8f0;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            top: 0;
-            left: 50%;
-            margin-left: -170px; 
-            opacity: 0;
-            pointer-events: none;
-            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease, z-index 0.45s ease;
-        }
-        
-        .slide-card.active-middle {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 10;
-            transform: translateX(0) scale(1.05);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
-            border-color: #2563eb;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+            backface-visibility: visible;
         }
 
-        .slide-card.active-left {
-            opacity: 0.65;
-            pointer-events: auto;
-            z-index: 5;
-            transform: translateX(-300px) scale(0.85);
-        }
+        /* Precise 3D Spatial Transforms for standard 300px Cube */
+        .face-front  { transform: rotateY(0deg) translateZ(150px); border-top: 5px solid #2563eb; }
+        .face-back   { transform: rotateY(180deg) translateZ(150px); border-top: 5px solid #dc2626; }
+        .face-left   { transform: rotateY(-90deg) translateZ(150px); border-top: 5px solid #2563eb; }
+        .face-right  { transform: rotateY(90deg) translateZ(150px); border-top: 5px solid #dc2626; }
+        .face-top    { transform: rotateX(90deg) translateZ(150px); background: #f8fafc; }
+        .face-bottom { transform: rotateX(-90deg) translateZ(150px); background: #f8fafc; }
 
-        .slide-card.active-right {
-            opacity: 0.65;
-            pointer-events: auto;
-            z-index: 5;
-            transform: translateX(300px) scale(0.85);
-        }
-
-        .cover-image {
+        /* Inside Face UI Styling placeholders */
+        .placeholder-image-slot {
             width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .img-tablet { background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'); }
-        .img-capsule { background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=400&q=80'); }
-        .img-powder { background-image: url('https://images.unsplash.com/photo-1616679911721-fe6e5e46183b?auto=format&fit=crop&w=400&q=80'); }
-        .img-syrup { background-image: url('https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=400&q=80'); }
-        .img-injectable { background-image: url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?auto=format&fit=crop&w=400&q=80'); }
-
-        .prod-tag {
-            align-self: flex-start;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 30px;
+            height: 140px;
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            background: #eff6ff;
-            color: #2563eb;
-            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        .slide-card h3 {
-            font-size: 22px;
+        .cube-face h4 {
+            font-size: 20px;
             color: #0f172a;
             margin-bottom: 8px;
-            text-align: left;
+            font-weight: 700;
         }
 
-        .slide-card p {
+        .cube-face p {
             font-size: 13px;
             color: #64748b;
-            line-height: 1.5;
-            text-align: left;
-            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.4;
         }
 
-        .list-action-btn {
-            width: 100%;
-            padding: 12px;
+        /* Rotation Animation Formula */
+        @keyframes continuousCubeRotation {
+            0%   { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(720deg); }
+        }
+
+        /* Controls Panel */
+        .cube-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .control-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #475569;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
             background: #2563eb;
             color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .list-action-btn:hover {
-            background: #dc2626;
+            border-color: #2563eb;
         }
 
         footer {
@@ -570,11 +460,9 @@
         }
 
         @media (max-width: 992px) {
-            .hero-slider-wrapper { height: 580px; }
-            .hero-slide { padding: 160px 5% 40px 5%; }
-            .slide-content-box { text-align: center; }
-            .badge-group-row { justify-content: center; }
-            .corporate-contact-strip { justify-content: center; width: 100%; }
+            .infographic-container { flex-direction: column; gap: 80px; }
+            .stage-3d-viewport { order: -1; }
+            .info-column.left-side, .info-column.right-side { text-align: center; }
             .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
             .logo-branding-row { justify-content: center; }
         }
@@ -604,37 +492,12 @@
 
     <!-- Main Dynamic Banner Deck -->
     <section class="hero-slider-wrapper">
-        
-        <!-- Slide 1: Welcome Corporate Presentation -->
         <div class="hero-slide slide-one active">
             <div class="slide-content-box">
                 <h1 class="hero-title-large">Welcome to <span style="color: #dc2626;">Madinal</span> <span style="color: #2563eb;">Lifesciences</span></h1>
                 <p class="hero-subtitle-text">Advancing Healthcare through Quality Formulations: Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
             </div>
         </div>
-
-        <!-- Slide 2: PCD Pharma Franchise Business Opportunity -->
-        <div class="hero-slide slide-two">
-            <div class="slide-content-box">
-                <h1 class="hero-title-large"><span style="color: #0f172a;">PCD PHARMA FRANCHISE</span><br><span style="color: #2563eb;">BUSINESS OPPORTUNITY</span></h1>
-                <p class="hero-subtitle-text" style="color: #475569;">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
-                
-                <div class="badge-group-row">
-                    <div class="premium-contrast-badge">Quality Range</div>
-                    <div class="premium-contrast-badge alt-color">All Over India</div>
-                </div>
-
-                <div class="corporate-contact-strip">
-                    <div class="contact-pill-item">
-                        <span class="label-icon">Call:</span> +91 9913977154
-                    </div>
-                    <div class="contact-pill-item">
-                        <span class="label-icon">Email:</span> madinallifesciences@gmail.com
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </section>
 
     <!-- Corporate Story Section -->
@@ -642,27 +505,11 @@
         <div class="story-card">
             <h2>Our Journey & Commitment</h2>
             <p>Established in 2018, Madinal Lifescience has consistently committed itself to improving healthcare accessibility across India. We specialize in producing and developing a comprehensive array of premium medicinal choices tailored to address diverse therapeutic fields.</p>
-            <p>Operating with a core foundation based on ethical marketing, we operate multi-layered frameworks incorporating robust PCD Pharma Franchise distributions and precise Net Rate distribution networks.</p>
-            
-            <div class="story-highlights">
-                <div class="highlight-item">
-                    <h3>2018</h3>
-                    <p>Year of Inception</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>Pan-India</h3>
-                    <p>Net Rate & PCD Network</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>100% Ethical</h3>
-                    <p>Marketing Operations</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- EXACT INTERLOCKING HEXAGON DESIGN MATCH WITH UP-ENTRANCE ANIMATION -->
-    <section class="who-we-are-section reveal-up">
+    <!-- PREMIUM 3D UNFOLDING SEGMENTED RING SECTION -->
+    <section class="who-we-are-section">
         <h2 class="main-title">Who We Are</h2>
         
         <div class="infographic-container">
@@ -683,45 +530,47 @@
                 </div>
             </div>
 
-            <!-- Central Custom CSS Hexagon Graphic Hub -->
-            <div class="hexagon-graphic-wrap">
-                
-                <!-- Central Focus Hub -->
-                <div class="hex-center-hub">
-                    <span>Who<br>We Are</span>
-                </div>
+            <!-- Central 3D Interactive Unfolding Stage -->
+            <div class="stage-3d-viewport" id="unfoldStage">
+                <div class="unfold-hub-3d">
+                    
+                    <!-- Floating Center Label Core -->
+                    <div class="center-core-disc">
+                        <span>Who<br>We Are</span>
+                    </div>
 
-                <!-- Hexagon Nodes (Alternating Blue and Red) -->
-                <!-- Top: Target/Mission -->
-                <div class="hex-node hex-top hex-blue">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
-                </div>
+                    <!-- Rectangular Blocks that morph/unfold out into a circle via CSS transforms -->
+                    <!-- Top Panel -->
+                    <div class="unfold-panel-rect rect-node-1 panel-blue">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
+                    </div>
 
-                <!-- Top Right: Marketing Team (Swapped out from Investment) -->
-                <div class="hex-node hex-top-right hex-red">
-                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S11.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                </div>
+                    <!-- Top Right Panel -->
+                    <div class="unfold-panel-rect rect-node-2 panel-red">
+                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S11.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
 
-                <!-- Bottom Right: Quality Assurance -->
-                <div class="hex-node hex-bot-right hex-blue">
-                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                </div>
+                    <!-- Bottom Right Panel -->
+                    <div class="unfold-panel-rect rect-node-3 panel-blue">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </div>
 
-                <!-- Bottom: Why Us? -->
-                <div class="hex-node hex-bottom hex-red">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-                </div>
+                    <!-- Bottom Panel -->
+                    <div class="unfold-panel-rect rect-node-4 panel-red">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    </div>
 
-                <!-- Bottom Left: Customer Satisfaction -->
-                <div class="hex-node hex-bot-left hex-blue">
-                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                </div>
+                    <!-- Bottom Left Panel -->
+                    <div class="unfold-panel-rect rect-node-5 panel-blue">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
 
-                <!-- Top Left: Team of Experts -->
-                <div class="hex-node hex-top-left hex-red">
-                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                </div>
+                    <!-- Top Left Panel -->
+                    <div class="unfold-panel-rect rect-node-6 panel-red">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
 
+                </div>
             </div>
 
             <!-- Right Text Column -->
@@ -743,123 +592,108 @@
         </div>
     </section>
 
-    <!-- 3D Rotating Cycle Carousel Section -->
-    <section class="formulation-section">
-        <h2>Our Premium Formulations</h2>
-        
-        <div class="carousel-stage">
-            <div class="carousel-track" id="cardTrack">
+    <!-- PREMIUM 3D CUBIC PRODUCT GALLERY -->
+    <section class="gallery-3d-section">
+        <h2>Corporate Product Showcase</h2>
+        <p class="subtitle">Hover to pause rotation. Future asset images drop directly into front structural faces.</p>
+
+        <!-- The Viewport -->
+        <div class="cube-viewport-3d">
+            <!-- The 3D Rotating Cube Component -->
+            <div class="product-cube-3d" id="productCube">
                 
-                <!-- Card 1 -->
-                <div class="slide-card">
-                    <span class="prod-tag" style="background:#fef2f2; color:#dc2626;">Oral Solid</span>
-                    <div class="cover-image img-tablet"></div>
-                    <h3>Tablets</h3>
-                    <p>Coated, un-coated, rapid-release, and sustained formulations.</p>
-                    <button class="list-action-btn">Product List</button>
+                <!-- Front Side -->
+                <div class="cube-face face-front">
+                    <div class="placeholder-image-slot">Image Face Front</div>
+                    <h4>Tablets Range</h4>
+                    <p>Premium coated and rapid action formulation lines.</p>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="slide-card">
-                    <span class="prod-tag">Solid Fill</span>
-                    <div class="cover-image img-capsule"></div>
-                    <h3>Capsules</h3>
-                    <p>Premium hard gelatin and softgel options prepared cleanly.</p>
-                    <button class="list-action-btn">Product List</button>
+                
+                <!-- Back Side -->
+                <div class="cube-face face-back">
+                    <div class="placeholder-image-slot">Image Face Back</div>
+                    <h4>Capsules Solid</h4>
+                    <p>Advanced hard gelatin multi-dosage units.</p>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="slide-card">
-                    <span class="prod-tag" style="background:#fef2f2; color:#dc2626;">Nutritional</span>
-                    <div class="cover-image img-powder"></div>
-                    <h3>Powder</h3>
-                    <p>High stability, protein-rich supplements and dry oral mixes.</p>
-                    <button class="list-action-btn">Product List</button>
+                
+                <!-- Left Side -->
+                <div class="cube-face face-left">
+                    <div class="placeholder-image-slot">Image Face Left</div>
+                    <h4>Syrup Suspensions</h4>
+                    <p>High bio-availability liquid therapeutic lines.</p>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="slide-card">
-                    <span class="prod-tag">Oral Liquid</span>
-                    <div class="cover-image img-syrup"></div>
-                    <h3>Syrups</h3>
-                    <p>Homogeneous oral suspensions optimized for bio-availability.</p>
-                    <button class="list-action-btn">Product List</button>
+                
+                <!-- Right Side -->
+                <div class="cube-face face-right">
+                    <div class="placeholder-image-slot">Image Face Right</div>
+                    <h4>Dry Powders</h4>
+                    <p>Stabilized custom-formulation antibiotic solutions.</p>
                 </div>
-
-                <!-- Card 5 -->
-                <div class="slide-card">
-                    <span class="prod-tag" style="background:#fef2f2; color:#dc2626;">Sterile Liquid</span>
-                    <div class="cover-image img-injectable"></div>
-                    <h3>Injectables</h3>
-                    <p>Liquid and powder vials built under strict safety standards.</p>
-                    <button class="list-action-btn">Product List</button>
+                
+                <!-- Top Side -->
+                <div class="cube-face face-top">
+                    <div class="placeholder-image-slot">Top Cap View</div>
+                    <h4>Injections</h4>
+                    <p>Sterile ampoules.</p>
+                </div>
+                
+                <!-- Bottom Side -->
+                <div class="cube-face face-bottom">
+                    <div class="placeholder-image-slot">Bottom Cap View</div>
+                    <h4>Madinal Labs</h4>
+                    <p>Quality Inspected.</p>
                 </div>
 
             </div>
+        </div>
+
+        <!-- Manual Navigation Interactions -->
+        <div class="cube-controls">
+            <button class="control-btn" onclick="rotateCube('left')">Spin Left</button>
+            <button class="control-btn" onclick="rotateCube('right')">Spin Right</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
+        <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Premium 3D Digital Presentation Deck.</p>
     </footer>
 
-    <!-- Slider, 3D Carousel & Entrance Animation Observers -->
+    <!-- Logic Processing Core Scripts -->
     <script>
-        // Scroll Entrance Animation Engine (Fade & Slide Up)
-        const animationObserver = new IntersectionObserver((entries) => {
+        // Scroll Intersection Observer to Trigger the Unfolding Action dynamically
+        const viewportStage = document.getElementById('unfoldStage');
+        
+        const scrollTracker = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('animated');
+                if (entry.isIntersecting) {
+                    // Activate unfolding transformation
+                    viewportStage.classList.add('activated');
+                } else {
+                    // Refold cleanly back to rectangular column stack when scrolled away
+                    viewportStage.classList.remove('activated');
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.25 });
 
-        document.querySelectorAll('.reveal-up').forEach((el) => animationObserver.observe(el));
+        scrollTracker.observe(viewportStage);
 
-        // Hero Crossfade Engine
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        const totalSlides = slides.length;
+        // Cube Manual Manipulation Rotation Engine
+        let targetYRotation = 25;
+        const cubeElement = document.getElementById('productCube');
 
-        function rotateHeroBanners() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % totalSlides;
-            slides[currentSlide].classList.add('active');
+        function rotateCube(direction) {
+            // Temporarily pause default continuous keyframe execution loop to apply manual offset override smoothly
+            cubeElement.style.animation = 'none';
+            
+            if (direction === 'left') {
+                targetYRotation -= 90;
+            } else if (direction === 'right') {
+                targetYRotation += 90;
+            }
+            
+            cubeElement.style.transform = `rotateX(-20deg) rotateY(${targetYRotation}deg)`;
         }
-        setInterval(rotateHeroBanners, 4000);
-
-        // 3D Carousel Logic Engine
-        let currentIndex = 0;
-        const cards = document.querySelectorAll('.slide-card');
-        const totalCards = cards.length;
-
-        function update3DCarousel() {
-            cards.forEach(card => {
-                card.classList.remove('active-left', 'active-middle', 'active-right');
-            });
-
-            const middleIdx = currentIndex;
-            const leftIdx = (currentIndex - 1 + totalCards) % totalCards;
-            const rightIdx = (currentIndex + 1) % totalCards;
-
-            cards[middleIdx].classList.add('active-middle');
-            cards[leftIdx].classList.add('active-left');
-            cards[rightIdx].classList.add('active-right');
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalCards;
-            update3DCarousel();
-        }
-
-        update3DCarousel();
-        let autoRotate = setInterval(nextSlide, 1800);
-
-        const stage = document.querySelector('.carousel-stage');
-        stage.addEventListener('mouseenter', () => clearInterval(autoRotate));
-        stage.addEventListener('mouseleave', () => autoRotate = setInterval(nextSlide, 1800));
     </script>
-
 </body>
 </html>
