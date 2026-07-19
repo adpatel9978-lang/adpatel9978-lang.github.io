@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madinal Lifescience</title>
     <style>
-        /* --- Core Reset & Root Variables --- */
+        /* --- Core Reset & Foundations --- */
         * {
             margin: 0;
             padding: 0;
@@ -18,10 +18,9 @@
             color: #0f172a;
             overflow-x: hidden;
             width: 100%;
-            line-height: 1.6;
         }
 
-        /* --- Header & Translucent Navigation System --- */
+        /* --- Translucent Header System --- */
         header {
             width: 100%;
             position: relative;
@@ -46,7 +45,6 @@
         .logo-text {
             font-size: 26px;
             font-weight: 800;
-            letter-spacing: 0.5px;
             color: #dc2626;
         }
 
@@ -61,7 +59,6 @@
             -webkit-backdrop-filter: blur(12px);
             padding: 16px 5%;
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            position: relative;
         }
 
         .nav-links {
@@ -76,7 +73,6 @@
             font-weight: 700;
             font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             transition: color 0.3s ease;
         }
 
@@ -84,20 +80,19 @@
             color: #2563eb;
         }
 
-        /* --- Dual Banner Dynamic Engine --- */
+        /* --- Full-Bleed Integrated Twin Banners --- */
         .slider-viewport {
             position: relative;
             width: 100%;
-            height: 520px;
+            height: 580px;
             overflow: hidden;
-            background: #0f172a;
         }
 
         .slider-pan-track {
             display: flex;
             width: 200%;
             height: 100%;
-            transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
         .banner-slide {
@@ -107,55 +102,31 @@
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
-            align-items: center;
-            padding: 0 6%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 8%;
             position: relative;
-        }
-
-        .banner-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.15);
-            z-index: 1;
         }
 
         .banner-slide.welcome-panel {
-            background-image: url('medicine-capsules.jpg');
+            background-image: linear-gradient(to right, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.2) 100%), url('medicine-capsules.jpg');
         }
 
         .banner-slide.pcd-panel {
-            background-image: url('production-facility.jpg');
+            background-image: linear-gradient(to right, rgba(15,23,42,0.9) 40%, rgba(15,23,42,0.3) 100%), url('production-facility.jpg');
         }
 
-        .slide-glass-card {
-            position: relative;
+        .banner-text-group {
+            max-width: 650px;
             z-index: 2;
-            max-width: 620px;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(8px);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            border-left: 6px solid #2563eb;
-            transform: translateY(0);
-            animation: floatCard 4s ease-in-out infinite;
-        }
-
-        .pcd-panel .slide-glass-card {
-            border-left-color: #dc2626;
-            background: rgba(15, 23, 42, 0.92);
-            color: #ffffff;
         }
 
         .slide-title-heavy {
-            font-size: 36px;
+            font-size: 46px;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 16px;
+            line-height: 1.15;
+            margin-bottom: 20px;
             color: #0f172a;
         }
 
@@ -164,7 +135,7 @@
         }
 
         .slide-text-body {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.6;
             font-weight: 600;
             color: #334155;
@@ -174,27 +145,22 @@
             color: #cbd5e1;
         }
 
-        .pcd-inline-tag {
+        .pcd-heavy-tag {
             background: #dc2626;
             color: white;
-            padding: 5px 12px;
-            font-size: 11px;
+            padding: 6px 16px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
-            border-radius: 12px;
+            border-radius: 4px;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* --- Sections Core Layout --- */
+        /* --- Deep Journey & Commitment Layout --- */
         .page-segment {
-            padding: 60px 5%;
+            padding: 80px 5%;
             width: 100%;
             background: #ffffff;
         }
@@ -209,60 +175,92 @@
             width: 100%;
         }
 
-        /* --- Journey & Commitment Box --- */
-        .story-block-container {
-            background: #ffffff;
-            border-left: 6px solid #2563eb;
-            padding: 40px;
-            border-radius: 4px 20px 20px 4px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e2e8f0;
-            border-left: 6px solid #2563eb;
-        }
-
-        .story-block-container h2 {
-            font-size: 30px;
+        .deep-story-layout h2 {
+            font-size: 36px;
             color: #0f172a;
             font-weight: 800;
-            margin-bottom: 18px;
+            margin-bottom: 24px;
+            position: relative;
+            padding-bottom: 12px;
         }
 
-        .story-block-container p {
+        .deep-story-layout h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+        }
+
+        .story-long-para {
             font-size: 16px;
-            color: #475569;
-            line-height: 1.8;
+            color: #334155;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            text-align: justify;
         }
 
-        /* --- Who We Are: 3D Rolling Circular Matrix --- */
+        .story-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .highlight-milestone-card {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 24px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .highlight-milestone-card .year-mark {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 6px;
+        }
+
+        .highlight-milestone-card p {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        /* --- Who We Are: Precise 3D Rolling Circle Grid --- */
         .section-header-main {
             text-align: center;
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 800;
             color: #0f172a;
-            margin-bottom: 50px;
-            letter-spacing: -0.5px;
+            margin-bottom: 60px;
         }
 
-        .matrix-3d-wrapper {
+        .matrix-3d-circles {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            perspective: 1200px;
+            perspective: 1500px;
+            justify-content: center;
         }
 
-        .circular-roll-card {
-            height: 300px;
+        .circular-roll-container {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
         }
 
-        .circular-roll-card:hover {
+        .circular-roll-container:hover {
             transform: rotateY(180deg);
         }
 
-        .circle-face {
+        .circle-face-element {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -273,165 +271,149 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
-            border: 2px solid #e2e8f0;
-            aspect-ratio: 1 / 1;
-            max-width: 300px;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .circle-face.front-view {
+        .circle-face-element.front-side {
             background: #ffffff;
-            border-top: 6px solid #2563eb;
+            border: 4px solid #2563eb;
         }
 
-        .circle-face.front-view h3 {
-            font-size: 22px;
+        .circle-face-element.front-side h3 {
+            font-size: 20px;
             color: #1e3a8a;
             font-weight: 700;
         }
 
-        .circle-face.front-view .roll-hint {
-            margin-top: 15px;
-            font-size: 12px;
+        .circle-face-element.front-side .flip-hint-text {
+            margin-top: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             color: #94a3b8;
-            font-weight: 700;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
-        .circle-face.back-flip-view {
+        .circle-face-element.back-side {
             background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
             transform: rotateY(180deg);
-            border: none;
         }
 
-        .circle-face.back-flip-view p {
-            font-size: 14px;
+        .circle-face-element.back-side p {
+            font-size: 13px;
             line-height: 1.6;
             color: #e2e8f0;
         }
 
-        /* --- Reference Style Product Grid --- */
-        .product-showcase-matrix {
+        /* --- Reference Style Clean Product Gallery --- */
+        .product-reference-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
-        .display-node-card {
+        .product-node {
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .display-node-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+        .product-node:hover {
+            transform: translateY(-5px);
         }
 
-        .media-box-square {
+        .product-square-container {
             width: 100%;
-            height: 180px;
+            height: 170px;
             background: #f8fafc;
             border: 1px dashed #cbd5e1;
-            border-radius: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: #94a3b8;
             font-size: 14px;
         }
 
-        .display-node-card h4 {
-            font-size: 19px;
+        .product-node h4 {
+            font-size: 18px;
             color: #0f172a;
+            margin-bottom: 8px;
             font-weight: 700;
-            margin-bottom: 10px;
         }
 
-        .display-node-card p {
+        .product-node p {
             font-size: 14px;
             color: #64748b;
         }
 
-        /* --- Automated Horizontally Shuffling Showcase --- */
-        .infinite-slider-viewport {
-            width: 100%;
-            overflow: hidden;
+        /* --- Stacked Shuffling Layer Gallery --- */
+        .shuffling-gallery-viewport {
             position: relative;
-            padding: 20px 0;
-        }
-
-        .infinite-slider-viewport::before, .infinite-slider-viewport::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 150px;
-            z-index: 5;
-            top: 0;
-            pointer-events: none;
-        }
-
-        .infinite-slider-viewport::before {
-            left: 0;
-            background: linear-gradient(to right, #f1f5f9 0%, transparent 100%);
-        }
-
-        .infinite-slider-viewport::after {
-            right: 0;
-            background: linear-gradient(to left, #f1f5f9 0%, transparent 100%);
-        }
-
-        .shuffle-track-row {
+            width: 100%;
+            height: 400px;
             display: flex;
-            width: max-content;
-            gap: 30px;
-            animation: loopShuffle 25s linear infinite;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            overflow: hidden;
         }
 
-        .shuffle-track-row:hover {
-            animation-play-state: paused;
-        }
-
-        .category-shuffle-box {
-            width: 320px;
+        .shuffle-card-layer {
+            position: absolute;
+            width: 450px;
             background: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-            flex-shrink: 0;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 0;
+            pointer-events: none;
+            transform: translate3d(0, 0, -300px) rotateY(-15deg);
         }
 
-        .category-shuffle-box h3 {
-            font-size: 22px;
+        .shuffle-card-layer h3 {
+            font-size: 26px;
             color: #2563eb;
-            margin-bottom: 14px;
-            font-weight: 700;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 8px;
+            margin-bottom: 16px;
+            font-weight: 800;
+            border-bottom: 3px solid #f1f5f9;
+            padding-bottom: 10px;
         }
 
-        .category-shuffle-box p {
-            font-size: 14px;
+        .shuffle-card-layer p {
+            font-size: 15px;
             color: #475569;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        @keyframes loopShuffle {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-350px * 3)); }
+        /* Dynamic Active Stack States */
+        .shuffle-card-layer.stack-active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate3d(0, 0, 0) rotateY(0deg);
+            z-index: 30;
+        }
+
+        .shuffle-card-layer.stack-next {
+            opacity: 0.75;
+            transform: translate3d(180px, 0, -150px) rotateY(-10deg);
+            z-index: 20;
+        }
+
+        .shuffle-card-layer.stack-prev {
+            opacity: 0.75;
+            transform: translate3d(-180px, 0, -150px) rotateY(10deg);
+            z-index: 10;
         }
 
         /* --- Footer --- */
@@ -444,14 +426,14 @@
             border-top: 4px solid #dc2626;
         }
 
-        /* --- Device Scaling --- */
+        /* --- Viewport Adaptive Adjustments --- */
         @media (max-width: 768px) {
-            .slider-viewport { height: 420px; }
-            .slide-title-heavy { font-size: 26px; }
-            .section-header-main { font-size: 26px; }
-            .matrix-3d-wrapper { gap: 20px; }
-            .circular-roll-card { height: 280px; }
-            .circle-face { padding: 20px; }
+            .slider-viewport { height: 460px; }
+            .slide-title-heavy { font-size: 30px; }
+            .section-header-main { font-size: 28px; }
+            .shuffle-card-layer { width: 90%; padding: 25px; }
+            .shuffle-card-layer.stack-next { transform: translate3d(40px, 0, -100px); }
+            .shuffle-card-layer.stack-prev { transform: translate3d(-40px, 0, -100px); }
         }
     </style>
 </head>
@@ -477,20 +459,20 @@
         </div>
     </header>
 
-    <!-- Alternating Banner System -->
+    <!-- Full-Bleed Integrated Twin Banners -->
     <div class="slider-viewport">
         <div class="slider-pan-track" id="dynamicEngineTrack">
             <!-- Banner 1: Welcome Element -->
             <div class="banner-slide welcome-panel">
-                <div class="slide-glass-card">
+                <div class="banner-text-group">
                     <h1 class="slide-title-heavy">Welcome to <span style="color:#dc2626;">Madinal</span> <span style="color:#2563eb;">Lifesciences</span></h1>
                     <p class="slide-text-body">Advancing Healthcare through Quality Formulations: Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions.</p>
                 </div>
             </div>
             <!-- Banner 2: PCD Component -->
             <div class="banner-slide pcd-panel">
-                <div class="slide-glass-card">
-                    <span class="pcd-inline-tag">PCD Franchise Opportunity</span>
+                <div class="banner-text-group">
+                    <span class="pcd-heavy-tag">PCD Franchise Opportunity</span>
                     <h1 class="slide-title-heavy">Expand Your Business Horizons</h1>
                     <p class="slide-text-body">We provide exclusive monopoly rights, extensive promotional support toolkits, and an unmatched distribution framework across India.</p>
                 </div>
@@ -498,84 +480,99 @@
         </div>
     </div>
 
-    <!-- Our Journey Story Layout -->
+    <!-- Deep Journey & Milestone Commitment Layout -->
     <section class="page-segment">
-        <div class="inner-contained">
-            <div class="story-block-container">
-                <h2>Our Journey & Commitment</h2>
-                <p>Established in 2018, Madinal Lifescience has consistently committed itself to improving healthcare accessibility across India. We specialize in producing and developing a comprehensive array of premium medicinal choices tailored to address diverse therapeutic fields.</p>
+        <div class="inner-contained deep-story-layout">
+            <h2>Our Journey & Commitment</h2>
+            <p class="story-long-para">
+                Established in 2018, Madinal Lifescience has consistently committed itself to improving healthcare accessibility across India. We specialize in producing and developing a comprehensive array of premium medicinal choices tailored to address diverse therapeutic fields. Our operational framework processes elite chemical compounds through multi-tiered clinical testing modules, engineering high-tier remedies that address crucial medical concerns nationwide.
+            </p>
+            
+            <div class="story-highlights-grid">
+                <div class="highlight-milestone-card">
+                    <div class="year-mark">2018</div>
+                    <p>Foundation established with a core vision to optimize healthcare accessibility across domestic distribution chains.</p>
+                </div>
+                <div class="highlight-milestone-card">
+                    <div class="year-mark">Premium Range</div>
+                    <p>Development of specialized targeted healthcare formulations including high-potency antibiotic modules.</p>
+                </div>
+                <div class="highlight-milestone-card">
+                    <div class="year-mark">Monopoly Rights</div>
+                    <p>Introduction of exclusive franchise frameworks giving distinct distribution groups distinct market security.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Who We Are: 3D Rolling Infographic Rings -->
+    <!-- Who We Are: 3D Rolling Circle Matrix -->
     <section class="page-segment alt-tint">
         <div class="inner-contained">
             <h2 class="section-header-main">Who We Are</h2>
-            <div class="matrix-3d-wrapper">
+            <div class="matrix-3d-circles">
                 
                 <!-- Circle 1 -->
-                <div class="circular-roll-card">
-                    <div class="circle-face front-view">
+                <div class="circular-roll-container">
+                    <div class="circle-face-element front-side">
                         <h3>Our Mission</h3>
-                        <div class="roll-hint">Hover to Flip</div>
+                        <div class="flip-hint-text">Hover to Rotate</div>
                     </div>
-                    <div class="circle-face back-flip-view">
+                    <div class="circle-face-element back-side">
                         <p>We aim to empower the world of pharmaceuticals with our wide range of accessible healthcare options.</p>
                     </div>
                 </div>
 
                 <!-- Circle 2 -->
-                <div class="circular-roll-card">
-                    <div class="circle-face front-view">
+                <div class="circular-roll-container">
+                    <div class="circle-face-element front-side">
                         <h3>Team of Experts</h3>
-                        <div class="roll-hint">Hover to Flip</div>
+                        <div class="flip-hint-text">Hover to Rotate</div>
                     </div>
-                    <div class="circle-face back-flip-view">
+                    <div class="circle-face-element back-side">
                         <p>The team ensures flawless productivity, continuous supply of products, and best-in-class service standards.</p>
                     </div>
                 </div>
 
                 <!-- Circle 3 -->
-                <div class="circular-roll-card">
-                    <div class="circle-face front-view">
+                <div class="circular-roll-container">
+                    <div class="circle-face-element front-side">
                         <h3>Customer Satisfaction</h3>
-                        <div class="roll-hint">Hover to Flip</div>
+                        <div class="flip-hint-text">Hover to Rotate</div>
                     </div>
-                    <div class="circle-face back-flip-view">
+                    <div class="circle-face-element back-side">
                         <p>Some of the striking features that allow us to remain ahead of our competitors include absolute compliance and reliability.</p>
                     </div>
                 </div>
 
                 <!-- Circle 4 -->
-                <div class="circular-roll-card">
-                    <div class="circle-face front-view">
+                <div class="circular-roll-container">
+                    <div class="circle-face-element front-side">
                         <h3>Marketing Team</h3>
-                        <div class="roll-hint">Hover to Flip</div>
+                        <div class="flip-hint-text">Hover to Rotate</div>
                     </div>
-                    <div class="circle-face back-flip-view">
+                    <div class="circle-face-element back-side">
                         <p>Providing our distribution partners with full marketing toolkits and robust promotional systems nationwide.</p>
                     </div>
                 </div>
 
                 <!-- Circle 5 -->
-                <div class="circular-roll-card">
-                    <div class="circle-face front-view">
+                <div class="circular-roll-container">
+                    <div class="circle-face-element front-side">
                         <h3>Quality Assurance</h3>
-                        <div class="roll-hint">Hover to Flip</div>
+                        <div class="flip-hint-text">Hover to Rotate</div>
                     </div>
-                    <div class="circle-face back-flip-view">
+                    <div class="circle-face-element back-side">
                         <p>We have set up a strict quality assurance team to evaluate crucial chemical parameters and formulations closely.</p>
                     </div>
                 </div>
 
                 <!-- Circle 6 -->
-                <div class="circular-roll-card">
-                    <div class="circle-face front-view">
+                <div class="circular-roll-container">
+                    <div class="circle-face-element front-side">
                         <h3>Why Us?</h3>
-                        <div class="roll-hint">Hover to Flip</div>
+                        <div class="flip-hint-text">Hover to Rotate</div>
                     </div>
-                    <div class="circle-face back-flip-view">
+                    <div class="circle-face-element back-side">
                         <p>We are actively engaged in formulating, supplying, and trading clinically approved therapeutic segments.</p>
                     </div>
                 </div>
@@ -584,28 +581,28 @@
         </div>
     </section>
 
-    <!-- Balanced Reference Style Product Grid -->
+    <!-- Reference Style Clean Product Gallery -->
     <section class="page-segment">
         <div class="inner-contained">
             <h2 class="section-header-main">Our Products</h2>
-            <div class="product-showcase-matrix">
-                <div class="display-node-card">
-                    <div class="media-box-square">Product Image 1</div>
+            <div class="product-reference-grid">
+                <div class="product-node">
+                    <div class="product-square-container">Product Image 1</div>
                     <h4>Product Alpha</h4>
                     <p>Essential formulation line.</p>
                 </div>
-                <div class="display-node-card">
-                    <div class="media-box-square">Product Image 2</div>
+                <div class="product-node">
+                    <div class="product-square-container">Product Image 2</div>
                     <h4>Product Beta</h4>
                     <p>Advanced tablet variant.</p>
                 </div>
-                <div class="display-node-card">
-                    <div class="media-box-square">Product Image 3</div>
+                <div class="product-node">
+                    <div class="product-square-container">Product Image 3</div>
                     <h4>Product Gamma</h4>
                     <p>Liquid syrup suspension.</p>
                 </div>
-                <div class="display-node-card">
-                    <div class="media-box-square">Product Image 4</div>
+                <div class="product-node">
+                    <div class="product-square-container">Product Image 4</div>
                     <h4>Product Delta</h4>
                     <p>Premium capsule defense.</p>
                 </div>
@@ -613,39 +610,27 @@
         </div>
     </section>
 
-    <!-- Shuffling Product Categories Slider -->
+    <!-- Layer Shuffling Product Categories Showcase -->
     <section class="page-segment alt-tint">
         <div class="inner-contained">
             <h2 class="section-header-main">Product Categories</h2>
-            <div class="infinite-slider-viewport">
-                <div class="shuffle-track-row">
-                    <!-- Set 1 -->
-                    <div class="category-shuffle-box">
-                        <h3>Tablets</h3>
-                        <p>Comprehensive variety of premium medicinal choices manufactured to address diverse therapeutic fields with strict active parameters.</p>
-                    </div>
-                    <div class="category-shuffle-box">
-                        <h3>Capsules</h3>
-                        <p>Premium antibiotic choices and general health supplement products manufactured to modern quality standards.</p>
-                    </div>
-                    <div class="category-shuffle-box">
-                        <h3>Syrups</h3>
-                        <p>Precisely formulated fluid choices optimizing patient delivery systems across multiple dosage classes.</p>
-                    </div>
-                    <!-- Duplicate Set 2 for Seamless Loop Shuffling -->
-                    <div class="category-shuffle-box">
-                        <h3>Tablets</h3>
-                        <p>Comprehensive variety of premium medicinal choices manufactured to address diverse therapeutic fields with strict active parameters.</p>
-                    </div>
-                    <div class="category-shuffle-box">
-                        <h3>Capsules</h3>
-                        <p>Premium antibiotic choices and general health supplement products manufactured to modern quality standards.</p>
-                    </div>
-                    <div class="category-shuffle-box">
-                        <h3>Syrups</h3>
-                        <p>Precisely formulated fluid choices optimizing patient delivery systems across multiple dosage classes.</p>
-                    </div>
+            <div class="shuffling-gallery-viewport" id="shuffleViewport">
+                
+                <div class="shuffle-card-layer">
+                    <h3>Tablets</h3>
+                    <p>Comprehensive variety of premium medicinal choices manufactured to address diverse therapeutic fields with strict active parameters.</p>
                 </div>
+                
+                <div class="shuffle-card-layer">
+                    <h3>Capsules</h3>
+                    <p>Premium antibiotic choices and general health supplement products manufactured to modern quality standards.</p>
+                </div>
+                
+                <div class="shuffle-card-layer">
+                    <h3>Syrups</h3>
+                    <p>Precisely formulated fluid choices optimizing patient delivery systems across multiple dosage classes.</p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -655,18 +640,38 @@
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved.</p>
     </footer>
 
-    <!-- Alternating Banner Transition Controller -->
+    <!-- Complex Animation Layout Engines -->
     <script>
+        /* --- Banner Switch Engine --- */
         const trackMatrix = document.getElementById('dynamicEngineTrack');
         let indexMarker = 0;
-
-        function runAlternator() {
+        setInterval(() => {
             indexMarker = indexMarker === 0 ? 1 : 0;
             trackMatrix.style.transform = `translateX(-${indexMarker * 50}%)`;
-        }
+        }, 5000);
 
-        // Switches between both distinct banners automatically every 5 seconds
-        setInterval(runAlternator, 5000);
+        /* --- Layered Stack Shuffling Gallery Engine --- */
+        const layers = Array.from(document.querySelectorAll('.shuffle-card-layer'));
+        let currentStackIndex = 0;
+
+        function updateStackShuffling() {
+            layers.forEach((layer, i) => {
+                layer.classList.remove('stack-active', 'stack-next', 'stack-prev');
+                
+                if (i === currentStackIndex) {
+                    layer.classList.add('stack-active');
+                } else if (i === (currentStackIndex + 1) % layers.length) {
+                    layer.classList.add('stack-next');
+                } else {
+                    layer.classList.add('stack-prev');
+                }
+            });
+            currentStackIndex = (currentStackIndex + 1) % layers.length;
+        }
+        
+        // Initial execution and cycling setup
+        updateStackShuffling();
+        setInterval(updateStackShuffling, 4000);
     </script>
 </body>
 </html>
