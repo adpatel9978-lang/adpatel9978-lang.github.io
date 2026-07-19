@@ -42,7 +42,6 @@
             gap: 14px;
         }
 
-        /* Nav Text Colors: Fixed Madinal to Red, Lifescience to Blue */
         .logo-text {
             font-size: 24px;
             font-weight: 800;
@@ -89,7 +88,7 @@
             color: #2563eb;
         }
 
-        /* --- Full Width Expanded Hero Slider Wrapper --- */
+        /* --- Full Screen Slider Wrapper --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
@@ -108,9 +107,9 @@
             visibility: hidden;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
             display: flex;
-            align-items: flex-start; /* Aligns content area to the top */
-            justify-content: flex-start; /* Aligns content area to the left */
-            padding: 120px 8% 60px 8%; /* Top-left metrics consistent with 1st slide */
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 120px 8% 60px 8%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -126,19 +125,11 @@
             background-image: url('medicine-capsules.jpg');
         }
 
-        /* --- NEW: Direct Link to the specified image for the PCD Banner --- */
         .slide-two {
-            background-image: url('photo 2.jpg'); /* Direct file link */
+            background-image: url('photo 2.jpg');
         }
 
-        /* Gradient mask for text contrast over full-screen image */
-        .hero-slide::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.6) 100%);
-            z-index: 1;
-        }
+        /* OVERLAY REMOVED: No more fading or gradient shields. Images show crisp. */
 
         .slide-content-box {
             position: relative;
@@ -148,7 +139,6 @@
             margin-top: 40px;
         }
 
-        /* Typography & Layout Accents from First Slide Style */
         .hero-title-large {
             font-size: 56px;
             font-weight: 800;
@@ -157,17 +147,23 @@
             color: #0f172a;
         }
 
+        /* Added a slight drop shadow strictly to text for readability against the crisp backgrounds */
         .hero-subtitle-text {
             color: #1e3a8a;
             font-size: 24px;
             line-height: 1.5;
             font-weight: 700;
             margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
         }
 
-        /* PCD Banner specific headline color */
+        .slide-one .hero-title-large {
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+        }
+
         .slide-two .hero-title-large {
             color: #0f172a;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
         }
 
         /* --- Badge Tags Layout --- */
@@ -193,7 +189,7 @@
             background: #dc2626;
         }
 
-        /* --- Deep Contrast Corporate Contact Info Shape (Reference SS) --- */
+        /* --- Contact Info Strip --- */
         .corporate-contact-strip {
             display: inline-flex;
             align-items: center;
@@ -423,7 +419,6 @@
         @media (max-width: 992px) {
             .hero-slider-wrapper { height: 580px; }
             .hero-slide { padding: 160px 5% 40px 5%; }
-            .hero-slide::before { background: rgba(255, 255, 255, 0.94); }
             .slide-content-box { text-align: center; }
             .badge-group-row { justify-content: center; }
             .corporate-contact-strip { justify-content: center; width: 100%; }
@@ -471,13 +466,11 @@
                 <h1 class="hero-title-large"><span style="color: #0f172a;">PCD PHARMA FRANCHISE</span><br><span style="color: #2563eb;">BUSINESS OPPORTUNITY</span></h1>
                 <p class="hero-subtitle-text" style="color: #475569;">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
                 
-                <!-- Tag Shapes -->
                 <div class="badge-group-row">
                     <div class="premium-contrast-badge">Quality Range</div>
                     <div class="premium-contrast-badge alt-color">All Over India</div>
                 </div>
 
-                <!-- Custom Contrast Contact Shape Blocks from PCD Reference SS -->
                 <div class="corporate-contact-strip">
                     <div class="contact-pill-item">
                         <span class="label-icon">Call:</span> +91 9913977154
