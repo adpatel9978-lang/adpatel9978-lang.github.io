@@ -153,10 +153,6 @@
             margin-bottom: 25px;
         }
 
-        .slide-two .hero-title-large {
-            color: #0f172a;
-        }
-
         /* --- Badge Tags Layout --- */
         .badge-group-row {
             display: flex;
@@ -180,7 +176,7 @@
             background: #dc2626;
         }
 
-        /* --- Integrated Contact Info Strip Shapes --- */
+        /* --- Contact Info Strip --- */
         .corporate-contact-strip {
             display: inline-flex;
             align-items: center;
@@ -266,133 +262,170 @@
             color: #64748b;
         }
 
-        /* --- New Section: interlinking structural team layout --- */
-        .team-structure-section {
-            padding: 80px 8%;
-            background: #e2e8f0 url('medicine-capsules.jpg') center/cover no-repeat;
-            position: relative;
-            z-index: 1;
-        }
-
-        .team-structure-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(248, 250, 252, 0.96);
-            z-index: -1;
-        }
-
-        .team-structure-section h2.section-header {
-            font-size: 36px;
-            font-weight: 800;
-            color: #0f172a;
+        /* --- Who We Are Section (Exact Match to Reference Layout) --- */
+        .who-we-are-section {
+            padding: 80px 5%;
+            background: #ffffff;
             text-align: center;
+        }
+
+        .who-we-are-section h2.main-title {
+            font-size: 38px;
+            color: #1e3a8a;
             margin-bottom: 60px;
+            font-weight: 600;
         }
 
-        .molecular-layout-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .infographic-container {
+            display: flex;
             align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
         }
 
-        /* Side content boxes translated from reference screenshot */
-        .team-content-box {
+        /* Text Columns */
+        .info-column {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 45px;
         }
 
-        .team-item {
+        .info-column.left-side {
             text-align: right;
         }
 
-        .team-item.item-left {
-            padding-right: 20px;
-            border-right: 2px solid #2563eb; /* Blue connector */
-        }
-
-        .team-item.item-right {
+        .info-column.right-side {
             text-align: left;
-            padding-left: 20px;
-            border-left: 2px solid #dc2626; /* Red connector */
         }
 
-        .team-item h3 {
-            font-size: 19px;
-            color: #0f172a;
+        .info-block h3 {
+            font-size: 18px;
+            color: #1e3a8a;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .team-item p {
-            font-size: 15px;
-            color: #475569;
+        .info-block p {
+            font-size: 14px;
+            color: #64748b;
             line-height: 1.6;
         }
 
-        /* Core Circular Molecular Structure replacement for standard hexagons */
-        .central-molecular-flow {
+        /* Central Hexagon Ring Graphic */
+        .hexagon-graphic-wrap {
             position: relative;
-            width: 100%;
-            height: 500px;
-            display: grid;
-            justify-content: center;
-            align-content: center;
-            grid-template-columns: repeat(3, 160px);
-            grid-template-rows: repeat(2, 160px);
-            gap: 15px;
-        }
-
-        .molecular-node {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%; /* Circle replacement for standard hexagons */
+            width: 420px;
+            height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Outer Thin Ring from image */
+        .hexagon-graphic-wrap::before {
+            content: '';
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hex-node {
+            position: absolute;
+            width: 120px;
+            height: 138px;
+            background: #2563eb;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            transition: transform 0.3s ease;
+        }
+
+        /* Alternating Theme: Blue & Red */
+        .hex-blue { background: #2563eb; }
+        .hex-red { background: #dc2626; }
+
+        /* Exact Layout Coordinates around the hub */
+        .hex-top       { top: 10px;  left: 150px; }
+        .hex-top-right { top: 78px;  left: 270px; }
+        .hex-bot-right { top: 212px; left: 270px; }
+        .hex-bottom    { top: 280px; left: 150px; }
+        .hex-bot-left  { top: 212px; left: 30px; }
+        .hex-top-left  { top: 78px;  left: 30px; }
+
+        /* Icon Styling inside Hexagons */
+        .hex-node svg {
+            width: 42px;
+            height: 42px;
+            fill: #ffffff;
+        }
+
+        /* Central White Hexagon Hub */
+        .hex-center-hub {
+            position: absolute;
+            width: 130px;
+            height: 150px;
+            background: #ffffff;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
             flex-direction: column;
-            color: white;
-            padding: 15px;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            box-shadow: 0 0 0 4px #1e3a8a;
+        }
+
+        /* Inner line boundary for center hub */
+        .hex-center-hub::after {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border: 2px solid #1e3a8a;
+            pointer-events: none;
+        }
+
+        .hex-center-hub span {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e3a8a;
             text-align: center;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border: 4px solid white;
+            line-height: 1.3;
+            z-index: 5;
         }
 
-        .molecular-node span.node-label {
-            font-size: 14px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        /* --- Scroll Animation (Up Entrance Effect) --- */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Gradient Colors (Blue/Red theme requested) */
-        .node-blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
-        .node-red { background: linear-gradient(135deg, #dc2626, #b91c1c); }
-
-        /* The connected grid structural layout request - circular molecular connections */
-        .flow-center-core {
-            grid-column: 2 / 3;
-            grid-row: 1 / 3;
-            background: white;
-            color: #0f172a;
-            border: 4px solid #2563eb;
-            align-self: center;
-            width: 170px;
-            height: 170px;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
-            margin-top: 85px;
+        .reveal-up.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .flow-center-core span.node-label { color: #dc2626; }
-        .flow-center-core span.node-tagline { color: #2563eb; font-size: 11px; font-weight: 600; text-transform: uppercase;}
-
+        /* Responsive Breakpoint */
         @media (max-width: 992px) {
-            .molecular-layout-grid { grid-template-columns: 1fr; }
-            .central-molecular-flow { display: none; }
-            .team-item.item-left, .team-item.item-right { text-align: center; border: none; padding: 0; }
+            .infographic-container {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .hexagon-graphic-wrap {
+                order: -1;
+            }
+            .info-column.left-side, .info-column.right-side {
+                text-align: center;
+            }
         }
 
         /* --- 3D Rotating Cycle Carousel Section --- */
@@ -586,13 +619,11 @@
                 <h1 class="hero-title-large"><span style="color: #0f172a;">PCD PHARMA FRANCHISE</span><br><span style="color: #2563eb;">BUSINESS OPPORTUNITY</span></h1>
                 <p class="hero-subtitle-text" style="color: #475569;">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
                 
-                <!-- Tag Shapes -->
                 <div class="badge-group-row">
                     <div class="premium-contrast-badge">Quality Range</div>
                     <div class="premium-contrast-badge alt-color">All Over India</div>
                 </div>
 
-                <!-- Custom Contrast Contact Shape Blocks from PCD Reference SS -->
                 <div class="corporate-contact-strip">
                     <div class="contact-pill-item">
                         <span class="label-icon">Call:</span> +91 9913977154
@@ -630,57 +661,82 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: Organizational Structure Layout beneath story commitment (As requested from reference) -->
-    <section class="team-structure-section">
-        <h2 class="section-header">Madinal Corporate Structure</h2>
+    <!-- EXACT INTERLOCKING HEXAGON DESIGN MATCH WITH UP-ENTRANCE ANIMATION -->
+    <section class="who-we-are-section reveal-up">
+        <h2 class="main-title">Who We Are</h2>
         
-        <div class="molecular-layout-grid">
+        <div class="infographic-container">
             
-            <!-- Left Side Categories -->
-            <div class="team-content-box">
-                <div class="team-item item-left">
-                    <h3>Team of Leaders</h3>
-                    <p>Our operational framework is ensured flawless productivity and supply of products and services.</p>
+            <!-- Left Text Column -->
+            <div class="info-column left-side">
+                <div class="info-block">
+                    <h3>Our Mission</h3>
+                    <p>We aim to empower the world of pharmaceutical with our wide range.</p>
                 </div>
-                <div class="team-item item-left">
-                    <h3>Product R&D</h3>
-                    <p>A flawless operational system aimed to empower the pharmaceutical world with our wide range of unique formulations.</p>
+                <div class="info-block">
+                    <h3>Team of Experts</h3>
+                    <p>The team ensures flawless productivity and supply of the products and best services.</p>
                 </div>
-                <div class="team-item item-left">
-                    <h3>Operational Logistics</h3>
-                    <p>We are consistently committed itself to ADDRESS diverse logistic and therapeutic fields efficiently.</p>
-                </div>
-            </div>
-
-            <!-- Central Interlocking circular (molecular) structure replacement for standard hexagons -->
-            <div class="central-molecular-flow">
-                <!-- Connective circular flow based on reference composition but blue/red themed -->
-                <div class="molecular-node node-blue" style="grid-column: 1 / 2; grid-row: 1 / 2;"><span class="node-label">PRODUCT<br>R&D</span></div>
-                <div class="molecular-node node-red" style="grid-column: 3 / 4; grid-row: 1 / 2;"><span class="node-label">LOGISTICS<br>& SUPPLY</span></div>
-                <div class="molecular-node node-blue" style="grid-column: 1 / 2; grid-row: 2 / 3;"><span class="node-label">LEADERSHIP<br>TEAM</span></div>
-                <div class="molecular-node node-red" style="grid-column: 3 / 4; grid-row: 2 / 3;"><span class="node-label">OPERATIONAL<br>MARKETING</span></div>
-
-                <!-- Central Hub -->
-                <div class="molecular-node flow-center-core">
-                    <span class="node-label">WHO<br>WE ARE</span>
-                    <span class="node-tagline">MADINAL<br>LIFESCIENCE</span>
+                <div class="info-block">
+                    <h3>Customer Satisfaction</h3>
+                    <p>Some of the striking features that have allowed us to remain ahead of our competitors include.</p>
                 </div>
             </div>
 
-            <!-- Right Side Categories -->
-            <div class="team-content-box">
-                <div class="team-item item-right">
-                    <h3>Quality Compliance</h3>
-                    <p>A fundamental striking feature ensuring rigorous set up of quality standardizations.</p>
+            <!-- Central Custom CSS Hexagon Graphic Hub -->
+            <div class="hexagon-graphic-wrap">
+                
+                <!-- Central Focus Hub -->
+                <div class="hex-center-hub">
+                    <span>Who<br>We Are</span>
                 </div>
-                <!-- Specific request: Replacing "Investment" with "Operational Marketing" details -->
-                <div class="team-item item-right">
-                    <h3>Operational Marketing</h3>
-                    <p>A flawless multi-layered framework incorporating PCD Franchise distributions and precise Net Rate operations.</p>
+
+                <!-- Hexagon Nodes (Alternating Blue and Red) -->
+                <!-- Top: Target/Mission -->
+                <div class="hex-node hex-top hex-blue">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
                 </div>
-                <div class="team-item item-right">
-                    <h3>Supply Chain Network</h3>
-                    <p>We are strictly engaged in formulating and providing a comprehensive array of medicines across India.</p>
+
+                <!-- Top Right: Marketing Team (Swapped out from Investment) -->
+                <div class="hex-node hex-top-right hex-red">
+                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S11.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                </div>
+
+                <!-- Bottom Right: Quality Assurance -->
+                <div class="hex-node hex-bot-right hex-blue">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+
+                <!-- Bottom: Why Us? -->
+                <div class="hex-node hex-bottom hex-red">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                </div>
+
+                <!-- Bottom Left: Customer Satisfaction -->
+                <div class="hex-node hex-bot-left hex-blue">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+
+                <!-- Top Left: Team of Experts -->
+                <div class="hex-node hex-top-left hex-red">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                </div>
+
+            </div>
+
+            <!-- Right Text Column -->
+            <div class="info-column right-side">
+                <div class="info-block">
+                    <h3>Marketing Team</h3>
+                    <p>Some of the striking features us to remain ahead of our competitors.</p>
+                </div>
+                <div class="info-block">
+                    <h3>Quality Assurance</h3>
+                    <p>We have set up a quality assurance team to evaluate parameters closely.</p>
+                </div>
+                <div class="info-block">
+                    <h3>Why Us?</h3>
+                    <p>We are engaged in formulating, supplying, and trading approved arrays.</p>
                 </div>
             </div>
 
@@ -748,8 +804,19 @@
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
     </footer>
 
-    <!-- Banner Fading Slider & 3D Carousel Logic Systems -->
+    <!-- Slider, 3D Carousel & Entrance Animation Observers -->
     <script>
+        // Scroll Entrance Animation Engine (Fade & Slide Up)
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal-up').forEach((el) => animationObserver.observe(el));
+
         // Hero Crossfade Engine
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
