@@ -88,13 +88,13 @@
             color: #2563eb;
         }
 
-        /* --- Clean Full-Width Hero Slider Container --- */
+        /* --- Original Full Screen Slider Container --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
-            height: 650px;
+            height: 600px;
             overflow: hidden;
-            background: #e2e8f0;
+            background: #f1f5f9;
         }
 
         .hero-slide {
@@ -120,70 +120,65 @@
             z-index: 5;
         }
 
-        /* Reverted slide backgrounds to clean full-bleed styling */
         .slide-one {
             background-image: url('medicine-capsules.jpg');
         }
 
-        /* Matches the reference layout with a clean laboratory style image background */
         .slide-two {
-            background-image: url('https://images.unsplash.com/photo-1579165466541-74e2b49699f4?auto=format&fit=crop&w=1600&q=80');
+            background-image: url('medicine-capsules.jpg');
         }
 
-        /* Smooth left side mask for text contrast over full background */
         .hero-slide::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%);
+            background: rgba(255, 255, 255, 0.85);
             z-index: 1;
         }
 
         .slide-content-box {
             position: relative;
             z-index: 10;
-            max-width: 650px;
+            max-width: 750px;
             text-align: left;
         }
 
-        /* --- Primary Headline & Tagline Architecture --- */
-        .main-hero-headline {
-            font-size: 54px;
-            font-weight: 850;
-            line-height: 1.15;
+        .welcome-badge {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             color: #dc2626;
             margin-bottom: 12px;
-            letter-spacing: -0.5px;
         }
 
-        .slide-two .main-hero-headline {
-            color: #4c1d95; /* Deep corporate violet tone matching reference vibe */
-        }
-
-        .hero-tag-line {
-            font-size: 26px;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #2563eb;
-            margin-bottom: 22px;
-        }
-
-        .slide-two .hero-tag-line {
+        /* Exact original text sizing styles */
+        .hero-title-large {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
             color: #0f172a;
         }
 
-        .hero-body-description {
-            color: #475569;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .hero-title-large span {
+            color: #2563eb;
         }
 
-        /* --- Reference Inspired Shape Badges --- */
+        .hero-subtitle-text {
+            color: #475569;
+            font-size: 20px;
+            line-height: 1.6;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* --- Badge Tags Layout --- */
         .badge-group-row {
             display: flex;
             gap: 15px;
-            margin-bottom: 32px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
@@ -192,26 +187,24 @@
             color: #ffffff;
             font-weight: 700;
             font-size: 15px;
-            padding: 10px 24px;
+            padding: 10px 22px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
         }
 
         .premium-contrast-badge.alt-color {
             background: #dc2626;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
         }
 
-        /* --- Deep Contrast Corporate Contact Info Shape --- */
+        /* --- Integrated Contact Info Strip Shapes --- */
         .corporate-contact-strip {
             display: inline-flex;
             align-items: center;
             gap: 25px;
             background: #0f172a;
             padding: 14px 28px;
-            border-radius: 50px; /* Fully rounded elegant pill shape like reference design */
+            border-radius: 14px;
             box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
             border-left: 5px solid #dc2626;
             flex-wrap: wrap;
@@ -228,8 +221,8 @@
 
         .contact-pill-item span.label-icon {
             color: #94a3b8;
-            font-weight: 500;
-            font-size: 13px;
+            font-weight: 400;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -432,12 +425,11 @@
         }
 
         @media (max-width: 992px) {
-            .hero-slider-wrapper { height: 600px; }
+            .hero-slider-wrapper { height: 580px; }
             .hero-slide { padding: 160px 5% 40px 5%; }
-            .hero-slide::before { background: rgba(255, 255, 255, 0.96); }
-            .slide-content-box { max-width: 100%; text-align: center; }
+            .slide-content-box { text-align: center; }
             .badge-group-row { justify-content: center; }
-            .corporate-contact-strip { justify-content: center; width: 100%; border-radius: 12px; }
+            .corporate-contact-strip { justify-content: center; width: 100%; }
             .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
             .logo-branding-row { justify-content: center; }
         }
@@ -465,32 +457,28 @@
         </div>
     </header>
 
-    <!-- Full-Width Banner Slideshow Layout System -->
+    <!-- Original Full Screen Slider Container -->
     <section class="hero-slider-wrapper">
         
         <!-- Slide 1: Welcome Corporate Headline -->
         <div class="hero-slide slide-one active">
             <div class="slide-content-box">
-                <h1 class="main-hero-headline">Welcome to Madinal Lifesciences</h1>
-                <div class="hero-tag-line">Advancing Healthcare through Quality Formulations</div>
-                <p class="hero-body-description">Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across comprehensive national distribution networks.</p>
+                <h1 class="hero-title-large">Welcome to <span>Madinal Lifesciences</span></h1>
+                <p class="hero-subtitle-text">Advancing Healthcare through Quality Formulations</p>
             </div>
         </div>
 
-        <!-- Slide 2: PCD Pharma Franchise Asymmetric Presentation Layout -->
+        <!-- Slide 2: PCD Pharma Franchise Presentation -->
         <div class="hero-slide slide-two">
             <div class="slide-content-box">
-                <h1 class="main-hero-headline">PCD PHARMA FRANCHISE</h1>
-                <div class="hero-tag-line">BUSINESS OPPORTUNITY</div>
-                <p class="hero-body-description">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with a highly effective, premium formulation catalog.</p>
+                <h1 class="hero-title-large">PCD PHARMA FRANCHISE<br><span>BUSINESS OPPORTUNITY</span></h1>
+                <p class="hero-subtitle-text">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
                 
-                <!-- Tag Shapes -->
                 <div class="badge-group-row">
                     <div class="premium-contrast-badge">Quality Range</div>
                     <div class="premium-contrast-badge alt-color">All Over India</div>
                 </div>
 
-                <!-- Custom High-Contrast Contact Shape Blocks -->
                 <div class="corporate-contact-strip">
                     <div class="contact-pill-item">
                         <span class="label-icon">Call:</span> +91 9913977154
@@ -591,7 +579,7 @@
 
     <!-- Banner Fading Slider & 3D Carousel Logic Systems -->
     <script>
-        // Hero Crossfade Engine
+        // Hero Slider Logic Engine
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
         const totalSlides = slides.length;
