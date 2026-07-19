@@ -115,8 +115,9 @@
             background-repeat: no-repeat;
         }
 
+        /* Forces maximum opacity on the active slide image */
         .hero-slide.active {
-            opacity: 1;
+            opacity: 1 !important;
             visibility: visible;
             z-index: 5;
         }
@@ -128,8 +129,6 @@
         .slide-two {
             background-image: url('photo 2.jpg');
         }
-
-        /* OVERLAY REMOVED: No more fading or gradient shields. Images show crisp. */
 
         .slide-content-box {
             position: relative;
@@ -147,23 +146,16 @@
             color: #0f172a;
         }
 
-        /* Added a slight drop shadow strictly to text for readability against the crisp backgrounds */
         .hero-subtitle-text {
             color: #1e3a8a;
             font-size: 24px;
             line-height: 1.5;
             font-weight: 700;
             margin-bottom: 25px;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
-        }
-
-        .slide-one .hero-title-large {
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
         }
 
         .slide-two .hero-title-large {
             color: #0f172a;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
         }
 
         /* --- Badge Tags Layout --- */
