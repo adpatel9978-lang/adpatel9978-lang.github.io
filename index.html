@@ -17,6 +17,7 @@
             background-color: #f8fafc;
             color: #0f172a;
             overflow-x: hidden;
+            width: 100%;
         }
 
         /* --- Header & Navigation --- */
@@ -25,12 +26,13 @@
             position: relative;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            width: 100%;
         }
 
         .logo-branding-row {
             display: flex;
             align-items: center;
-            padding: 16px 8%;
+            padding: 16px 5%;
             background: #ffffff;
             border-bottom: 4px solid #dc2626;
         }
@@ -39,6 +41,7 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            flex-wrap: wrap;
         }
 
         .logo-text {
@@ -55,7 +58,7 @@
         .translucent-nav-bar {
             width: 100%;
             background: #ffffff;
-            padding: 16px 8%;
+            padding: 16px 5%;
             display: flex;
             justify-content: flex-start;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -65,35 +68,37 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 45px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #0f172a;
             font-weight: 700;
-            font-size: 19px;
+            font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.2s ease;
+            display: inline-block;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #2563eb;
         }
 
-        /* --- FIXED: Main Banner Stack Layout --- */
+        /* --- Mobile Friendly Hero Section --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
-            min-height: 450px;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)), url('medicine-capsules.jpg');
+            min-height: 400px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('medicine-capsules.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
-            padding: 60px 8%;
+            padding: 40px 5%;
         }
 
         .slide-content-box {
@@ -103,23 +108,23 @@
         }
 
         .hero-title-large {
-            font-size: 54px;
+            font-size: 38px;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             color: #0f172a;
         }
 
         .hero-subtitle-text {
             color: #1e3a8a;
-            font-size: 22px;
-            line-height: 1.6;
+            font-size: 18px;
+            line-height: 1.5;
             font-weight: 700;
         }
 
-        /* --- FIXED: Journey & Corporate Section Layout --- */
+        /* --- Journey Section --- */
         .story-section {
-            padding: 60px 8% 20px 8%;
+            padding: 40px 5% 20px 5%;
             background: #ffffff;
             width: 100%;
         }
@@ -127,7 +132,7 @@
         .story-card {
             background: #f8fafc;
             border-left: 5px solid #2563eb;
-            padding: 40px;
+            padding: 30px;
             border-radius: 0 16px 16px 0;
             width: 100%;
             max-width: 1200px;
@@ -136,21 +141,21 @@
         }
 
         .story-card h2 {
-            font-size: 32px;
+            font-size: 28px;
             color: #0f172a;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .story-card p {
-            font-size: 16px;
+            font-size: 15px;
             color: #475569;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
-        /* --- FIXED: PCD Franchise Grid Block --- */
+        /* --- PCD Franchise Section --- */
         .pcd-franchise-section {
-            padding: 20px 8% 60px 8%;
+            padding: 20px 5% 40px 5%;
             background: #ffffff;
             width: 100%;
         }
@@ -158,7 +163,7 @@
         .pcd-franchise-banner {
             background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 50px;
+            padding: 40px 30px;
             border-radius: 16px;
             width: 100%;
             max-width: 1200px;
@@ -169,40 +174,40 @@
         .pcd-tag {
             background: #dc2626;
             color: white;
-            padding: 6px 16px;
-            font-size: 14px;
+            padding: 6px 14px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             letter-spacing: 1px;
         }
 
         .pcd-franchise-banner h2 {
-            font-size: 34px;
+            font-size: 28px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .pcd-franchise-banner p {
-            font-size: 17px;
+            font-size: 15px;
             color: #cbd5e1;
             line-height: 1.6;
         }
 
-        /* --- 3D UNFOLDING SEGMENTED RING SECTION (WHO WE ARE) --- */
+        /* --- Who We Are Fluid Grid --- */
         .who-we-are-section {
-            padding: 80px 5%;
+            padding: 60px 5%;
             background: #ffffff;
             text-align: center;
             width: 100%;
         }
 
         .who-we-are-section h2.main-title {
-            font-size: 38px;
+            font-size: 32px;
             color: #1e3a8a;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             font-weight: 700;
         }
 
@@ -212,35 +217,36 @@
             justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 20px;
+            gap: 30px;
         }
 
         .info-column {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 40px;
         }
 
         .info-column.left-side { text-align: right; }
         .info-column.right-side { text-align: left; }
 
         .info-block h3 {
-            font-size: 20px;
+            font-size: 18px;
             color: #1e3a8a;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .info-block p {
-            font-size: 15px;
+            font-size: 14px;
             color: #64748b;
             line-height: 1.6;
         }
 
+        /* --- Scalable 3D Ring Viewport --- */
         .stage-3d-viewport {
-            width: 440px;
-            height: 440px;
+            width: 340px;
+            height: 340px;
             perspective: 1500px;
             display: flex;
             align-items: center;
@@ -251,43 +257,42 @@
 
         .unfold-hub-3d {
             position: relative;
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             transform-style: preserve-3d;
             transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .center-core-disc {
             position: absolute;
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             background: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transform: translateZ(35px);
-            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15), inset 0 0 0 3px #1e3a8a;
+            transform: translateZ(25px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15), inset 0 0 0 3px #1e3a8a;
             font-weight: 700;
             color: #1e3a8a;
-            font-size: 18px;
+            font-size: 14px;
             line-height: 1.3;
         }
 
         .unfold-panel-rect {
             position: absolute;
-            width: 100px;
-            height: 70px;
-            left: 20px;
-            top: 35px;
-            border-radius: 8px;
+            width: 70px;
+            height: 50px;
+            left: 15px;
+            top: 25px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
             transform-style: preserve-3d;
             opacity: 0;
             transform: rotate(0deg) translateY(0px) rotateX(0deg);
@@ -295,8 +300,8 @@
         }
 
         .unfold-panel-rect svg {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             fill: #ffffff;
         }
 
@@ -304,39 +309,39 @@
         .panel-red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
 
         .stage-3d-viewport.activated .unfold-hub-3d { transform: rotateX(15deg); }
-        .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-155px) rotateX(-15deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-155px) rotateX(-15deg) rotateZ(-60deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-155px) rotateX(-15deg) rotateZ(-120deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-155px) rotateX(-15deg) rotateZ(-180deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-155px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-155px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-110px) rotateX(-15deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-110px) rotateX(-15deg) rotateZ(-60deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-110px) rotateX(-15deg) rotateZ(-120deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-110px) rotateX(-15deg) rotateZ(-180deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-110px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
+        .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-110px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
 
-        /* --- DYNAMIC ROTATING CUBE BOX PRODUCT GALLERY --- */
+        /* --- Responsive Product Grid --- */
         .cubical-gallery-section {
-            padding: 80px 8%;
+            padding: 60px 5%;
             background: #f1f5f9;
             text-align: center;
             width: 100%;
         }
 
         .cubical-gallery-section h2 {
-            font-size: 38px;
+            font-size: 32px;
             color: #0f172a;
             margin-bottom: 40px;
             font-weight: 700;
         }
 
         .cubical-grid-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .cube-box-scene {
-            width: 260px;
+            width: 100%;
             height: 260px;
             perspective: 1000px;
         }
@@ -351,8 +356,8 @@
 
         .box-face {
             position: absolute;
-            width: 260px;
-            height: 260px;
+            width: 100%;
+            height: 100%;
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
@@ -370,7 +375,7 @@
 
         .img-placeholder-square {
             width: 100%;
-            height: 160px;
+            height: 140px;
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
@@ -382,14 +387,14 @@
         }
 
         .box-face h4 {
-            font-size: 18px;
+            font-size: 16px;
             color: #1e3a8a;
             font-weight: 700;
             margin-bottom: 4px;
         }
 
         .box-face p {
-            font-size: 14px;
+            font-size: 13px;
             color: #64748b;
         }
 
@@ -397,25 +402,25 @@
             transform: rotateY(180deg);
         }
 
-        /* --- RESTORED ORIGINAL PRODUCT CATEGORIES FORMAT --- */
+        /* --- Product Categories --- */
         .old-gallery-section {
-            padding: 80px 8%;
+            padding: 60px 5%;
             background: #ffffff;
             text-align: center;
             width: 100%;
         }
 
         .old-gallery-section h2 {
-            font-size: 38px;
+            font-size: 32px;
             color: #0f172a;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-weight: 700;
         }
 
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -424,7 +429,7 @@
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 40px 30px;
+            padding: 30px 24px;
             transition: all 0.3s ease;
             text-align: left;
         }
@@ -435,35 +440,80 @@
         }
 
         .category-card h3 {
-            font-size: 24px;
+            font-size: 22px;
             color: #1e3a8a;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .category-card p {
-            font-size: 15px;
+            font-size: 14px;
             color: #64748b;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         /* --- Footer --- */
         footer {
             background: #0f172a;
             color: #94a3b8;
-            padding: 40px 8%;
+            padding: 30px 5%;
             text-align: center;
             font-size: 14px;
             border-top: 4px solid #dc2626;
             width: 100%;
         }
 
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 992px) {
-            .infographic-container { flex-direction: column; gap: 80px; }
-            .stage-3d-viewport { order: -1; }
-            .info-column.left-side, .info-column.right-side { text-align: center; }
-            .translucent-nav-bar { justify-content: center; }
-            .logo-branding-row { justify-content: center; }
+            .infographic-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .stage-3d-viewport {
+                order: -1;
+            }
+            .info-column.left-side, .info-column.right-side {
+                text-align: center;
+            }
+            .hero-title-large {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo-branding-row {
+                justify-content: center;
+                text-align: center;
+            }
+            .translucent-nav-bar {
+                justify-content: center;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+            .nav-links a {
+                font-size: 14px;
+            }
+            .hero-slider-wrapper {
+                min-height: 320px;
+            }
+            .hero-title-large {
+                font-size: 26px;
+            }
+            .hero-subtitle-text {
+                font-size: 15px;
+            }
+            .stage-3d-viewport {
+                width: 280px;
+                height: 280px;
+            }
+            .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-85px) rotateX(-15deg); }
+            .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-85px) rotateX(-15deg) rotateZ(-60deg); }
+            .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-85px) rotateX(-15deg) rotateZ(-120deg); }
+            .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-85px) rotateX(-15deg) rotateZ(-180deg); }
+            .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-85px) rotateX(-15deg) rotateZ(-240deg); }
+            .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-85px) rotateX(-15deg) rotateZ(-300deg); }
         }
     </style>
 </head>
@@ -473,7 +523,7 @@
     <header>
         <div class="logo-branding-row">
             <div class="logo-area">
-                <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 55px; width: auto; object-fit: contain;">
+                <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 45px; width: auto; object-fit: contain;">
                 <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
             </div>
         </div>
@@ -489,7 +539,7 @@
         </div>
     </header>
 
-    <!-- Fixed Hero Section Behind Text Elements -->
+    <!-- Main Banner Section -->
     <section class="hero-slider-wrapper">
         <div class="slide-content-box">
             <h1 class="hero-title-large">Welcome to <span style="color: #dc2626;">Madinal</span> <span style="color: #2563eb;">Lifesciences</span></h1>
@@ -497,7 +547,7 @@
         </div>
     </section>
 
-    <!-- Restored Journey Text Segment -->
+    <!-- Journey Section -->
     <section class="story-section">
         <div class="story-card">
             <h2>Our Journey & Commitment</h2>
@@ -505,7 +555,7 @@
         </div>
     </section>
 
-    <!-- PCD Franchise Banner Display Section -->
+    <!-- PCD Franchise Section -->
     <section class="pcd-franchise-section">
         <div class="pcd-franchise-banner">
             <span class="pcd-tag">PCD Franchise Opportunity</span>
@@ -514,12 +564,11 @@
         </div>
     </section>
 
-    <!-- 3D UNFOLDING CATEGORY RING SECTION (WHO WE ARE) -->
+    <!-- Who We Are Ring Section -->
     <section class="who-we-are-section">
         <h2 class="main-title">Who We Are</h2>
         
         <div class="infographic-container">
-            <!-- Left Info Block Deck -->
             <div class="info-column left-side">
                 <div class="info-block">
                     <h3>Our Mission</h3>
@@ -535,13 +584,11 @@
                 </div>
             </div>
 
-            <!-- Center Ring Core Node Viewport -->
             <div class="stage-3d-viewport" id="unfoldStage">
                 <div class="unfold-hub-3d">
                     <div class="center-core-disc">
                         <span>Who<br>We Are</span>
                     </div>
-
                     <div class="unfold-panel-rect rect-node-1 panel-blue">
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
                     </div>
@@ -563,7 +610,6 @@
                 </div>
             </div>
 
-            <!-- Right Info Block Deck -->
             <div class="info-column right-side">
                 <div class="info-block">
                     <h3>Marketing Team</h3>
@@ -581,24 +627,22 @@
         </div>
     </section>
 
-    <!-- ROTATING PRODUCT TILES GALLERY -->
+    <!-- Rotating Product Cards Grid -->
     <section class="cubical-gallery-section">
         <h2>Our Products</h2>
-        
         <div class="cubical-grid-row">
-            <!-- Box 1 -->
             <div class="cube-box-scene">
                 <div class="cubical-box">
                     <div class="box-face face-front">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 1 (Front)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 1</div>
                         </div>
                         <h4>Product Alpha</h4>
                         <p>Essential formulation line.</p>
                     </div>
                     <div class="box-face face-back">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 1 (Back)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
                         </div>
                         <h4>Product Details</h4>
                         <p>High purity specifications.</p>
@@ -606,19 +650,18 @@
                 </div>
             </div>
 
-            <!-- Box 2 -->
             <div class="cube-box-scene">
                 <div class="cubical-box">
                     <div class="box-face face-front">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 2 (Front)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 2</div>
                         </div>
                         <h4>Product Beta</h4>
                         <p>Advanced tablet variant.</p>
                     </div>
                     <div class="box-face face-back">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 2 (Back)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
                         </div>
                         <h4>Product Details</h4>
                         <p>Optimal bioavailability.</p>
@@ -626,19 +669,18 @@
                 </div>
             </div>
 
-            <!-- Box 3 -->
             <div class="cube-box-scene">
                 <div class="cubical-box">
                     <div class="box-face face-front">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 3 (Front)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 3</div>
                         </div>
                         <h4>Product Gamma</h4>
                         <p>Liquid syrup suspension.</p>
                     </div>
                     <div class="box-face face-back">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 3 (Back)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
                         </div>
                         <h4>Product Details</h4>
                         <p>Stabilized fluid matrices.</p>
@@ -646,19 +688,18 @@
                 </div>
             </div>
 
-            <!-- Box 4 -->
             <div class="cube-box-scene">
                 <div class="cubical-box">
                     <div class="box-face face-front">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 4 (Front)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 4</div>
                         </div>
                         <h4>Product Delta</h4>
                         <p>Premium capsule defense.</p>
                     </div>
                     <div class="box-face face-back">
                         <div class="img-placeholder-square">
-                            <div style="padding: 20px; text-align: center; color: #94a3b8;">Product Image 4 (Back)</div>
+                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
                         </div>
                         <h4>Product Details</h4>
                         <p>Certified active compound.</p>
@@ -668,7 +709,7 @@
         </div>
     </section>
 
-    <!-- ORIGINAL PRODUCT CATEGORIES FORMAT -->
+    <!-- Product Categories -->
     <section class="old-gallery-section">
         <h2>Product Categories</h2>
         <div class="category-grid">
@@ -693,7 +734,6 @@
     </footer>
 
     <script>
-        // Ring Scroll Engine Tracker
         const viewportStage = document.getElementById('unfoldStage');
         const scrollTracker = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -703,10 +743,9 @@
                     viewportStage.classList.remove('activated');
                 }
             });
-        }, { threshold: 0.25 });
+        }, { threshold: 0.15 });
         scrollTracker.observe(viewportStage);
 
-        // Staggered Flip Rotation loop for products
         const productBoxes = document.querySelectorAll('.cubical-box');
         function initializeProductRotationEngine() {
             productBoxes.forEach((box, index) => {
