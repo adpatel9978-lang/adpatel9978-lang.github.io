@@ -88,13 +88,13 @@
             color: #2563eb;
         }
 
-        /* --- New Layout Container for Slideshow --- */
+        /* --- Clean Full-Width Hero Slider Container --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
-            height: 600px;
-            background: #ffffff;
+            height: 650px;
             overflow: hidden;
+            background: #e2e8f0;
         }
 
         .hero-slide {
@@ -105,12 +105,13 @@
             height: 100%;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 120px 8% 40px 8%;
-            z-index: 1;
+            padding: 140px 8% 60px 8%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .hero-slide.active {
@@ -119,65 +120,70 @@
             z-index: 5;
         }
 
-        /* Left Content Column */
-        .slide-content-left {
-            flex: 1;
-            max-width: 55%;
+        /* Reverted slide backgrounds to clean full-bleed styling */
+        .slide-one {
+            background-image: url('medicine-capsules.jpg');
+        }
+
+        /* Matches the reference layout with a clean laboratory style image background */
+        .slide-two {
+            background-image: url('https://images.unsplash.com/photo-1579165466541-74e2b49699f4?auto=format&fit=crop&w=1600&q=80');
+        }
+
+        /* Smooth left side mask for text contrast over full background */
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.75) 45%, rgba(255, 255, 255, 0) 100%);
+            z-index: 1;
+        }
+
+        .slide-content-box {
+            position: relative;
             z-index: 10;
+            max-width: 650px;
+            text-align: left;
         }
 
-        /* Right Image Column Fixes */
-        .slide-image-right {
-            flex: 1;
-            width: 45%;
-            height: 420px;
-            margin-left: 40px;
-            border-radius: 24px;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2e8f0;
-            z-index: 10;
-        }
-
-        .img-one {
-            background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80');
-        }
-
-        .img-two {
-            background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?auto=format&fit=crop&w=800&q=80');
-        }
-
-        /* --- Typography & Badges --- */
-        .welcome-headline {
-            font-size: 48px; /* Boosted to primary headline scale */
-            font-weight: 800;
-            color: #dc2626;
+        /* --- Primary Headline & Tagline Architecture --- */
+        .main-hero-headline {
+            font-size: 54px;
+            font-weight: 850;
             line-height: 1.15;
+            color: #dc2626;
             margin-bottom: 12px;
-            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
 
-        .tag-subline {
-            font-size: 26px; /* Clearly separated secondary tag style */
+        .slide-two .main-hero-headline {
+            color: #4c1d95; /* Deep corporate violet tone matching reference vibe */
+        }
+
+        .hero-tag-line {
+            font-size: 26px;
             font-weight: 700;
-            color: #2563eb;
             line-height: 1.3;
-            margin-bottom: 20px;
+            color: #2563eb;
+            margin-bottom: 22px;
         }
 
-        .hero-description-text {
+        .slide-two .hero-tag-line {
+            color: #0f172a;
+        }
+
+        .hero-body-description {
+            color: #475569;
             font-size: 16px;
-            color: #64748b;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
-        /* --- Badge Tags Layout --- */
+        /* --- Reference Inspired Shape Badges --- */
         .badge-group-row {
             display: flex;
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 32px;
             flex-wrap: wrap;
         }
 
@@ -185,25 +191,28 @@
             background: #2563eb;
             color: #ffffff;
             font-weight: 700;
-            font-size: 14px;
-            padding: 10px 22px;
+            font-size: 15px;
+            padding: 10px 24px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
         }
 
         .premium-contrast-badge.alt-color {
             background: #dc2626;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
         }
 
-        /* --- High Contrast Contact Info Bar shapes --- */
+        /* --- Deep Contrast Corporate Contact Info Shape --- */
         .corporate-contact-strip {
             display: inline-flex;
             align-items: center;
             gap: 25px;
             background: #0f172a;
             padding: 14px 28px;
-            border-radius: 12px;
+            border-radius: 50px; /* Fully rounded elegant pill shape like reference design */
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
             border-left: 5px solid #dc2626;
             flex-wrap: wrap;
         }
@@ -211,7 +220,7 @@
         .contact-pill-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             color: #ffffff;
             font-size: 16px;
             font-weight: 700;
@@ -219,6 +228,7 @@
 
         .contact-pill-item span.label-icon {
             color: #94a3b8;
+            font-weight: 500;
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -422,13 +432,12 @@
         }
 
         @media (max-width: 992px) {
-            .hero-slider-wrapper { height: auto; }
-            .hero-slide { flex-direction: column; padding: 160px 5% 40px 5%; height: auto; position: relative; display: none; }
-            .hero-slide.active { display: flex; }
-            .slide-content-left { max-width: 100%; text-align: center; }
-            .slide-image-right { width: 100%; margin-left: 0; margin-top: 30px; height: 280px; }
+            .hero-slider-wrapper { height: 600px; }
+            .hero-slide { padding: 160px 5% 40px 5%; }
+            .hero-slide::before { background: rgba(255, 255, 255, 0.96); }
+            .slide-content-box { max-width: 100%; text-align: center; }
             .badge-group-row { justify-content: center; }
-            .corporate-contact-strip { justify-content: center; width: 100%; }
+            .corporate-contact-strip { justify-content: center; width: 100%; border-radius: 12px; }
             .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
             .logo-branding-row { justify-content: center; }
         }
@@ -456,25 +465,24 @@
         </div>
     </header>
 
-    <!-- Main Dynamic Banner Engine -->
+    <!-- Full-Width Banner Slideshow Layout System -->
     <section class="hero-slider-wrapper">
         
-        <!-- Slide 1: Welcome Corporate Presentation -->
-        <div class="hero-slide active">
-            <div class="slide-content-left">
-                <h1 class="welcome-headline">Welcome to Madinal Lifesciences</h1>
-                <h2 class="tag-subline">Advancing Healthcare through Quality Formulations</h2>
-                <p class="hero-description-text">Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across comprehensive national distribution networks.</p>
+        <!-- Slide 1: Welcome Corporate Headline -->
+        <div class="hero-slide slide-one active">
+            <div class="slide-content-box">
+                <h1 class="main-hero-headline">Welcome to Madinal Lifesciences</h1>
+                <div class="hero-tag-line">Advancing Healthcare through Quality Formulations</div>
+                <p class="hero-body-description">Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across comprehensive national distribution networks.</p>
             </div>
-            <div class="slide-image-right img-one"></div>
         </div>
 
-        <!-- Slide 2: High Contrast Franchise Presentation (Matches Screen Reference Layout) -->
-        <div class="hero-slide">
-            <div class="slide-content-left">
-                <h1 class="welcome-headline" style="color:#1e3a8a;">PCD PHARMA FRANCHISE</h1>
-                <h2 class="tag-subline" style="color:#0f172a;">BUSINESS OPPORTUNITY</h2>
-                <p class="hero-description-text">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with a highly effective, premium formulation catalog.</p>
+        <!-- Slide 2: PCD Pharma Franchise Asymmetric Presentation Layout -->
+        <div class="hero-slide slide-two">
+            <div class="slide-content-box">
+                <h1 class="main-hero-headline">PCD PHARMA FRANCHISE</h1>
+                <div class="hero-tag-line">BUSINESS OPPORTUNITY</div>
+                <p class="hero-body-description">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with a highly effective, premium formulation catalog.</p>
                 
                 <!-- Tag Shapes -->
                 <div class="badge-group-row">
@@ -482,7 +490,7 @@
                     <div class="premium-contrast-badge alt-color">All Over India</div>
                 </div>
 
-                <!-- Custom Info Details Block -->
+                <!-- Custom High-Contrast Contact Shape Blocks -->
                 <div class="corporate-contact-strip">
                     <div class="contact-pill-item">
                         <span class="label-icon">Call:</span> +91 9913977154
@@ -492,7 +500,6 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-image-right img-two"></div>
         </div>
 
     </section>
