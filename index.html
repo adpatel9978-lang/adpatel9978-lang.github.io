@@ -28,13 +28,12 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
 
-        /* Row 1: Logo Row with the Red Line firmly underneath */
         .logo-branding-row {
             display: flex;
             align-items: center;
             padding: 16px 8%;
             background: #ffffff;
-            border-bottom: 4px solid #dc2626; /* Red line directly under logo area */
+            border-bottom: 4px solid #dc2626;
         }
 
         .logo-area {
@@ -54,16 +53,15 @@
             color: #2563eb;
         }
 
-        /* Row 2: Translucent Bar Overlapping the Hero Image Below */
         .translucent-nav-bar {
             width: 100%;
-            background: rgba(255, 255, 255, 0.65); /* Elegant semi-transparent white */
-            backdrop-filter: blur(12px); /* High-end frosted glass effect */
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 16px 8%;
             display: flex;
             justify-content: flex-start;
-            position: absolute; /* Positions seamlessly on top of the hero image layout */
+            position: absolute;
             left: 0;
             z-index: 99;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -78,9 +76,9 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #0f172a; /* Ultra-clear high-contrast dark color */
-            font-weight: 700; /* Crisp bold look */
-            font-size: 19px; /* Enhanced larger size as requested */
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 19px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.2s ease;
@@ -90,54 +88,155 @@
             color: #2563eb;
         }
 
-        /* --- Hero Layout Adjusted for Glass Overlay --- */
-        .hero-container {
-            background: url('medicine-capsules.jpg') center/cover no-repeat;
-            /* Extra top padding (150px) gives room so text stays perfectly below the absolute menu bar */
-            padding: 150px 8% 90px 8%; 
+        /* --- Animated Slideshow Container --- */
+        .hero-slider-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 620px;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
             align-items: center;
-            min-height: 580px;
-            position: relative;
+            padding: 160px 8% 80px 8%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        /* Light background blending overlay */
-        .hero-container::before {
+        .hero-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        /* Slide Specific Backgrounds & Overlays */
+        .slide-one {
+            background-image: url('medicine-capsules.jpg');
+        }
+
+        .slide-two {
+            background-image: url('https://images.unsplash.com/photo-1579165466541-74e2b49699f4?auto=format&fit=crop&w=1600&q=80');
+        }
+
+        .hero-slide::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.3) 100%);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.4) 100%);
             z-index: 1;
         }
 
-        .hero-text-side {
+        .slide-content-box {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             text-align: left;
         }
 
-        .hero-text-side h1 {
-            font-size: 46px;
+        /* --- Slide Typography & Layout Accents --- */
+        .welcome-badge {
+            display: inline-block;
+            font-size: 14px;
             font-weight: 800;
-            line-height: 1.25;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #2563eb;
+            background: rgba(37, 99, 235, 0.1);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+        }
+
+        .hero-title-large {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
             margin-bottom: 20px;
             color: #0f172a;
         }
 
-        .hero-text-side p {
-            color: #1e3a8a;
-            font-size: 19px;
-            line-height: 1.6;
-            font-weight: 600;
+        .slide-one .hero-title-large span {
+            color: #2563eb;
         }
 
-        .hero-space-side {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
+        .slide-two .hero-title-large {
+            color: #1e3a8a;
+        }
+
+        .hero-subtitle-text {
+            color: #475569;
+            font-size: 20px;
+            line-height: 1.6;
+            font-weight: 600;
+            margin-bottom: 25px;
+            max-width: 680px;
+        }
+
+        /* --- Badge Tags Layout --- */
+        .badge-group-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .premium-contrast-badge {
+            background: #2563eb;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .premium-contrast-badge.alt-color {
+            background: #dc2626;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+        }
+
+        /* --- Integrated Contact Info Strip Shapes --- */
+        .corporate-contact-strip {
+            display: inline-flex;
+            align-items: center;
+            gap: 25px;
+            background: #0f172a;
+            padding: 14px 28px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.15);
+            border-left: 5px solid #dc2626;
+            flex-wrap: wrap;
+        }
+
+        .contact-pill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .contact-pill-item span.label-icon {
+            color: #94a3b8;
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* --- Corporate Story Section --- */
@@ -338,10 +437,12 @@
         }
 
         @media (max-width: 992px) {
-            .hero-container { grid-template-columns: 1fr; padding: 180px 5% 60px 5%; }
-            .hero-container::before { background: rgba(255, 255, 255, 0.95); }
-            .hero-text-side { text-align: center; }
-            .hero-space-side { display: none; }
+            .hero-slider-wrapper { min-height: 720px; }
+            .hero-slide { grid-template-columns: 1fr; padding: 180px 5% 60px 5%; }
+            .hero-slide::before { background: rgba(255, 255, 255, 0.95); }
+            .slide-content-box { text-align: center; }
+            .badge-group-row { justify-content: center; }
+            .corporate-contact-strip { justify-content: center; width: 100%; }
             .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
             .logo-branding-row { justify-content: center; }
         }
@@ -351,7 +452,6 @@
 
     <!-- Branding and Translucent Navigation System -->
     <header>
-        <!-- Row 1: Logo and Company Text -->
         <div class="logo-branding-row">
             <div class="logo-area">
                 <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 55px; width: auto; object-fit: contain;">
@@ -359,7 +459,6 @@
             </div>
         </div>
         
-        <!-- Row 2: Translucent Aesthetic Navigation Bar Overlapping the Hero -->
         <div class="translucent-nav-bar">
             <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
@@ -371,13 +470,42 @@
         </div>
     </header>
 
-    <!-- Main Hero Section -->
-    <section class="hero-container">
-        <div class="hero-text-side">
-            <h1>Advancing Healthcare through Quality Formulations</h1>
-            <p>Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
+    <!-- Main Rotating Banner System -->
+    <section class="hero-slider-wrapper">
+        
+        <!-- Slide 1: Main Product Banner -->
+        <div class="hero-slide slide-one active">
+            <div class="slide-content-box">
+                <div class="welcome-badge">Welcome to Madinal Lifesciences</div>
+                <h1 class="hero-title-large">Advancing Healthcare through <span>Quality Formulations</span></h1>
+                <p class="hero-subtitle-text">Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
+            </div>
         </div>
-        <div class="hero-space-side"></div>
+
+        <!-- Slide 2: Premium PCD Pharma Franchise Banner -->
+        <div class="hero-slide slide-two">
+            <div class="slide-content-box">
+                <h1 class="hero-title-large">PCD PHARMA FRANCHISE<br>BUSINESS OPPORTUNITY</h1>
+                <p class="hero-subtitle-text">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
+                
+                <!-- Reference Style Shape Badges -->
+                <div class="badge-group-row">
+                    <div class="premium-contrast-badge">Quality Range</div>
+                    <div class="premium-contrast-badge alt-color">All Over India</div>
+                </div>
+
+                <!-- Custom Contrast Contact Shape Blocks -->
+                <div class="corporate-contact-strip">
+                    <div class="contact-pill-item">
+                        <span class="label-icon">Call:</span> +91 9913977154
+                    </div>
+                    <div class="contact-pill-item">
+                        <span class="label-icon">Email:</span> madinallifesciences@gmail.com
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- Corporate Story Section -->
@@ -465,8 +593,22 @@
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved. Product availability varied by region across India networks.</p>
     </footer>
 
-    <!-- Infinite 3D Auto-Rotation Logic Engine -->
+    <!-- Banner Fading Slider & 3D Carousel Logic Systems -->
     <script>
+        // Hero Slider Logic Engine
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const totalSlides = slides.length;
+
+        function rotateHeroBanners() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+        // Change slide every 4 seconds cleanly
+        setInterval(rotateHeroBanners, 4000);
+
+        // 3D Carousel Logic Engine
         let currentIndex = 0;
         const cards = document.querySelectorAll('.slide-card');
         const totalCards = cards.length;
