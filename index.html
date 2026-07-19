@@ -46,11 +46,11 @@
             font-size: 24px;
             font-weight: 800;
             letter-spacing: 0.5px;
-            color: #dc2626; /* Madinal = Red */
+            color: #dc2626;
         }
 
         .logo-text span {
-            color: #2563eb; /* Lifescience = Blue */
+            color: #2563eb;
         }
 
         .translucent-nav-bar {
@@ -107,9 +107,9 @@
             visibility: hidden;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
             display: flex;
-            align-items: flex-start; /* Pushes content area to the top */
-            justify-content: flex-start; /* Aligns content area to the left */
-            padding: 120px 8% 60px 8%; /* Fixed top-left positioning metrics */
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 120px 8% 60px 8%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -125,25 +125,39 @@
             background-image: url('medicine-capsules.jpg');
         }
 
+        /* Slide 2 Layout: Uses a split approach to beautifully blend the background text area with the graphic side */
         .slide-two {
-            background-image: url('https://images.unsplash.com/photo-1579165466541-74e2b49699f4?auto=format&fit=crop&w=1600&q=80');
-        }
-
-        /* REMOVED FADE EFFECT: Made overlay fully transparent so images show at 100% brightness */
-        .hero-slide::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.2) 100%);
-            z-index: 1;
+            background: #f8fafc; /* Matches image background natively */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 0;
         }
 
         .slide-content-box {
             position: relative;
             z-index: 10;
-            max-width: 800px;
-            text-align: left; /* Explicitly forced left-alignment */
+            max-width: 750px;
+            text-align: left;
             margin-top: 40px;
+            flex: 1;
+        }
+
+        /* Blended Image Container for the right side of the PCD Banner */
+        .slide-image-blend-zone {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 4;
+        }
+
+        .slide-image-blend-zone img {
+            max-width: 85%;
+            max-height: 480px;
+            object-fit: contain;
         }
 
         /* Text Element Styling */
@@ -159,9 +173,8 @@
             color: #1e3a8a;
             font-size: 24px;
             line-height: 1.5;
-            font-weight: 700; /* Extra bold highlight format */
+            font-weight: 700;
             margin-bottom: 25px;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
         }
 
         /* --- Badge Tags Layout --- */
@@ -415,13 +428,15 @@
         }
 
         @media (max-width: 992px) {
-            .hero-slider-wrapper { height: 580px; }
-            .hero-slide { padding: 160px 5% 40px 5%; align-items: center; justify-content: center; }
+            .hero-slider-wrapper { height: auto; min-height: 600px; }
+            .hero-slide { padding: 160px 5% 40px 5%; flex-direction: column; align-items: center; justify-content: center; }
+            .slide-two { padding-right: 5%; text-align: center; }
             .slide-content-box { text-align: center; }
             .badge-group-row { justify-content: center; }
             .corporate-contact-strip { justify-content: center; width: 100%; }
             .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
             .logo-branding-row { justify-content: center; }
+            .slide-image-blend-zone { margin-top: 30px; width: 100%; }
         }
     </style>
 </head>
@@ -432,7 +447,6 @@
         <div class="logo-branding-row">
             <div class="logo-area">
                 <img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience Logo" style="height: 55px; width: auto; object-fit: contain;">
-                <!-- Fixed Navigation Text Corporate Styling -->
                 <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
             </div>
         </div>
@@ -451,17 +465,15 @@
     <!-- Main Dynamic Banner Deck -->
     <section class="hero-slider-wrapper">
         
-        <!-- Slide 1: Welcome Corporate Presentation (Fixed Sizing, Layout & Colors) -->
+        <!-- Slide 1: Welcome Corporate Presentation -->
         <div class="hero-slide slide-one active">
             <div class="slide-content-box">
-                <!-- Massive Headings positioned cleanly top-left with accurate color values -->
                 <h1 class="hero-title-large">Welcome to <span style="color: #dc2626;">Madinal</span> <span style="color: #2563eb;">Lifesciences</span></h1>
-                <!-- Spaced and highlighted full copy tagline -->
                 <p class="hero-subtitle-text">Advancing Healthcare through Quality Formulations: Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
             </div>
         </div>
 
-        <!-- Slide 2: PCD Pharma Franchise Business Presentation (Fixed Duplicate Image Asset) -->
+        <!-- Slide 2: PCD Pharma Franchise Business Presentation (Blended Graphic Version) -->
         <div class="hero-slide slide-two">
             <div class="slide-content-box">
                 <h1 class="hero-title-large"><span style="color: #0f172a;">PCD PHARMA FRANCHISE</span><br><span style="color: #2563eb;">BUSINESS OPPORTUNITY</span></h1>
@@ -480,6 +492,12 @@
                         <span class="label-icon">Email:</span> madinallifesciences@gmail.com
                     </div>
                 </div>
+            </div>
+            
+            <!-- Dynamic Right Side Graphic Blend Zone -->
+            <div class="slide-image-blend-zone">
+                <!-- If you want to use your custom local file name, replace "pharma-banner-graphic.png" below with your exact filename -->
+                <img src="pharma-banner-graphic.png" alt="Pharma Franchise Opportunity Graphic" onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9d39d6618?auto=format&fit=crop&w=600&q=80'; this.style.borderRadius='16px';">
             </div>
         </div>
 
