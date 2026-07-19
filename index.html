@@ -94,7 +94,7 @@
             width: 100%;
             min-height: 620px;
             overflow: hidden;
-            background: #e2e8f0;
+            background: #f1f5f9;
         }
 
         .hero-slide {
@@ -107,13 +107,10 @@
             visibility: hidden;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1.2fr 0.8fr; /* Evenly splits text and visual sides */
             gap: 40px;
             align-items: center;
             padding: 160px 8% 80px 8%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         .hero-slide.active {
@@ -122,41 +119,25 @@
             z-index: 2;
         }
 
-        /* Slide Specific Backgrounds & Overlays */
-        .slide-one {
-            background-image: url('medicine-capsules.jpg');
-        }
-
-        .slide-two {
-            background-image: url('https://images.unsplash.com/photo-1579165466541-74e2b49699f4?auto=format&fit=crop&w=1600&q=80');
-        }
-
-        .hero-slide::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.4) 100%);
-            z-index: 1;
-        }
-
         .slide-content-box {
             position: relative;
             z-index: 3;
             text-align: left;
         }
 
-        /* --- Slide Typography & Layout Accents --- */
+        /* --- Slide 1 Highlights --- */
         .welcome-badge {
             display: inline-block;
             font-size: 14px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #2563eb;
-            background: rgba(37, 99, 235, 0.1);
-            padding: 6px 16px;
+            color: #ffffff;
+            background: #dc2626; /* High-contrast red pop highlight */
+            padding: 8px 20px;
             border-radius: 30px;
             margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
         }
 
         .hero-title-large {
@@ -182,6 +163,27 @@
             font-weight: 600;
             margin-bottom: 25px;
             max-width: 680px;
+        }
+
+        /* --- Side Feature Images (Like Reference SS) --- */
+        .slide-image-side {
+            width: 100%;
+            height: 380px;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            z-index: 3;
+        }
+
+        .img-slide-one {
+            background-image: url('medicine-capsules.jpg');
+        }
+
+        /* Modern pharma lab/bottles image to match reference look */
+        .img-slide-two {
+            background-image: url('https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?auto=format&fit=crop&w=800&q=80');
         }
 
         /* --- Badge Tags Layout --- */
@@ -437,10 +439,10 @@
         }
 
         @media (max-width: 992px) {
-            .hero-slider-wrapper { min-height: 720px; }
-            .hero-slide { grid-template-columns: 1fr; padding: 180px 5% 60px 5%; }
-            .hero-slide::before { background: rgba(255, 255, 255, 0.95); }
+            .hero-slider-wrapper { min-height: 780px; }
+            .hero-slide { grid-template-columns: 1fr; padding: 180px 5% 60px 5%; gap: 20px; }
             .slide-content-box { text-align: center; }
+            .slide-image-side { height: 260px; }
             .badge-group-row { justify-content: center; }
             .corporate-contact-strip { justify-content: center; width: 100%; }
             .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
@@ -480,6 +482,8 @@
                 <h1 class="hero-title-large">Advancing Healthcare through <span>Quality Formulations</span></h1>
                 <p class="hero-subtitle-text">Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
             </div>
+            <!-- Dynamic Image Frame matching composition -->
+            <div class="slide-image-side img-slide-one"></div>
         </div>
 
         <!-- Slide 2: Premium PCD Pharma Franchise Banner -->
@@ -504,6 +508,8 @@
                     </div>
                 </div>
             </div>
+            <!-- High Contrast Right Side Image (Matches Screenshot Reference) -->
+            <div class="slide-image-side img-slide-two"></div>
         </div>
 
     </section>
@@ -605,7 +611,7 @@
             currentSlide = (currentSlide + 1) % totalSlides;
             slides[currentSlide].classList.add('active');
         }
-        // Change slide every 4 seconds cleanly
+        // Rotate every 4 seconds cleanly
         setInterval(rotateHeroBanners, 4000);
 
         // 3D Carousel Logic Engine
