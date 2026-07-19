@@ -115,7 +115,6 @@
             background-repeat: no-repeat;
         }
 
-        /* Forces maximum opacity on the active slide image */
         .hero-slide.active {
             opacity: 1 !important;
             visibility: visible;
@@ -181,7 +180,7 @@
             background: #dc2626;
         }
 
-        /* --- Contact Info Strip --- */
+        /* --- Integrated Contact Info Strip Shapes --- */
         .corporate-contact-strip {
             display: inline-flex;
             align-items: center;
@@ -265,6 +264,135 @@
         .highlight-item p {
             font-size: 14px;
             color: #64748b;
+        }
+
+        /* --- New Section: interlinking structural team layout --- */
+        .team-structure-section {
+            padding: 80px 8%;
+            background: #e2e8f0 url('medicine-capsules.jpg') center/cover no-repeat;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-structure-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(248, 250, 252, 0.96);
+            z-index: -1;
+        }
+
+        .team-structure-section h2.section-header {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .molecular-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* Side content boxes translated from reference screenshot */
+        .team-content-box {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .team-item {
+            text-align: right;
+        }
+
+        .team-item.item-left {
+            padding-right: 20px;
+            border-right: 2px solid #2563eb; /* Blue connector */
+        }
+
+        .team-item.item-right {
+            text-align: left;
+            padding-left: 20px;
+            border-left: 2px solid #dc2626; /* Red connector */
+        }
+
+        .team-item h3 {
+            font-size: 19px;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .team-item p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Core Circular Molecular Structure replacement for standard hexagons */
+        .central-molecular-flow {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(3, 160px);
+            grid-template-rows: repeat(2, 160px);
+            gap: 15px;
+        }
+
+        .molecular-node {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* Circle replacement for standard hexagons */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid white;
+        }
+
+        .molecular-node span.node-label {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Gradient Colors (Blue/Red theme requested) */
+        .node-blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .node-red { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+
+        /* The connected grid structural layout request - circular molecular connections */
+        .flow-center-core {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            background: white;
+            color: #0f172a;
+            border: 4px solid #2563eb;
+            align-self: center;
+            width: 170px;
+            height: 170px;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+            margin-top: 85px;
+        }
+
+        .flow-center-core span.node-label { color: #dc2626; }
+        .flow-center-core span.node-tagline { color: #2563eb; font-size: 11px; font-weight: 600; text-transform: uppercase;}
+
+        @media (max-width: 992px) {
+            .molecular-layout-grid { grid-template-columns: 1fr; }
+            .central-molecular-flow { display: none; }
+            .team-item.item-left, .team-item.item-right { text-align: center; border: none; padding: 0; }
         }
 
         /* --- 3D Rotating Cycle Carousel Section --- */
@@ -458,11 +586,13 @@
                 <h1 class="hero-title-large"><span style="color: #0f172a;">PCD PHARMA FRANCHISE</span><br><span style="color: #2563eb;">BUSINESS OPPORTUNITY</span></h1>
                 <p class="hero-subtitle-text" style="color: #475569;">Partner with India's trusted pharmaceutical brand. We empower healthcare businesses with highly effective, affordable formulations.</p>
                 
+                <!-- Tag Shapes -->
                 <div class="badge-group-row">
                     <div class="premium-contrast-badge">Quality Range</div>
                     <div class="premium-contrast-badge alt-color">All Over India</div>
                 </div>
 
+                <!-- Custom Contrast Contact Shape Blocks from PCD Reference SS -->
                 <div class="corporate-contact-strip">
                     <div class="contact-pill-item">
                         <span class="label-icon">Call:</span> +91 9913977154
@@ -497,6 +627,63 @@
                     <p>Marketing Operations</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Organizational Structure Layout beneath story commitment (As requested from reference) -->
+    <section class="team-structure-section">
+        <h2 class="section-header">Madinal Corporate Structure</h2>
+        
+        <div class="molecular-layout-grid">
+            
+            <!-- Left Side Categories -->
+            <div class="team-content-box">
+                <div class="team-item item-left">
+                    <h3>Team of Leaders</h3>
+                    <p>Our operational framework is ensured flawless productivity and supply of products and services.</p>
+                </div>
+                <div class="team-item item-left">
+                    <h3>Product R&D</h3>
+                    <p>A flawless operational system aimed to empower the pharmaceutical world with our wide range of unique formulations.</p>
+                </div>
+                <div class="team-item item-left">
+                    <h3>Operational Logistics</h3>
+                    <p>We are consistently committed itself to ADDRESS diverse logistic and therapeutic fields efficiently.</p>
+                </div>
+            </div>
+
+            <!-- Central Interlocking circular (molecular) structure replacement for standard hexagons -->
+            <div class="central-molecular-flow">
+                <!-- Connective circular flow based on reference composition but blue/red themed -->
+                <div class="molecular-node node-blue" style="grid-column: 1 / 2; grid-row: 1 / 2;"><span class="node-label">PRODUCT<br>R&D</span></div>
+                <div class="molecular-node node-red" style="grid-column: 3 / 4; grid-row: 1 / 2;"><span class="node-label">LOGISTICS<br>& SUPPLY</span></div>
+                <div class="molecular-node node-blue" style="grid-column: 1 / 2; grid-row: 2 / 3;"><span class="node-label">LEADERSHIP<br>TEAM</span></div>
+                <div class="molecular-node node-red" style="grid-column: 3 / 4; grid-row: 2 / 3;"><span class="node-label">OPERATIONAL<br>MARKETING</span></div>
+
+                <!-- Central Hub -->
+                <div class="molecular-node flow-center-core">
+                    <span class="node-label">WHO<br>WE ARE</span>
+                    <span class="node-tagline">MADINAL<br>LIFESCIENCE</span>
+                </div>
+            </div>
+
+            <!-- Right Side Categories -->
+            <div class="team-content-box">
+                <div class="team-item item-right">
+                    <h3>Quality Compliance</h3>
+                    <p>A fundamental striking feature ensuring rigorous set up of quality standardizations.</p>
+                </div>
+                <!-- Specific request: Replacing "Investment" with "Operational Marketing" details -->
+                <div class="team-item item-right">
+                    <h3>Operational Marketing</h3>
+                    <p>A flawless multi-layered framework incorporating PCD Franchise distributions and precise Net Rate operations.</p>
+                </div>
+                <div class="team-item item-right">
+                    <h3>Supply Chain Network</h3>
+                    <p>We are strictly engaged in formulating and providing a comprehensive array of medicines across India.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
