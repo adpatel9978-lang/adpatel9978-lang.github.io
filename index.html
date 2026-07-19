@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madinal Lifescience</title>
     <style>
-        /* --- Core Reset --- */
+        /* --- Core Reset & Layout Stability --- */
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +18,7 @@
             color: #0f172a;
             overflow-x: hidden;
             width: 100%;
+            line-height: 1.5;
         }
 
         /* --- Header & Navigation --- */
@@ -25,7 +26,7 @@
             background: #ffffff;
             position: relative;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             width: 100%;
         }
 
@@ -61,7 +62,6 @@
             padding: 16px 5%;
             display: flex;
             justify-content: flex-start;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid #e2e8f0;
         }
 
@@ -80,35 +80,37 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.2s ease;
-            display: inline-block;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: #2563eb;
         }
 
-        /* --- Mobile Friendly Hero Section --- */
+        /* --- Clear Hero Banner --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
-            min-height: 400px;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)), url('medicine-capsules.jpg');
+            min-height: 450px;
+            background-image: url('medicine-capsules.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
-            padding: 40px 5%;
+            padding: 60px 5%;
         }
 
         .slide-content-box {
-            max-width: 800px;
+            max-width: 650px;
             width: 100%;
-            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .hero-title-large {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 16px;
@@ -117,58 +119,56 @@
 
         .hero-subtitle-text {
             color: #1e3a8a;
-            font-size: 18px;
-            line-height: 1.5;
-            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 600;
         }
 
-        /* --- Journey Section --- */
-        .story-section {
-            padding: 40px 5% 20px 5%;
-            background: #ffffff;
+        /* --- Fully Visible Sections --- */
+        .story-section, .pcd-franchise-section, .who-we-are-section, .cubical-gallery-section, .old-gallery-section {
+            padding: 50px 5%;
             width: 100%;
+            background: #ffffff;
         }
 
         .story-card {
             background: #f8fafc;
             border-left: 5px solid #2563eb;
-            padding: 30px;
+            padding: 35px;
             border-radius: 0 16px 16px 0;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
-        .story-card h2 {
+        .story-card h2, .pcd-franchise-banner h2, .main-title, .section-title {
             font-size: 28px;
             color: #0f172a;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             font-weight: 700;
         }
 
         .story-card p {
-            font-size: 15px;
-            color: #475569;
+            font-size: 16px;
+            color: #334155;
             line-height: 1.7;
         }
 
-        /* --- PCD Franchise Section --- */
-        .pcd-franchise-section {
-            padding: 20px 5% 40px 5%;
-            background: #ffffff;
-            width: 100%;
-        }
-
+        /* --- Full Width PCD Banner --- */
         .pcd-franchise-banner {
             background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: #ffffff;
-            padding: 40px 30px;
+            padding: 45px 35px;
             border-radius: 16px;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+            box-shadow: 0 15px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .pcd-franchise-banner h2 {
+            color: #ffffff;
         }
 
         .pcd-tag {
@@ -184,237 +184,105 @@
             letter-spacing: 1px;
         }
 
-        .pcd-franchise-banner h2 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
         .pcd-franchise-banner p {
-            font-size: 15px;
-            color: #cbd5e1;
-            line-height: 1.6;
+            font-size: 16px;
+            color: #e2e8f0;
+            line-height: 1.7;
         }
 
-        /* --- Who We Are Fluid Grid --- */
+        /* --- Readable Who We Are Layout --- */
         .who-we-are-section {
-            padding: 60px 5%;
-            background: #ffffff;
+            background: #f1f5f9;
             text-align: center;
-            width: 100%;
-        }
-
-        .who-we-are-section h2.main-title {
-            font-size: 32px;
-            color: #1e3a8a;
-            margin-bottom: 40px;
-            font-weight: 700;
         }
 
         .infographic-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 30px;
-        }
-
-        .info-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .info-column.left-side { text-align: right; }
-        .info-column.right-side { text-align: left; }
-
-        .info-block h3 {
-            font-size: 18px;
-            color: #1e3a8a;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .info-block p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* --- Scalable 3D Ring Viewport --- */
-        .stage-3d-viewport {
-            width: 340px;
-            height: 340px;
-            perspective: 1500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .unfold-hub-3d {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            transform-style: preserve-3d;
-            transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-
-        .center-core-disc {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transform: translateZ(25px);
-            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15), inset 0 0 0 3px #1e3a8a;
-            font-weight: 700;
-            color: #1e3a8a;
-            font-size: 14px;
-            line-height: 1.3;
-        }
-
-        .unfold-panel-rect {
-            position: absolute;
-            width: 70px;
-            height: 50px;
-            left: 15px;
-            top: 25px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            transform-style: preserve-3d;
-            opacity: 0;
-            transform: rotate(0deg) translateY(0px) rotateX(0deg);
-            transition: transform 1.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 1s ease;
-        }
-
-        .unfold-panel-rect svg {
-            width: 24px;
-            height: 24px;
-            fill: #ffffff;
-        }
-
-        .panel-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
-        .panel-red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
-
-        .stage-3d-viewport.activated .unfold-hub-3d { transform: rotateX(15deg); }
-        .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-110px) rotateX(-15deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-110px) rotateX(-15deg) rotateZ(-60deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-110px) rotateX(-15deg) rotateZ(-120deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-110px) rotateX(-15deg) rotateZ(-180deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-110px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
-        .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-110px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
-
-        /* --- Responsive Product Grid --- */
-        .cubical-gallery-section {
-            padding: 60px 5%;
-            background: #f1f5f9;
-            text-align: center;
-            width: 100%;
-        }
-
-        .cubical-gallery-section h2 {
-            font-size: 32px;
-            color: #0f172a;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-
-        .cubical-grid-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
         }
 
-        .cube-box-scene {
-            width: 100%;
-            height: 260px;
-            perspective: 1000px;
-        }
-
-        .cubical-box {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .box-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        .info-block {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            backface-visibility: hidden;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            text-align: left;
+            border-top: 4px solid #2563eb;
         }
 
-        .box-face.face-front  { transform: rotateY(0deg) translateZ(8px); }
-        .box-face.face-back   { transform: rotateY(180deg) translateZ(8px); }
-
-        .img-placeholder-square {
-            width: 100%;
-            height: 140px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+        .info-block h3 {
+            font-size: 20px;
+            color: #1e3a8a;
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .box-face h4 {
-            font-size: 16px;
-            color: #1e3a8a;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .info-block p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
         }
 
-        .box-face p {
-            font-size: 13px;
-            color: #64748b;
-        }
-
-        .cubical-box.flipped {
-            transform: rotateY(180deg);
-        }
-
-        /* --- Product Categories --- */
-        .old-gallery-section {
-            padding: 60px 5%;
-            background: #ffffff;
+        /* --- Grid Product Showcase --- */
+        .cubical-gallery-section {
             text-align: center;
+        }
+
+        .cubical-grid-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
         }
 
-        .old-gallery-section h2 {
-            font-size: 32px;
-            color: #0f172a;
-            margin-bottom: 40px;
+        .product-display-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease;
+        }
+
+        .product-display-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .img-placeholder-square {
+            width: 100%;
+            height: 160px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .product-display-card h4 {
+            font-size: 18px;
+            color: #1e3a8a;
             font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .product-display-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* --- Standardized Categories --- */
+        .old-gallery-section {
+            background: #f8fafc;
+            text-align: center;
         }
 
         .category-grid {
@@ -426,17 +294,17 @@
         }
 
         .category-card {
-            background: #f8fafc;
+            background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 30px 24px;
-            transition: all 0.3s ease;
+            padding: 30px;
             text-align: left;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            transform: translateY(-4px);
         }
 
         .category-card h3 {
@@ -447,8 +315,8 @@
         }
 
         .category-card p {
-            font-size: 14px;
-            color: #64748b;
+            font-size: 15px;
+            color: #475569;
             line-height: 1.6;
         }
 
@@ -463,57 +331,18 @@
             width: 100%;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
-        @media (max-width: 992px) {
-            .infographic-container {
-                flex-direction: column;
-                gap: 40px;
-            }
-            .stage-3d-viewport {
-                order: -1;
-            }
-            .info-column.left-side, .info-column.right-side {
-                text-align: center;
-            }
-            .hero-title-large {
-                font-size: 32px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .logo-branding-row {
-                justify-content: center;
-                text-align: center;
-            }
-            .translucent-nav-bar {
-                justify-content: center;
-            }
-            .nav-links {
-                justify-content: center;
-                gap: 15px;
-            }
-            .nav-links a {
-                font-size: 14px;
-            }
+        /* --- Mobile Breakpoints --- */
+        @media (max-width: 768px) {
             .hero-slider-wrapper {
-                min-height: 320px;
+                min-height: 360px;
+                padding: 40px 5%;
             }
             .hero-title-large {
-                font-size: 26px;
+                font-size: 28px;
             }
-            .hero-subtitle-text {
-                font-size: 15px;
+            .story-card h2, .pcd-franchise-banner h2, .main-title, .section-title {
+                font-size: 24px;
             }
-            .stage-3d-viewport {
-                width: 280px;
-                height: 280px;
-            }
-            .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-85px) rotateX(-15deg); }
-            .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-85px) rotateX(-15deg) rotateZ(-60deg); }
-            .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-85px) rotateX(-15deg) rotateZ(-120deg); }
-            .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-85px) rotateX(-15deg) rotateZ(-180deg); }
-            .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-85px) rotateX(-15deg) rotateZ(-240deg); }
-            .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-85px) rotateX(-15deg) rotateZ(-300deg); }
         }
     </style>
 </head>
@@ -564,154 +393,78 @@
         </div>
     </section>
 
-    <!-- Who We Are Ring Section -->
+    <!-- Who We Are Clean Section -->
     <section class="who-we-are-section">
         <h2 class="main-title">Who We Are</h2>
-        
         <div class="infographic-container">
-            <div class="info-column left-side">
-                <div class="info-block">
-                    <h3>Our Mission</h3>
-                    <p>We aim to empower the world of pharmaceutical with our wide range.</p>
-                </div>
-                <div class="info-block">
-                    <h3>Team of Experts</h3>
-                    <p>The team ensures flawless productivity and supply of the products and best services.</p>
-                </div>
-                <div class="info-block">
-                    <h3>Customer Satisfaction</h3>
-                    <p>Some of the striking features that have allowed us to remain ahead of our competitors include.</p>
-                </div>
+            <div class="info-block">
+                <h3>Our Mission</h3>
+                <p>We aim to empower the world of pharmaceuticals with our wide range of accessible healthcare options.</p>
             </div>
-
-            <div class="stage-3d-viewport" id="unfoldStage">
-                <div class="unfold-hub-3d">
-                    <div class="center-core-disc">
-                        <span>Who<br>We Are</span>
-                    </div>
-                    <div class="unfold-panel-rect rect-node-1 panel-blue">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/></svg>
-                    </div>
-                    <div class="unfold-panel-rect rect-node-2 panel-red">
-                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S11.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                    </div>
-                    <div class="unfold-panel-rect rect-node-3 panel-blue">
-                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                    </div>
-                    <div class="unfold-panel-rect rect-node-4 panel-red">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
-                    </div>
-                    <div class="unfold-panel-rect rect-node-5 panel-blue">
-                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                    </div>
-                    <div class="unfold-panel-rect rect-node-6 panel-red">
-                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                    </div>
-                </div>
+            <div class="info-block">
+                <h3>Team of Experts</h3>
+                <p>The team ensures flawless productivity, continuous supply of products, and best-in-class service standards.</p>
             </div>
-
-            <div class="info-column right-side">
-                <div class="info-block">
-                    <h3>Marketing Team</h3>
-                    <p>Some of the striking features us to remain ahead of our competitors.</p>
-                </div>
-                <div class="info-block">
-                    <h3>Quality Assurance</h3>
-                    <p>We have set up a quality assurance team to evaluate parameters closely.</p>
-                </div>
-                <div class="info-block">
-                    <h3>Why Us?</h3>
-                    <p>We are engaged in formulating, supplying, and trading approved arrays.</p>
-                </div>
+            <div class="info-block">
+                <h3>Customer Satisfaction</h3>
+                <p>Some of the striking features that allow us to remain ahead of our competitors include absolute compliance and reliability.</p>
+            </div>
+            <div class="info-block">
+                <h3>Marketing Team</h3>
+                <p>Providing our distribution partners with full marketing toolkits and robust promotional systems nationwide.</p>
+            </div>
+            <div class="info-block">
+                <h3>Quality Assurance</h3>
+                <p>We have set up a strict quality assurance team to evaluate crucial chemical parameters and formulations closely.</p>
+            </div>
+            <div class="info-block">
+                <h3>Why Us?</h3>
+                <p>We are actively engaged in formulating, supplying, and trading clinically approved therapeutic segments.</p>
             </div>
         </div>
     </section>
 
-    <!-- Rotating Product Cards Grid -->
+    <!-- Clean Product Showcase Gallery -->
     <section class="cubical-gallery-section">
-        <h2>Our Products</h2>
+        <h2 class="section-title">Our Products</h2>
         <div class="cubical-grid-row">
-            <div class="cube-box-scene">
-                <div class="cubical-box">
-                    <div class="box-face face-front">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 1</div>
-                        </div>
-                        <h4>Product Alpha</h4>
-                        <p>Essential formulation line.</p>
-                    </div>
-                    <div class="box-face face-back">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
-                        </div>
-                        <h4>Product Details</h4>
-                        <p>High purity specifications.</p>
-                    </div>
+            <div class="product-display-card">
+                <div class="img-placeholder-square">
+                    <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 1</div>
                 </div>
+                <h4>Product Alpha</h4>
+                <p>Essential formulation line.</p>
             </div>
 
-            <div class="cube-box-scene">
-                <div class="cubical-box">
-                    <div class="box-face face-front">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 2</div>
-                        </div>
-                        <h4>Product Beta</h4>
-                        <p>Advanced tablet variant.</p>
-                    </div>
-                    <div class="box-face face-back">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
-                        </div>
-                        <h4>Product Details</h4>
-                        <p>Optimal bioavailability.</p>
-                    </div>
+            <div class="product-display-card">
+                <div class="img-placeholder-square">
+                    <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 2</div>
                 </div>
+                <h4>Product Beta</h4>
+                <p>Advanced tablet variant.</p>
             </div>
 
-            <div class="cube-box-scene">
-                <div class="cubical-box">
-                    <div class="box-face face-front">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 3</div>
-                        </div>
-                        <h4>Product Gamma</h4>
-                        <p>Liquid syrup suspension.</p>
-                    </div>
-                    <div class="box-face face-back">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
-                        </div>
-                        <h4>Product Details</h4>
-                        <p>Stabilized fluid matrices.</p>
-                    </div>
+            <div class="product-display-card">
+                <div class="img-placeholder-square">
+                    <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 3</div>
                 </div>
+                <h4>Product Gamma</h4>
+                <p>Liquid syrup suspension.</p>
             </div>
 
-            <div class="cube-box-scene">
-                <div class="cubical-box">
-                    <div class="box-face face-front">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 4</div>
-                        </div>
-                        <h4>Product Delta</h4>
-                        <p>Premium capsule defense.</p>
-                    </div>
-                    <div class="box-face face-back">
-                        <div class="img-placeholder-square">
-                            <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Back Specs</div>
-                        </div>
-                        <h4>Product Details</h4>
-                        <p>Certified active compound.</p>
-                    </div>
+            <div class="product-display-card">
+                <div class="img-placeholder-square">
+                    <div style="padding: 10px; font-size: 14px; text-align: center; color: #94a3b8;">Product Image 4</div>
                 </div>
+                <h4>Product Delta</h4>
+                <p>Premium capsule defense.</p>
             </div>
         </div>
     </section>
 
     <!-- Product Categories -->
     <section class="old-gallery-section">
-        <h2>Product Categories</h2>
+        <h2 class="section-title">Product Categories</h2>
         <div class="category-grid">
             <div class="category-card">
                 <h3>Tablets</h3>
@@ -733,28 +486,5 @@
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        const viewportStage = document.getElementById('unfoldStage');
-        const scrollTracker = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    viewportStage.classList.add('activated');
-                } else {
-                    viewportStage.classList.remove('activated');
-                }
-            });
-        }, { threshold: 0.15 });
-        scrollTracker.observe(viewportStage);
-
-        const productBoxes = document.querySelectorAll('.cubical-box');
-        function initializeProductRotationEngine() {
-            productBoxes.forEach((box, index) => {
-                setInterval(() => {
-                    box.classList.toggle('flipped');
-                }, 3000 + (index * 600)); 
-            });
-        }
-        window.addEventListener('DOMContentLoaded', initializeProductRotationEngine);
-    </script>
 </body>
 </html>
