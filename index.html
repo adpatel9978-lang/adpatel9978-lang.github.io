@@ -219,7 +219,7 @@
             transform: scale(1.3);
         }
 
-        /* --- Corporate Story Section --- */
+        /* --- 1. Corporate Story Section --- */
         .story-section {
             padding: 70px 8%;
             background: #ffffff;
@@ -281,113 +281,76 @@
             text-transform: uppercase;
         }
 
-        /* --- THERAPEUTIC CATEGORIES --- */
-        .categories-section {
-            padding: 80px 8%;
-            background: #f1f5f9;
+        /* --- 2. PRODUCT GALLERY (BENEATH OUR JOURNEY) --- */
+        .bottom-gallery-2d {
+            padding: 70px 0;
+            background: #f8fafc;
             text-align: center;
+            overflow: hidden;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .categories-section h2 {
-            font-size: 34px;
+        .bottom-gallery-2d h2 {
+            font-size: 32px;
             color: #0f172a;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 800;
         }
 
-        .categories-section p.subtitle {
+        .bottom-gallery-2d p.subtitle {
             color: #64748b;
-            font-size: 16px;
-            margin-bottom: 50px;
+            font-size: 15px;
+            margin-bottom: 40px;
         }
 
-        .shuffle-deck-container {
-            position: relative;
+        .marquee-container {
             width: 100%;
-            max-width: 320px;
-            height: 380px;
-            margin: 0 auto;
-            perspective: 1000px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
         }
 
-        .shuffle-card {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .marquee-track {
+            display: inline-flex;
+            gap: 25px;
+            animation: scrollLeftToRight 25s linear infinite;
+        }
+
+        .square-frame-2d {
+            width: 140px;
+            height: 140px;
+            background: #ffffff;
+            border: 2px solid #94a3b8;
+            border-radius: 12px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .square-frame-2d:hover {
+            border-color: #2563eb;
+        }
+
+        .square-frame-2d img {
             width: 100%;
             height: 100%;
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            border: 2px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            animation: backShuffleLoop 14s ease-in-out infinite;
-        }
-
-        .shuffle-card img {
-            width: 100%;
-            height: 240px;
             object-fit: cover;
-            border-radius: 12px;
         }
 
-        .shuffle-card h4 {
-            font-size: 22px;
-            color: #0f172a;
-            font-weight: 800;
+        @keyframes scrollLeftToRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
         }
 
-        .shuffle-card:nth-child(1) { animation-delay: 0s; }
-        .shuffle-card:nth-child(2) { animation-delay: -3.5s; }
-        .shuffle-card:nth-child(3) { animation-delay: -7s; }
-        .shuffle-card:nth-child(4) { animation-delay: -10.5s; }
-
-        @keyframes backShuffleLoop {
-            0% {
-                transform: translateX(0) scale(1);
-                z-index: 4;
-                opacity: 1;
-            }
-            20% {
-                transform: translateX(0) scale(1);
-                z-index: 4;
-                opacity: 1;
-            }
-            28% {
-                transform: translateX(220px) scale(0.96) rotate(4deg);
-                z-index: 4;
-                opacity: 0.9;
-            }
-            32% {
-                transform: translateX(0) scale(0.88);
-                z-index: 1;
-                opacity: 0.6;
-            }
-            50% {
-                transform: scale(0.92);
-                z-index: 2;
-                opacity: 0.75;
-            }
-            75% {
-                transform: scale(0.96);
-                z-index: 3;
-                opacity: 0.9;
-            }
-            100% {
-                transform: translateX(0) scale(1);
-                z-index: 4;
-                opacity: 1;
-            }
-        }
-
-        /* --- 3D UNFOLDING SEGMENTED RING SECTION --- */
+        /* --- 3. 3D UNFOLDING SEGMENTED RING SECTION --- */
         .who-we-are-section {
             padding: 100px 5%;
-            background: #f8fafc;
+            background: #ffffff;
             text-align: center;
         }
 
@@ -503,69 +466,108 @@
         .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-155px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
         .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-155px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
 
-        /* --- PRODUCT GALLERY AT THE VERY BOTTOM --- */
-        .bottom-gallery-2d {
-            padding: 70px 0;
-            background: #ffffff;
+        /* --- 4. THERAPEUTIC CATEGORIES (AT THE VERY BOTTOM) --- */
+        .categories-section {
+            padding: 80px 8%;
+            background: #f1f5f9;
             text-align: center;
-            overflow: hidden;
             border-top: 1px solid #cbd5e1;
         }
 
-        .bottom-gallery-2d h2 {
-            font-size: 32px;
+        .categories-section h2 {
+            font-size: 34px;
             color: #0f172a;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-weight: 800;
         }
 
-        .bottom-gallery-2d p.subtitle {
+        .categories-section p.subtitle {
             color: #64748b;
-            font-size: 15px;
-            margin-bottom: 40px;
+            font-size: 16px;
+            margin-bottom: 50px;
         }
 
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
+        .shuffle-deck-container {
             position: relative;
+            width: 100%;
+            max-width: 320px;
+            height: 380px;
+            margin: 0 auto;
+            perspective: 1000px;
         }
 
-        .marquee-track {
-            display: inline-flex;
-            gap: 25px;
-            animation: scrollLeftToRight 25s linear infinite;
-        }
-
-        .square-frame-2d {
-            width: 140px;
-            height: 140px;
-            background: #ffffff;
-            border: 2px solid #94a3b8;
-            border-radius: 12px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-            overflow: hidden;
-            transition: border-color 0.3s ease;
-        }
-
-        .square-frame-2d:hover {
-            border-color: #2563eb;
-        }
-
-        .square-frame-2d img {
+        .shuffle-card {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            animation: backShuffleLoop 14s ease-in-out infinite;
         }
 
-        @keyframes scrollLeftToRight {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0%); }
+        .shuffle-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .shuffle-card h4 {
+            font-size: 22px;
+            color: #0f172a;
+            font-weight: 800;
+        }
+
+        .shuffle-card:nth-child(1) { animation-delay: 0s; }
+        .shuffle-card:nth-child(2) { animation-delay: -3.5s; }
+        .shuffle-card:nth-child(3) { animation-delay: -7s; }
+        .shuffle-card:nth-child(4) { animation-delay: -10.5s; }
+
+        @keyframes backShuffleLoop {
+            0% {
+                transform: translateX(0) scale(1);
+                z-index: 4;
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(0) scale(1);
+                z-index: 4;
+                opacity: 1;
+            }
+            28% {
+                transform: translateX(220px) scale(0.96) rotate(4deg);
+                z-index: 4;
+                opacity: 0.9;
+            }
+            32% {
+                transform: translateX(0) scale(0.88);
+                z-index: 1;
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(0.92);
+                z-index: 2;
+                opacity: 0.75;
+            }
+            75% {
+                transform: scale(0.96);
+                z-index: 3;
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateX(0) scale(1);
+                z-index: 4;
+                opacity: 1;
+            }
         }
 
         footer {
@@ -637,7 +639,7 @@
         </div>
     </section>
 
-    <!-- Corporate Story Section -->
+    <!-- 1. Corporate Story Section -->
     <section class="story-section">
         <div class="story-card">
             <h2>Our Journey & Commitment</h2>
@@ -660,35 +662,32 @@
         </div>
     </section>
 
-    <!-- THERAPEUTIC CATEGORIES -->
-    <section class="categories-section">
-        <h2>Therapeutic Categories</h2>
-        <p class="subtitle">Auto-shuffling product deck sliding cards behind each other sequentially.</p>
+    <!-- 2. PRODUCT GALLERY (RIGHT BENEATH OUR JOURNEY) -->
+    <section class="bottom-gallery-2d">
+        <h2>Product Gallery</h2>
+        <p class="subtitle">Continuous 2D showcase moving from left to right across our main catalog.</p>
 
-        <div class="shuffle-deck-container">
-            <div class="shuffle-card">
-                <img src="syrup.jpg" alt="Syrup" onerror="this.src='https://via.placeholder.com/280x240?text=Syrup'">
-                <h4>Syrup</h4>
-            </div>
-
-            <div class="shuffle-card">
-                <img src="tablet.jpg" alt="Tablet" onerror="this.src='https://via.placeholder.com/280x240?text=Tablet'">
-                <h4>Tablet</h4>
-            </div>
-
-            <div class="shuffle-card">
-                <img src="injectable.jpg" alt="Injectable" onerror="this.src='https://via.placeholder.com/280x240?text=Injectable'">
-                <h4>Injectable</h4>
-            </div>
-
-            <div class="shuffle-card">
-                <img src="powder.jpg" alt="Powder" onerror="this.src='https://via.placeholder.com/280x240?text=Powder'">
-                <h4>Powder / Nutra</h4>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <div class="square-frame-2d"><img src="prod1.jpg" alt="Product 1" onerror="this.src='https://via.placeholder.com/140?text=Product+1'"></div>
+                <div class="square-frame-2d"><img src="prod2.jpg" alt="Product 2" onerror="this.src='https://via.placeholder.com/140?text=Product+2'"></div>
+                <div class="square-frame-2d"><img src="prod3.jpg" alt="Product 3" onerror="this.src='https://via.placeholder.com/140?text=Product+3'"></div>
+                <div class="square-frame-2d"><img src="prod4.jpg" alt="Product 4" onerror="this.src='https://via.placeholder.com/140?text=Product+4'"></div>
+                <div class="square-frame-2d"><img src="prod5.jpg" alt="Product 5" onerror="this.src='https://via.placeholder.com/140?text=Product+5'"></div>
+                <div class="square-frame-2d"><img src="prod6.jpg" alt="Product 6" onerror="this.src='https://via.placeholder.com/140?text=Product+6'"></div>
+                
+                <!-- Duplicate Set for continuous loop -->
+                <div class="square-frame-2d"><img src="prod1.jpg" alt="Product 1" onerror="this.src='https://via.placeholder.com/140?text=Product+1'"></div>
+                <div class="square-frame-2d"><img src="prod2.jpg" alt="Product 2" onerror="this.src='https://via.placeholder.com/140?text=Product+2'"></div>
+                <div class="square-frame-2d"><img src="prod3.jpg" alt="Product 3" onerror="this.src='https://via.placeholder.com/140?text=Product+3'"></div>
+                <div class="square-frame-2d"><img src="prod4.jpg" alt="Product 4" onerror="this.src='https://via.placeholder.com/140?text=Product+4'"></div>
+                <div class="square-frame-2d"><img src="prod5.jpg" alt="Product 5" onerror="this.src='https://via.placeholder.com/140?text=Product+5'"></div>
+                <div class="square-frame-2d"><img src="prod6.jpg" alt="Product 6" onerror="this.src='https://via.placeholder.com/140?text=Product+6'"></div>
             </div>
         </div>
     </section>
 
-    <!-- 3D UNFOLDING SEGMENTED RING SECTION -->
+    <!-- 3. 3D UNFOLDING SEGMENTED RING SECTION -->
     <section class="who-we-are-section">
         <h2 class="main-title">Who We Are</h2>
         
@@ -757,28 +756,30 @@
         </div>
     </section>
 
-    <!-- PRODUCT GALLERY (MOVED BACK TO THE VERY BOTTOM) -->
-    <section class="bottom-gallery-2d">
-        <h2>Product Gallery</h2>
-        <p class="subtitle">Continuous 2D showcase moving from left to right across our main catalog.</p>
+    <!-- 4. THERAPEUTIC CATEGORIES (PLACED AT THE VERY BOTTOM ABOVE FOOTER) -->
+    <section class="categories-section">
+        <h2>Therapeutic Categories</h2>
+        <p class="subtitle">Auto-shuffling product deck sliding cards behind each other sequentially.</p>
 
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <!-- Change the file names inside src="..." to your exact image file names -->
-                <div class="square-frame-2d"><img src="prod1.jpg" alt="Product 1" onerror="this.src='https://via.placeholder.com/140?text=Product+1'"></div>
-                <div class="square-frame-2d"><img src="prod2.jpg" alt="Product 2" onerror="this.src='https://via.placeholder.com/140?text=Product+2'"></div>
-                <div class="square-frame-2d"><img src="prod3.jpg" alt="Product 3" onerror="this.src='https://via.placeholder.com/140?text=Product+3'"></div>
-                <div class="square-frame-2d"><img src="prod4.jpg" alt="Product 4" onerror="this.src='https://via.placeholder.com/140?text=Product+4'"></div>
-                <div class="square-frame-2d"><img src="prod5.jpg" alt="Product 5" onerror="this.src='https://via.placeholder.com/140?text=Product+5'"></div>
-                <div class="square-frame-2d"><img src="prod6.jpg" alt="Product 6" onerror="this.src='https://via.placeholder.com/140?text=Product+6'"></div>
-                
-                <!-- Duplicate Set (Keep these identical to the set above for a smooth infinite loop) -->
-                <div class="square-frame-2d"><img src="prod1.jpg" alt="Product 1" onerror="this.src='https://via.placeholder.com/140?text=Product+1'"></div>
-                <div class="square-frame-2d"><img src="prod2.jpg" alt="Product 2" onerror="this.src='https://via.placeholder.com/140?text=Product+2'"></div>
-                <div class="square-frame-2d"><img src="prod3.jpg" alt="Product 3" onerror="this.src='https://via.placeholder.com/140?text=Product+3'"></div>
-                <div class="square-frame-2d"><img src="prod4.jpg" alt="Product 4" onerror="this.src='https://via.placeholder.com/140?text=Product+4'"></div>
-                <div class="square-frame-2d"><img src="prod5.jpg" alt="Product 5" onerror="this.src='https://via.placeholder.com/140?text=Product+5'"></div>
-                <div class="square-frame-2d"><img src="prod6.jpg" alt="Product 6" onerror="this.src='https://via.placeholder.com/140?text=Product+6'"></div>
+        <div class="shuffle-deck-container">
+            <div class="shuffle-card">
+                <img src="syrup.jpg" alt="Syrup" onerror="this.src='https://via.placeholder.com/280x240?text=Syrup'">
+                <h4>Syrup</h4>
+            </div>
+
+            <div class="shuffle-card">
+                <img src="tablet.jpg" alt="Tablet" onerror="this.src='https://via.placeholder.com/280x240?text=Tablet'">
+                <h4>Tablet</h4>
+            </div>
+
+            <div class="shuffle-card">
+                <img src="injectable.jpg" alt="Injectable" onerror="this.src='https://via.placeholder.com/280x240?text=Injectable'">
+                <h4>Injectable</h4>
+            </div>
+
+            <div class="shuffle-card">
+                <img src="powder.jpg" alt="Powder" onerror="this.src='https://via.placeholder.com/280x240?text=Powder'">
+                <h4>Powder / Nutra</h4>
             </div>
         </div>
     </section>
