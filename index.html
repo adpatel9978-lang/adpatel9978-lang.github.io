@@ -19,21 +19,24 @@
             overflow-x: hidden;
         }
 
-        /* --- Header Layout --- */
+        /* --- Header Layout with 40% Translucent Glass Reflection Effect --- */
         header {
-            background: #ffffff;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
         }
 
         .logo-branding-row {
             display: flex;
             align-items: center;
-            padding: 16px 8%;
-            background: #ffffff;
-            border-bottom: 4px solid #dc2626;
+            padding: 14px 8%;
+            background: transparent;
+            border-bottom: 3px solid rgba(220, 38, 38, 0.85);
         }
 
         .logo-area {
@@ -55,17 +58,9 @@
 
         .translucent-nav-bar {
             width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 16px 8%;
+            padding: 14px 8%;
             display: flex;
             justify-content: flex-start;
-            position: absolute;
-            left: 0;
-            z-index: 99;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
         }
 
         .nav-links {
@@ -78,7 +73,7 @@
             text-decoration: none;
             color: #0f172a;
             font-weight: 700;
-            font-size: 19px;
+            font-size: 18px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             transition: color 0.2s ease;
@@ -219,6 +214,48 @@
             transform: scale(1.3);
         }
 
+        /* --- Professional Content Block Component --- */
+        .content-block-section {
+            padding: 60px 8%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content-block-section.alt-bg {
+            background: #f8fafc;
+        }
+
+        .content-card {
+            background: #ffffff;
+            border-left: 5px solid #2563eb;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 1100px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .content-card.red-accent {
+            border-left-color: #dc2626;
+        }
+
+        .content-card h3 {
+            font-size: 26px;
+            color: #0f172a;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .content-card p {
+            font-size: 16.5px;
+            color: #475569;
+            line-height: 1.85;
+        }
+
         /* --- Corporate Story Section --- */
         .story-section {
             padding: 70px 8%;
@@ -281,14 +318,13 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT GALLERY (LARGER BOXES & INTERACTIVE SCROLL) --- */
+        /* --- PRODUCT GALLERY --- */
         .bottom-gallery-2d {
-            padding: 70px 0;
+            padding: 70px 0 40px 0;
             background: #ffffff;
             text-align: center;
             overflow: hidden;
             border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
         }
 
         .bottom-gallery-2d h2 {
@@ -311,13 +347,13 @@
             position: relative;
             cursor: grab;
             user-select: none;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             padding: 10px 0;
         }
 
         .marquee-container::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         .marquee-container:active {
@@ -330,7 +366,6 @@
             padding: 0 20px;
         }
 
-        /* EXPANDED BOX SIZE: 240px x 240px */
         .square-frame-2d {
             width: 240px;
             height: 240px;
@@ -357,11 +392,11 @@
         .square-frame-2d img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Prevents stretching and blurring */
+            object-fit: contain;
             border-radius: 8px;
         }
 
-        /* --- LIGHTBOX MODAL (SMOOTH IMAGE ENLARGEMENT) --- */
+        /* --- LIGHTBOX MODAL --- */
         .lightbox-modal {
             position: fixed;
             top: 0;
@@ -422,7 +457,7 @@
 
         /* --- 3D UNFOLDING SEGMENTED RING SECTION --- */
         .who-we-are-section {
-            padding: 100px 5%;
+            padding: 90px 5% 50px 5%;
             background: #ffffff;
             text-align: center;
         }
@@ -627,7 +662,7 @@
             .infographic-container { flex-direction: column; gap: 80px; }
             .stage-3d-viewport { order: -1; }
             .info-column.left-side, .info-column.right-side { text-align: center; }
-            .translucent-nav-bar { justify-content: center; position: relative; background: rgba(255, 255, 255, 0.95); }
+            .translucent-nav-bar { justify-content: center; }
             .logo-branding-row { justify-content: center; }
             .story-highlights-grid { grid-template-columns: 1fr; }
             .square-frame-2d { width: 180px; height: 180px; }
@@ -636,7 +671,7 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section -->
+    <!-- Header Navigation Section with Translucent Glass Effect -->
     <header>
         <div class="logo-branding-row">
             <div class="logo-area">
@@ -684,7 +719,7 @@
         </div>
     </section>
 
-    <!-- 1. Corporate Story Section -->
+    <!-- Corporate Story Section -->
     <section class="story-section">
         <div class="story-card">
             <h2>Our Journey & Commitment</h2>
@@ -707,14 +742,13 @@
         </div>
     </section>
 
-    <!-- 2. PRODUCT GALLERY (INTERACTIVE SWIPE/SCROLL + POPUP) -->
+    <!-- PRODUCT GALLERY -->
     <section class="bottom-gallery-2d">
         <h2>Product Gallery</h2>
         <p class="subtitle">Drag with mouse or swipe on mobile. Tap any image for full view.</p>
 
         <div class="marquee-container" id="galleryContainer">
             <div class="marquee-track" id="galleryTrack">
-                <!-- 19 Product Images -->
                 <div class="square-frame-2d"><img src="prod1.jpg" alt="Product 1" onerror="this.src='https://via.placeholder.com/240?text=Product+1'"></div>
                 <div class="square-frame-2d"><img src="prod2.jpg" alt="Product 2" onerror="this.src='https://via.placeholder.com/240?text=Product+2'"></div>
                 <div class="square-frame-2d"><img src="prod3.jpg" alt="Product 3" onerror="this.src='https://via.placeholder.com/240?text=Product+3'"></div>
@@ -738,6 +772,14 @@
         </div>
     </section>
 
+    <!-- PARAGRAPH 1: BENEATH PRODUCT GALLERY (BUSINESS & PCD FRANCHISE) -->
+    <section class="content-block-section alt-bg">
+        <div class="content-card">
+            <h3>PCD Pharma Franchise Opportunities & Business Growth</h3>
+            <p>At Madinal Lifescience, we offer lucrative PCD Pharma Franchise business opportunities designed for energetic entrepreneurs and distributors looking to build a sustainable commercial footprint. Our franchise model empowers partners with exclusive geographic monopoly rights, comprehensive marketing collateral, and robust promotional assistance. By combining top-tier pharmaceutical inventory with an attractive profit margin framework, we ensure our business partners achieve scalable growth, dependable product availability, and unmatched competitive advantages within their respective markets.</p>
+        </div>
+    </section>
+
     <!-- FULLSCREEN IMAGE LIGHTBOX -->
     <div class="lightbox-modal" id="lightboxModal">
         <div class="lightbox-content">
@@ -746,7 +788,7 @@
         </div>
     </div>
 
-    <!-- 3. 3D UNFOLDING SEGMENTED RING SECTION -->
+    <!-- 3D UNFOLDING SEGMENTED RING SECTION -->
     <section class="who-we-are-section">
         <h2 class="main-title">Who We Are</h2>
         
@@ -815,7 +857,15 @@
         </div>
     </section>
 
-    <!-- 4. THERAPEUTIC CATEGORIES -->
+    <!-- PARAGRAPH 2: BENEATH WHO WE ARE (MEDICINE QUALITY & WHO STANDARDS) -->
+    <section class="content-block-section">
+        <div class="content-card red-accent">
+            <h3>Uncompromising Quality Standards & Formulation Excellence</h3>
+            <p>Quality remains the cornerstone of all operations at Madinal Lifescience. Every batch of our pharmaceutical product range is manufactured in WHO-GMP certified facilities under strict hygienic conditions. From raw material inspection to final product packaging, our quality assurance team enforces international therapeutic standards. This unwavering commitment to clinical efficacy, safety, and purity ensures that medical professionals and consumers receive trusted healthcare solutions every time.</p>
+        </div>
+    </section>
+
+    <!-- THERAPEUTIC CATEGORIES WITH CUSTOM IMAGES -->
     <section class="categories-section">
         <h2>Therapeutic Categories</h2>
         <p class="subtitle">Auto-shuffling product deck sliding cards behind each other sequentially.</p>
@@ -840,6 +890,14 @@
                 <img src="powder.jpg" alt="Powder" onerror="this.src='https://via.placeholder.com/280x240?text=Powder'">
                 <h4>Powder / Nutra</h4>
             </div>
+        </div>
+    </section>
+
+    <!-- PARAGRAPH 3: BOTTOM SECTION (DISTRIBUTION NETWORK & QUALITY SERVICE) -->
+    <section class="content-block-section alt-bg">
+        <div class="content-card">
+            <h3>Nationwide Distribution Network & Responsive Service</h3>
+            <p>Supported by an expansive logistics supply chain, Madinal Lifescience delivers seamless distribution capabilities across all regions of India. Our dedicated supply chain management ensures rapid order processing, tamper-proof transit packaging, and on-time order fulfillment. Combined with proactive client support, transparent corporate operations, and customer-centric service, we stand as a dependable healthcare partner committed to clinical excellence and customer satisfaction.</p>
         </div>
     </section>
 
