@@ -281,7 +281,7 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT GALLERY (LARGER BOXES & INTERACTIVE SCROLL) --- */
+        /* --- PRODUCT GALLERY --- */
         .bottom-gallery-2d {
             padding: 70px 0;
             background: #ffffff;
@@ -330,7 +330,6 @@
             padding: 0 20px;
         }
 
-        /* EXPANDED BOX SIZE: 240px x 240px */
         .square-frame-2d {
             width: 240px;
             height: 240px;
@@ -357,11 +356,11 @@
         .square-frame-2d img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Prevents stretching and blurring */
+            object-fit: contain;
             border-radius: 8px;
         }
 
-        /* --- LIGHTBOX MODAL (SMOOTH IMAGE ENLARGEMENT) --- */
+        /* --- LIGHTBOX MODAL --- */
         .lightbox-modal {
             position: fixed;
             top: 0;
@@ -707,14 +706,13 @@
         </div>
     </section>
 
-    <!-- 2. PRODUCT GALLERY (INTERACTIVE SWIPE/SCROLL + POPUP) -->
+    <!-- 2. PRODUCT GALLERY -->
     <section class="bottom-gallery-2d">
         <h2>Product Gallery</h2>
         <p class="subtitle">Drag with mouse or swipe on mobile. Tap any image for full view.</p>
 
         <div class="marquee-container" id="galleryContainer">
             <div class="marquee-track" id="galleryTrack">
-                <!-- 19 Product Images -->
                 <div class="square-frame-2d"><img src="prod1.jpg" alt="Product 1" onerror="this.src='https://via.placeholder.com/240?text=Product+1'"></div>
                 <div class="square-frame-2d"><img src="prod2.jpg" alt="Product 2" onerror="this.src='https://via.placeholder.com/240?text=Product+2'"></div>
                 <div class="square-frame-2d"><img src="prod3.jpg" alt="Product 3" onerror="this.src='https://via.placeholder.com/240?text=Product+3'"></div>
@@ -873,96 +871,179 @@
         // Scroll Observer for 3D Ring Unfolding
         const viewportStage = document.getElementById('unfoldStage');
         const scrollTracker = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
                     viewportStage.classList.add('activated');
-                } else {
-                    viewportStage.classList.remove('activated');
                 }
             });
-        }, { threshold: 0.25 });
+        }, { threshold: 0.3 });
 
-        scrollTracker.observe(viewportStage);
-
-        // --- PRODUCT GALLERY AUTO-SCROLL + SWIPE & DRAG + LIGHTBOX ---
-        const container = document.getElementById('galleryContainer');
-        const track = document.getElementById('galleryTrack');
-        
-        // Clone items for infinite loop feel
-        const trackContent = track.innerHTML;
-        track.innerHTML += trackContent;
-
-        let autoScrollSpeed = 1; 
-        let isPaused = false;
-
-        function autoScroll() {
-            if (!isPaused) {
-                container.scrollLeft += autoScrollSpeed;
-                if (container.scrollLeft >= track.scrollWidth / 2) {
-                    container.scrollLeft = 0;
-                }
-            }
-            requestAnimationFrame(autoScroll);
+        if (viewportStage) {
+            scrollTracker.observe(viewportStage);
         }
-        requestAnimationFrame(autoScroll);
 
-        // Drag to scroll functionality (Mouse & Touch)
+        // Gallery Drag/Scroll & Lightbox Logic
+        const container = document.getElementById('galleryContainer');
+        const modal = document.getElementById('lightboxModal');
+        const modalImg = document.getElementById('lightboxImg');
+        const modalClose = document.getElementById('lightboxClose');
+
         let isDown = false;
         let startX, scrollLeft;
 
         container.addEventListener('mousedown', (e) => {
             isDown = true;
-            isPaused = true;
             startX = e.pageX - container.offsetLeft;
             scrollLeft = container.scrollLeft;
         });
 
-        container.addEventListener('mouseleave', () => {
-            isDown = false;
-            isPaused = false;
-        });
+        container.addEventListener('mouseleave', () => { isDown = false; });
+        container.addEventListener('mouseup', () => { isDown = false; });
 
-        container.addEventListener('mouseup', () => {
-            isDown = false;
-            isPaused = false;
-        });
+        Here is the complete HTML code with the interactive script properly finished and integrated. The partner count numbers have been kept clean without adding "250".
 
-        container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
-        });
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madinal Lifescience | Premium Corporate</title>
+    <style>
+        /* --- Core Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        // Touch support for Mobile
-        container.addEventListener('touchstart', () => { isPaused = true; });
-        container.addEventListener('touchend', () => { isPaused = false; });
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
 
-        // Pause on Hover
-        container.addEventListener('mouseenter', () => { isPaused = true; });
+        /* --- Header Layout --- */
+        header {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
 
-        // --- LIGHTBOX POPUP FUNCTIONALITY ---
-        const lightboxModal = document.getElementById('lightboxModal');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
+        .logo-branding-row {
+            display: flex;
+            align-items: center;
+            padding: 16px 8%;
+            background: #ffffff;
+            border-bottom: 4px solid #dc2626;
+        }
 
-        document.querySelectorAll('.square-frame-2d img').forEach(img => {
-            img.addEventListener('click', (e) => {
-                lightboxImg.src = e.target.src;
-                lightboxModal.classList.add('active');
-            });
-        });
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
 
-        lightboxClose.addEventListener('click', () => {
-            lightboxModal.classList.remove('active');
-        });
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #dc2626;
+        }
 
-        lightboxModal.addEventListener('click', (e) => {
-            if (e.target === lightboxModal) {
-                lightboxModal.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
+        .logo-text span {
+            color: #2563eb;
+        }
+
+        .translucent-nav-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 16px 8%;
+            display: flex;
+            justify-content: flex-start;
+            position: absolute;
+            left: 0;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 19px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+        }
+
+        /* --- Full Screen Hero Slider --- */
+        .hero-slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            background: #0f172a;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 80px 8% 0 8%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-slide.active {
+            opacity: 1 !important;
+            visibility: visible;
+            z-index: 5;
+        }
+
+        .slide-one {
+            background-image: url('medicine-capsules.jpg');
+        }
+
+        .slide-pcd {
+            background-image: url('photo 2.jpg');
+        }
+
+        .slide-content-box {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            text-align: left;
+            background: transparent !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+        }
+
+        .hero-title-large {
+            font-size: 52px;
+            font-weight: 900;
