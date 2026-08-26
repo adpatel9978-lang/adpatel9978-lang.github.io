@@ -529,38 +529,38 @@
         <p class="subtitle">Click on any category card to view all medicines in that section.</p>
 
         <div class="deck-3d-stage" id="deckStage">
-            <div class="card-3d-item pos-0" onclick="openCategoryModal('TABLET', 41)">
-                <img src="TABLET1.jpg" alt="Tablet" onerror="this.src='https://via.placeholder.com/280x240?text=Tablet'">
+            <div class="card-3d-item pos-0" onclick="openCategoryModal('TABLET/TABLET', 41)">
+                <img src="TABLET/TABLET1.jpg" alt="Tablet" onerror="this.src='https://via.placeholder.com/280x240?text=Tablet'">
                 <h4>Tablets (41)</h4>
             </div>
 
-            <div class="card-3d-item pos-1" onclick="openCategoryModal('SYRUP', 8)">
-                <img src="SYRUP1.jpg" alt="Syrup" onerror="this.src='https://via.placeholder.com/280x240?text=Syrup'">
+            <div class="card-3d-item pos-1" onclick="openCategoryModal('SYRUP/SYRUP', 8)">
+                <img src="SYRUP/SYRUP1.jpg" alt="Syrup" onerror="this.src='https://via.placeholder.com/280x240?text=Syrup'">
                 <h4>Syrups (8)</h4>
             </div>
 
-            <div class="card-3d-item pos-2" onclick="openCategoryModal('INJECTABLE', 5)">
-                <img src="INJECTABLE1.jpg" alt="Injectable" onerror="this.src='https://via.placeholder.com/280x240?text=Injectable'">
+            <div class="card-3d-item pos-2" onclick="openCategoryModal('INJECTABLE/INJECTABLE', 5)">
+                <img src="INJECTABLE/INJECTABLE1.jpg" alt="Injectable" onerror="this.src='https://via.placeholder.com/280x240?text=Injectable'">
                 <h4>Injectables (5)</h4>
             </div>
 
-            <div class="card-3d-item pos-hidden" onclick="openCategoryModal('POWDER', 4)">
-                <img src="POWDER1.jpg" alt="Powder" onerror="this.src='https://via.placeholder.com/280x240?text=Powder'">
+            <div class="card-3d-item pos-hidden" onclick="openCategoryModal('POWDER/POWDER', 4)">
+                <img src="POWDER/POWDER1.jpg" alt="Powder" onerror="this.src='https://via.placeholder.com/280x240?text=Powder'">
                 <h4>Powders (4)</h4>
             </div>
 
-            <div class="card-3d-item pos-4" onclick="openCategoryModal('CAPSULE', 2)">
-                <img src="CAPSULE1.jpg" alt="Capsule" onerror="this.src='https://via.placeholder.com/280x240?text=Capsule'">
+            <div class="card-3d-item pos-4" onclick="openCategoryModal('CAPSULE/CAPSULE', 2)">
+                <img src="CAPSULE/CAPSULE1.jpg" alt="Capsule" onerror="this.src='https://via.placeholder.com/280x240?text=Capsule'">
                 <h4>Capsules (2)</h4>
             </div>
 
-            <div class="card-3d-item pos-5" onclick="openCategoryModal('AEROSOLS', 1)">
-                <img src="AEROSOLS1.jpg" alt="Aerosols" onerror="this.src='https://via.placeholder.com/280x240?text=Aerosols'">
+            <div class="card-3d-item pos-5" onclick="openCategoryModal('AEROSOLS/AEROSOLS', 1)">
+                <img src="AEROSOLS/AEROSOLS1.jpg" alt="Aerosols" onerror="this.src='https://via.placeholder.com/280x240?text=Aerosols'">
                 <h4>Aerosols (1)</h4>
             </div>
 
-            <div class="card-3d-item pos-hidden" onclick="openCategoryModal('SEMISOLID', 1)">
-                <img src="SEMISOLID1.jpg" alt="Semisolid" onerror="this.src='https://via.placeholder.com/280x240?text=Semisolid'">
+            <div class="card-3d-item pos-hidden" onclick="openCategoryModal('SEMISOLID/SEMISOLID', 1)">
+                <img src="SEMISOLID/SEMISOLID1.jpg" alt="Semisolid" onerror="this.src='https://via.placeholder.com/280x240?text=Semisolid'">
                 <h4>Semisolid (1)</h4>
             </div>
         </div>
@@ -617,22 +617,23 @@
 
         setInterval(rotateCards, 3500);
 
-        // Dynamic Category Popup Launcher (Generates Image Paths Automatically)
+        // Dynamic Category Popup Launcher with Folder Paths
         const categoryModal = document.getElementById('categoryModal');
         const categoryModalTitle = document.getElementById('categoryModalTitle');
         const categoryGrid = document.getElementById('categoryGrid');
         const categoryClose = document.getElementById('categoryClose');
 
-        function openCategoryModal(prefix, count) {
-            categoryModalTitle.innerText = `${prefix} Range (${count} Products)`;
+        function openCategoryModal(folderPath, count) {
+            const folderName = folderPath.split('/')[0];
+            categoryModalTitle.innerText = `${folderName} Range (${count} Products)`;
             categoryGrid.innerHTML = '';
 
             for (let i = 1; i <= count; i++) {
-                const imageName = `${prefix}${i}.jpg`;
+                const imageName = `${folderPath}${i}.jpg`;
                 const itemHtml = `
                     <div class="category-item-card">
-                        <img src="${imageName}" alt="${prefix} ${i}" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x160?text=${prefix}+${i}';">
-                        <h4>${prefix} ${i}</h4>
+                        <img src="${imageName}" alt="${folderName} ${i}" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x160?text=${folderName}+${i}';">
+                        <h4>${folderName} ${i}</h4>
                     </div>
                 `;
                 categoryGrid.innerHTML += itemHtml;
