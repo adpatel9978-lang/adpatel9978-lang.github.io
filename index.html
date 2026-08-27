@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madinal Lifescience | Quality Healthcare Formulations</title>
+    <title>Madinal Lifescience | Leading Pharmaceutical & PCD Franchise Company</title>
     <style>
-        /* --- GLOBAL RESETS & BASE STYLES --- */
         * {
             margin: 0;
             padding: 0;
@@ -25,11 +24,10 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border-bottom: 3px solid #dc2626;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
 
         .header-container {
@@ -48,7 +46,7 @@
         }
 
         .logo-area img {
-            height: 50px;
+            height: 48px;
             width: auto;
             object-fit: contain;
         }
@@ -60,29 +58,24 @@
             letter-spacing: 0.5px;
         }
 
-        .logo-text span {
-            color: #2563eb;
-        }
+        .logo-text span { color: #2563eb; }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #0f172a;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             text-transform: uppercase;
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #dc2626;
-        }
+        .nav-links a:hover, .nav-links a.active { color: #dc2626; }
 
         /* --- HERO BANNER SLIDER --- */
         .hero-slider {
@@ -101,7 +94,7 @@
             height: 100%;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+            transition: opacity 0.8s ease-in-out;
             display: flex;
             align-items: center;
             padding: 0 8%;
@@ -114,35 +107,24 @@
             visibility: visible;
         }
 
-        .slide-1 {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), url('medicine-capsules.jpg');
-        }
-
-        .slide-2 {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)), url('photo 2.jpg');
-        }
-
-        .slide-3 {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.45)), url('BANNER3.PNG');
-        }
+        .slide-1 { background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('medicine-capsules.jpg'); }
+        .slide-2 { background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('photo 2.jpg'); }
+        .slide-3 { background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), url('BANNER3.PNG'); }
 
         .slide-content {
             color: #ffffff;
             max-width: 750px;
-            z-index: 2;
         }
 
         .slide-content h1 {
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 800;
             margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .slide-content p {
-            font-size: 20px;
+            font-size: 19px;
             line-height: 1.5;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
         .slider-dots {
@@ -161,7 +143,6 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
         }
 
         .dot.active {
@@ -169,11 +150,78 @@
             transform: scale(1.3);
         }
 
-        /* --- AUTO-ROTATING PRODUCT GALLERY --- */
+        /* --- WHO WE ARE / ABOUT SECTION --- */
+        .about-section {
+            padding: 80px 6%;
+            background: #ffffff;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            color: #0f172a;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about-text h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #dc2626;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            color: #475569;
+            font-size: 16px;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .highlight-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-left: 4px solid #2563eb;
+            border-radius: 6px;
+        }
+
+        .highlight-card h4 {
+            color: #0f172a;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .highlight-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+
+        /* --- PRODUCT GALLERY (MARQUEE) --- */
         .gallery-section {
             padding: 70px 0;
-            background: #ffffff;
+            background: #f8fafc;
             text-align: center;
+            border-top: 1px solid #e2e8f0;
             border-bottom: 1px solid #e2e8f0;
         }
 
@@ -223,13 +271,12 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
         .gallery-card:hover {
             transform: scale(1.05);
             border-color: #dc2626;
-            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.12);
         }
 
         .gallery-card img {
@@ -238,10 +285,10 @@
             object-fit: contain;
         }
 
-        /* --- THERAPEUTIC CATEGORIES SECTION --- */
+        /* --- THERAPEUTIC CATEGORIES --- */
         .therapeutic-section {
             padding: 75px 6%;
-            background: #f1f5f9;
+            background: #ffffff;
             text-align: center;
         }
 
@@ -257,14 +304,14 @@
         }
 
         .therapeutic-card {
-            width: 250px;
+            width: 240px;
             background: #ffffff;
             border-radius: 16px;
             padding: 18px;
             border: 2px solid #e2e8f0;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -272,13 +319,12 @@
 
         .therapeutic-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 14px 30px rgba(0,0,0,0.1);
             border-color: #2563eb;
         }
 
         .therapeutic-card img {
             width: 100%;
-            height: 190px;
+            height: 180px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 14px;
@@ -290,6 +336,46 @@
             font-weight: 700;
         }
 
+        /* --- WHY CHOOSE US & QUALITY ASSURANCE --- */
+        .features-section {
+            padding: 80px 6%;
+            background: #0f172a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .features-section .section-title { color: #ffffff; }
+        .features-section .section-subtitle { color: #94a3b8; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .feature-box h3 {
+            color: #38bdf8;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-box p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
         /* --- MODALS & POPUPS --- */
         .modal-overlay {
             position: fixed;
@@ -299,7 +385,6 @@
             height: 100vh;
             background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
             z-index: 2000;
             display: flex;
             align-items: center;
@@ -323,7 +408,6 @@
             padding: 35px;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
         .modal-title {
@@ -342,13 +426,9 @@
             font-size: 32px;
             color: #64748b;
             cursor: pointer;
-            line-height: 1;
-            transition: color 0.2s;
         }
 
-        .close-btn:hover {
-            color: #dc2626;
-        }
+        .close-btn:hover { color: #dc2626; }
 
         .category-grid {
             display: grid;
@@ -362,7 +442,7 @@
             padding: 10px;
             background: #ffffff;
             cursor: pointer;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -371,7 +451,6 @@
         .category-item:hover {
             transform: translateY(-4px);
             border-color: #2563eb;
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
         }
 
         .category-item img {
@@ -380,21 +459,19 @@
             object-fit: contain;
         }
 
-        /* Lightbox Fullscreen Preview */
         .lightbox-box img {
             max-width: 85vw;
             max-height: 85vh;
             border-radius: 10px;
             background: #ffffff;
             padding: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
         /* --- FOOTER --- */
         footer {
-            background: #0f172a;
+            background: #090d16;
             color: #94a3b8;
-            padding: 35px 6%;
+            padding: 40px 6%;
             text-align: center;
             font-size: 15px;
             border-top: 4px solid #dc2626;
@@ -403,7 +480,7 @@
 </head>
 <body>
 
-    <!-- Header Navigation Section -->
+    <!-- Header Navigation -->
     <header>
         <div class="header-container">
             <div class="logo-area">
@@ -411,33 +488,34 @@
                 <div class="logo-text">MADINAL <span>LIFESCIENCE</span></div>
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">PCD Franchise</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">Who We Are</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#therapeutic">Categories</a></li>
+                <li><a href="#whyus">Why Choose Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
     </header>
 
     <!-- Hero Slider -->
-    <section class="hero-slider">
+    <section class="hero-slider" id="home">
         <div class="slide slide-1 active">
             <div class="slide-content">
                 <h1>Welcome to Madinal Lifesciences</h1>
-                <p>Advancing Healthcare through Quality Formulations across India.</p>
+                <p>Advancing Healthcare through Superior Quality Formulations and Trust across India.</p>
             </div>
         </div>
         <div class="slide slide-2">
             <div class="slide-content">
-                <h1>PCD Pharma Franchise</h1>
-                <p>Partner with a trusted leader. Monopoly rights & high-quality products.</p>
+                <h1>PCD Pharma Franchise Opportunities</h1>
+                <p>Partner with an industry leader. Exclusive monopoly rights and complete marketing support.</p>
             </div>
         </div>
         <div class="slide slide-3">
             <div class="slide-content">
-                <h1>Innovative Formulations</h1>
-                <p>Excellence in manufacturing and clinical quality safety standards.</p>
+                <h1>WHO-GMP Compliant Manufacturing</h1>
+                <p>Delivering high-efficacy therapeutic treatments adhering to international standard benchmarks.</p>
             </div>
         </div>
 
@@ -448,22 +526,47 @@
         </div>
     </section>
 
+    <!-- WHO WE ARE / ABOUT US SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p><strong>Madinal Lifescience</strong> is a fast-growing pharmaceutical company committed to enhancing human life through superior-quality medical formulations. Driven by innovation, medical research, and quality-driven manufacturing processes, we provide a wide spectrum of health solutions across India.</p>
+                <p>Our comprehensive portfolio spans Tablets, Syrups, Injectables, Capsules, Powders, Semisolids, and Aerosols. Every product we manufacture undergoes rigorous quality assurance protocols to guarantee safety, compliance, and clinical efficacy.</p>
+                
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <h4>WHO-GMP Standards</h4>
+                        <p>All formulations adhere to certified strict quality guidelines.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Pan-India Network</h4>
+                        <p>Extensive PCD franchise network delivering healthcare everywhere.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="photo 2.jpg" alt="Madinal Lifescience Operations" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" onerror="handleImageError(this, 'photo 2')">
+            </div>
+        </div>
+    </section>
+
     <!-- Auto-Scrolling Product Gallery -->
-    <section class="gallery-section">
-        <h2 class="section-title">Product Gallery</h2>
-        <p class="section-subtitle">Hover to pause continuous scroll. Click any product to expand view.</p>
+    <section class="gallery-section" id="products">
+        <h2 class="section-title">Featured Product Gallery</h2>
+        <p class="section-subtitle">Hover over any product to pause. Click to enlarge full details.</p>
 
         <div class="marquee-container">
             <div class="marquee-track" id="galleryTrack">
-                <!-- Javascript populates PROD1.JPG to PROD19.JPG -->
+                <!-- Javascript auto-loads PROD1.JPG to PROD19.JPG -->
             </div>
         </div>
     </section>
 
     <!-- Therapeutic Categories Section -->
-    <section class="therapeutic-section">
+    <section class="therapeutic-section" id="therapeutic">
         <h2 class="section-title">Therapeutic Categories</h2>
-        <p class="section-subtitle">Click any category to open all available products.</p>
+        <p class="section-subtitle">Explore our specialized therapeutic ranges.</p>
 
         <div class="deck-container">
             <div class="therapeutic-card" onclick="openCategoryPopup('TABLET', 41)">
@@ -497,7 +600,32 @@
         </div>
     </section>
 
-    <!-- Category Products Popup Modal -->
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="features-section" id="whyus">
+        <h2 class="section-title">Why Partner With Us?</h2>
+        <p class="section-subtitle">We empower our franchise partners with unparalleled quality and commercial support.</p>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>Monopoly Rights</h3>
+                <p>Enjoy exclusive distribution and marketing monopoly rights in your designated territory.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Promotional Support</h3>
+                <p>We provide full promotional kits including visual aids, MR bags, catch covers, and brochures.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Timely Delivery</h3>
+                <p>Robust supply chain network ensuring on-time delivery for all order sizes.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Quality Packaging</h3>
+                <p>Advanced ALU-ALU and Blister packaging protecting formulations against contamination.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Products Modal -->
     <div class="modal-overlay" id="categoryModal">
         <div class="modal-window">
             <span class="close-btn" onclick="closeModal('categoryModal')">&times;</span>
@@ -515,13 +643,14 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
+        <p><strong>Madinal Lifescience</strong> | Quality Healthcare Solutions</p>
+        <p style="margin: 10px 0; font-size: 13px;">PCD Pharma Franchise & Contract Manufacturing Enquiries Welcome.</p>
         <p>&copy; 2026 Madinal Lifescience. All Rights Reserved.</p>
     </footer>
 
     <!-- JavaScript Logic -->
     <script>
-        // Automatic Fallback System for Extensions (.JPG, .jpg, .PNG, .png)
         function handleImageError(imgElem, baseName) {
             if (!imgElem.dataset.triedLower) {
                 imgElem.dataset.triedLower = "true";
@@ -535,7 +664,6 @@
             }
         }
 
-        // Hero Slider Controls
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slider-dots .dot');
@@ -552,7 +680,6 @@
             setHeroSlide((slideIndex + 1) % slides.length);
         }, 5000);
 
-        // Populate Product Gallery (PROD1 to PROD19)
         const galleryTrack = document.getElementById('galleryTrack');
         let galleryHTML = '';
         for (let i = 1; i <= 19; i++) {
@@ -562,9 +689,8 @@
                 </div>
             `;
         }
-        galleryTrack.innerHTML = galleryHTML + galleryHTML; // Duplicated for seamless marquee loop
+        galleryTrack.innerHTML = galleryHTML + galleryHTML;
 
-        // Open Category Popup Grid
         function openCategoryPopup(prefix, count) {
             document.getElementById('modalCategoryTitle').innerText = prefix + " Range";
             const grid = document.getElementById('categoryGrid');
@@ -573,7 +699,6 @@
             for (let i = 1; i <= count; i++) {
                 let ext = "JPG";
 
-                // PNG Extension exceptions
                 if (prefix === "TABLET" && (i === 3 || i === 18 || i === 35)) {
                     ext = "PNG";
                 } else if (prefix === "SYRUP" && (i === 3 || i === 6 || i === 7)) {
@@ -593,7 +718,6 @@
             document.getElementById('categoryModal').classList.add('active');
         }
 
-        // Lightbox Popup Controls
         function openLightbox(src, baseName) {
             const img = document.getElementById('lightboxImg');
             img.src = src;
@@ -605,7 +729,6 @@
             document.getElementById(id).classList.remove('active');
         }
 
-        // Close Modals when clicking outside content
         document.getElementById('categoryModal').addEventListener('click', (e) => {
             if (e.target.id === 'categoryModal') closeModal('categoryModal');
         });
