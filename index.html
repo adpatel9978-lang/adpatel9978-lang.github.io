@@ -19,16 +19,16 @@
             overflow-x: hidden;
         }
 
-        /* --- Header Layout with Translucent Glass Effect --- */
+        /* --- Header Layout --- */
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.40);
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .logo-branding-row {
@@ -36,7 +36,7 @@
             align-items: center;
             padding: 14px 8%;
             background: transparent;
-            border-bottom: 3px solid rgba(220, 38, 38, 0.85);
+            border-bottom: 3px solid #dc2626;
         }
 
         .logo-area {
@@ -83,7 +83,7 @@
             color: #2563eb;
         }
 
-        /* --- Full Screen Hero Slider --- */
+        /* --- Hero Slider --- */
         .hero-slider-wrapper {
             position: relative;
             width: 100%;
@@ -133,9 +133,6 @@
             z-index: 10;
             max-width: 850px;
             text-align: left;
-            background: transparent !important;
-            box-shadow: none !important;
-            padding: 0 !important;
         }
 
         .hero-title-large {
@@ -218,7 +215,7 @@
             transform: scale(1.3);
         }
 
-        /* --- Seamless Blended Literature Sections --- */
+        /* --- Blended Literature Sections --- */
         .blended-literature-section {
             padding: 60px 12%;
             background: #ffffff;
@@ -306,7 +303,7 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT GALLERY --- */
+        /* --- PRODUCT GALLERY (PROD1.JPG TO PROD19.JPG) --- */
         .bottom-gallery-2d {
             padding: 70px 0 40px 0;
             background: #ffffff;
@@ -331,13 +328,16 @@
         .marquee-container {
             width: 100%;
             overflow-x: auto;
-            white-space: nowrap;
             position: relative;
             cursor: grab;
             user-select: none;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            padding: 10px 0;
+            padding: 15px 0;
+        }
+
+        .marquee-container:active {
+            cursor: grabbing;
         }
 
         .marquee-container::-webkit-scrollbar {
@@ -348,6 +348,7 @@
             display: inline-flex;
             gap: 24px;
             padding: 0 20px;
+            white-space: nowrap;
         }
 
         .square-frame-2d {
@@ -378,9 +379,10 @@
             height: 100%;
             object-fit: contain;
             border-radius: 8px;
+            pointer-events: none;
         }
 
-        /* --- MODAL DIALOGS --- */
+        /* --- LIGHTBOX MODAL --- */
         .lightbox-modal {
             position: fixed;
             top: 0;
@@ -484,16 +486,9 @@
 
         .category-item-card img {
             width: 100%;
-            height: 160px;
+            height: 180px;
             object-fit: contain;
-            margin-bottom: 10px;
             border-radius: 8px;
-        }
-
-        .category-item-card h4 {
-            font-size: 15px;
-            color: #1e293b;
-            font-weight: 700;
         }
 
         /* --- 3D UNFOLDING RING --- */
@@ -615,7 +610,7 @@
         .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-155px) rotateX(-15deg) rotateZ(-240deg); opacity: 1; }
         .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-155px) rotateX(-15deg) rotateZ(-300deg); opacity: 1; }
 
-        /* --- ALL 7 THERAPEUTIC CATEGORIES --- */
+        /* --- THERAPEUTIC CATEGORIES --- */
         .categories-section {
             padding: 80px 8%;
             background: #f1f5f9;
@@ -673,7 +668,7 @@
         }
 
         .card-3d-item h4 {
-            font-size: 20px;
+            font-size: 22px;
             color: #0f172a;
             font-weight: 800;
         }
@@ -789,32 +784,25 @@
         </div>
     </section>
 
-    <!-- PRODUCT GALLERY -->
+    <!-- PRODUCT GALLERY (DYNAMIC PROD1.JPG TO PROD19.JPG) -->
     <section class="bottom-gallery-2d">
         <h2>Product Gallery</h2>
-        <p class="subtitle">Drag with mouse or swipe on mobile. Tap any image for full view.</p>
+        <p class="subtitle">Drag with mouse, touch-swipe on mobile, or click any product image for full view.</p>
 
         <div class="marquee-container" id="galleryContainer">
             <div class="marquee-track" id="galleryTrack">
-                <div class="square-frame-2d"><img src="TABLET1.JPG" alt="Tablet 1" onerror="this.src='https://via.placeholder.com/240?text=Tablet+1'"></div>
-                <div class="square-frame-2d"><img src="TABLET2.JPG" alt="Tablet 2" onerror="this.src='https://via.placeholder.com/240?text=Tablet+2'"></div>
-                <div class="square-frame-2d"><img src="SYRUP1.JPG" alt="Syrup 1" onerror="this.src='https://via.placeholder.com/240?text=Syrup+1'"></div>
-                <div class="square-frame-2d"><img src="INJECTABLE1.JPG" alt="Injectable 1" onerror="this.src='https://via.placeholder.com/240?text=Injectable+1'"></div>
-                <div class="square-frame-2d"><img src="POWDER1.JPG" alt="Powder 1" onerror="this.src='https://via.placeholder.com/240?text=Powder+1'"></div>
-                <div class="square-frame-2d"><img src="CAPSULE1.JPG" alt="Capsule 1" onerror="this.src='https://via.placeholder.com/240?text=Capsule+1'"></div>
-                <div class="square-frame-2d"><img src="SEMISOLID1.JPG" alt="Semisolid 1" onerror="this.src='https://via.placeholder.com/240?text=Semisolid+1'"></div>
-                <div class="square-frame-2d"><img src="AEROSOLS1.JPG" alt="Aerosols 1" onerror="this.src='https://via.placeholder.com/240?text=Aerosols+1'"></div>
+                <!-- Javascript dynamically inserts PROD1.JPG to PROD19.JPG -->
             </div>
         </div>
     </section>
 
-    <!-- POSITION 1: Medicine Quality, Wide Range, WHO-GMP Approved -->
+    <!-- Medicine Quality Literature Section -->
     <section class="blended-literature-section alt-bg">
         <h3>Uncompromising Medicine Quality & Extensive Product Range</h3>
-        <p>At Madinal Lifescience, our unwavering commitment to clinical excellence begins with our extensive and meticulously formulated portfolio of high-quality pharmaceutical products. We take immense pride in offering a comprehensive and diverse array of medicinal choices—including advanced tablets, capsules, therapeutic syrups, injectables, and specialized nutritional supplements—tailored to meet contemporary healthcare demands. Every single formulation is manufactured in state-of-the-art, WHO-GMP certified production facilities that adhere strictly to rigorous international quality parameters. From careful raw material inspection and advanced chemical assay testing to sterile packaging and environmental controls, our stringent quality assurance protocols ensure absolute safety, exceptional chemical purity, and high therapeutic efficacy. Healthcare professionals and institutional partners across the country rely on our medicinal offerings because each product represents our core philosophy: uncompromised safety, scientific precision, and accessible healing for all communities.</p>
+        <p>At Madinal Lifescience, our unwavering commitment to clinical excellence begins with our extensive and meticulously formulated portfolio of high-quality pharmaceutical products. We take immense pride in offering a comprehensive and diverse array of medicinal choices—including advanced tablets, capsules, therapeutic syrups, injectables, and specialized nutritional supplements—tailored to meet contemporary healthcare demands. Every single formulation is manufactured in state-of-the-art, WHO-GMP certified production facilities that adhere strictly to rigorous international quality parameters.</p>
     </section>
 
-    <!-- FULLSCREEN IMAGE LIGHTBOX -->
+    <!-- LIGHTBOX MODAL -->
     <div class="lightbox-modal" id="lightboxModal">
         <div class="lightbox-content">
             <span class="lightbox-close" id="lightboxClose">&times;</span>
@@ -822,13 +810,13 @@
         </div>
     </div>
 
-    <!-- CATEGORY ALL-MEDICINE POPUP MODAL -->
+    <!-- CATEGORY PRODUCTS POPUP MODAL -->
     <div class="lightbox-modal" id="categoryModal">
         <div class="category-modal-box">
             <span class="lightbox-close" id="categoryClose" style="color:#0f172a; top: 15px; right: 20px;">&times;</span>
             <h2 id="categoryModalTitle">Category Products</h2>
             <div class="category-grid" id="categoryGrid">
-                <!-- JavaScript populates items dynamically -->
+                <!-- JavaScript generates images inside -->
             </div>
         </div>
     </div>
@@ -897,59 +885,59 @@
         </div>
     </section>
 
-    <!-- POSITION 2: Business & PCD Franchise, Monopoly -->
+    <!-- Franchise Section Literature -->
     <section class="blended-literature-section">
         <h3>Lucrative PCD Pharma Franchise Opportunities & Monopoly Growth</h3>
-        <p>Beyond our manufacturing and clinical formulation strengths, Madinal Lifescience functions as a dynamic commercial partner offering exceptionally rewarding PCD Pharma Franchise business opportunities across India. We empower energetic entrepreneurs, pharmaceutical distributors, and medical representatives with robust commercial frameworks designed for sustainable growth and high market profitability. Our franchise model grants exclusive geographic monopoly rights, allowing our partners to operate with minimal local competition while maximizing brand penetration within their designated territories. To ensure our associates hit the ground running with absolute confidence, we supply comprehensive promotional merchandise, high-grade visual aids, detailed product literature, and attractive profit-margin structures. By bridging top-tier pharmaceutical inventory with the drive of our business partners, we cultivate long-term, mutually prosperous relationships that continuously expand quality healthcare access across regional markets.</p>
+        <p>Beyond our manufacturing and clinical formulation strengths, Madinal Lifescience functions as a dynamic commercial partner offering exceptionally rewarding PCD Pharma Franchise business opportunities across India. Our franchise model grants exclusive geographic monopoly rights, allowing our partners to operate with minimal local competition.</p>
     </section>
 
-    <!-- THERAPEUTIC CATEGORIES WITH 7 DYNAMIC CARDS & 3D ANIMATION -->
+    <!-- THERAPEUTIC CATEGORIES WITH CLEAN DISPLAY NAMES -->
     <section class="categories-section">
         <h2>Therapeutic Categories</h2>
-        <p class="subtitle">Click on any category to open all corresponding products.</p>
+        <p class="subtitle">Click on any category to view all product formulations inside.</p>
 
         <div class="deck-3d-stage" id="deckStage">
             <div class="card-3d-item pos-0" onclick="openCategoryModal('TABLET', 41)">
-                <img src="TABLET1.JPG" alt="Tablet" onerror="this.src='https://via.placeholder.com/270x230?text=Tablet'">
-                <h4>Tablets (41)</h4>
+                <img src="TABLET/TABLET1.JPG" alt="TABLET" onerror="this.src='TABLET1.JPG'">
+                <h4>TABLET</h4>
             </div>
 
-            <div class="card-3d-item pos-1" onclick="openCategoryModal('SYRUP', 8)">
-                <img src="SYRUP1.JPG" alt="Syrup" onerror="this.src='https://via.placeholder.com/270x230?text=Syrup'">
-                <h4>Syrups (8)</h4>
+            <div class="card-3d-item pos-1" onclick="openCategoryModal('SYRUP', 9)">
+                <img src="SYRUP/SYRUP1.JPG" alt="SYRUP" onerror="this.src='SYRUP1.JPG'">
+                <h4>SYRUP</h4>
             </div>
 
             <div class="card-3d-item pos-2" onclick="openCategoryModal('INJECTABLE', 5)">
-                <img src="INJECTABLE1.JPG" alt="Injectable" onerror="this.src='https://via.placeholder.com/270x230?text=Injectable'">
-                <h4>Injectables (5)</h4>
+                <img src="INJECTABLE/INJECTABLE1.JPG" alt="INJECTABLE" onerror="this.src='INJECTABLE1.JPG'">
+                <h4>INJECTABLE</h4>
             </div>
 
             <div class="card-3d-item pos-3" onclick="openCategoryModal('POWDER', 4)">
-                <img src="POWDER1.JPG" alt="Powder" onerror="this.src='https://via.placeholder.com/270x230?text=Powder'">
-                <h4>Powder / Nutra (4)</h4>
+                <img src="POWDER/POWDER1.JPG" alt="POWDER" onerror="this.src='POWDER1.JPG'">
+                <h4>POWDER</h4>
             </div>
 
             <div class="card-3d-item pos-4" onclick="openCategoryModal('CAPSULE', 2)">
-                <img src="CAPSULE1.JPG" alt="Capsule" onerror="this.src='https://via.placeholder.com/270x230?text=Capsule'">
-                <h4>Capsules (2)</h4>
+                <img src="CAPSULE/CAPSULE1.JPG" alt="CAPSULE" onerror="this.src='CAPSULE1.JPG'">
+                <h4>CAPSULE</h4>
             </div>
 
             <div class="card-3d-item pos-5" onclick="openCategoryModal('SEMISOLID', 1)">
-                <img src="SEMISOLID1.JPG" alt="Semisolid" onerror="this.src='https://via.placeholder.com/270x230?text=Semisolid'">
-                <h4>Semisolid (1)</h4>
+                <img src="SEMISOLID/SEMISOLID1.JPG" alt="SEMISOLID" onerror="this.src='SEMISOLID1.JPG'">
+                <h4>SEMISOLID</h4>
             </div>
 
             <div class="card-3d-item pos-6" onclick="openCategoryModal('AEROSOLS', 1)">
-                <img src="AEROSOLS1.JPG" alt="Aerosols" onerror="this.src='https://via.placeholder.com/270x230?text=Aerosols'">
-                <h4>Aerosols (1)</h4>
+                <img src="AEROSOLS/AEROSOLS1.JPG" alt="AEROSOLS" onerror="this.src='AEROSOLS1.JPG'">
+                <h4>AEROSOLS</h4>
             </div>
         </div>
     </section>
 
-    <!-- POSITION 3: Wide Network Distribution & Quality Service -->
+    <!-- Distribution Literature Section -->
     <section class="blended-literature-section alt-bg">
         <h3>Nationwide Distribution Network & Responsive Quality Service</h3>
-        <p>A superior pharmaceutical product is only as impactful as its ability to reach patients timely, safely, and reliably. Madinal Lifescience has engineered a robust, expansive, and highly responsive nationwide distribution network that seamlessly connects our central production facilities with stockists, chemists, and healthcare institutions across every corner of the country. Supported by sophisticated logistics management, climate-controlled warehousing facilities, and tamper-proof transit packaging, we guarantee rapid order processing and zero-delay inventory replenishment. Furthermore, our dedicated customer service and support teams work hand-in-hand with our distribution partners to resolve inquiries promptly, maintain transparent operations, and offer customer-centric assistance at every stage. This ongoing dedication to dependable supply chain logistics, ethical corporate values, and responsive service cements our reputation as a steadfast, pillar organization in the Indian pharmaceutical landscape.</p>
+        <p>A superior pharmaceutical product is only as impactful as its ability to reach patients timely, safely, and reliably. Madinal Lifescience has engineered a robust, expansive, and highly responsive nationwide distribution network that seamlessly connects our central production facilities with stockists, chemists, and healthcare institutions across every corner of the country.</p>
     </section>
 
     <!-- Footer -->
@@ -967,9 +955,7 @@
         function switchHeroSlide(index) {
             heroSlides[currentHeroSlide].classList.remove('active');
             dots[currentHeroSlide].classList.remove('active');
-            
             currentHeroSlide = index;
-            
             heroSlides[currentHeroSlide].classList.add('active');
             dots[currentHeroSlide].classList.add('active');
         }
@@ -990,68 +976,89 @@
                 }
             });
         }, { threshold: 0.25 });
-
         scrollTracker.observe(viewportStage);
 
-        // Product Gallery Continuous Drag & Scroll
-        const container = document.getElementById('galleryContainer');
+        // Populate Product Gallery (PROD1.JPG to PROD19.JPG)
         const track = document.getElementById('galleryTrack');
-        const trackContent = track.innerHTML;
-        track.innerHTML += trackContent;
+        let galleryHtml = '';
+        for (let i = 1; i <= 19; i++) {
+            galleryHtml += `
+                <div class="square-frame-2d" onclick="openLightboxDirect('PROD${i}.JPG')">
+                    <img src="PROD${i}.JPG" alt="PROD ${i}" onerror="this.onerror=null; this.src='PROD${i}.jpg';">
+                </div>
+            `;
+        }
+        // Duplicate content for infinite scrolling loop
+        track.innerHTML = galleryHtml + galleryHtml;
 
+        // Interactive Gallery Continuous Smooth Auto-Scroll & Drag / Swipe
+        const container = document.getElementById('galleryContainer');
         let autoScrollSpeed = 1; 
         let isPaused = false;
+        let isDragging = false;
+        let startX, scrollLeftPos;
 
-        function autoScroll() {
-            if (!isPaused) {
+        function smoothAutoScroll() {
+            if (!isPaused && !isDragging) {
                 container.scrollLeft += autoScrollSpeed;
                 if (container.scrollLeft >= track.scrollWidth / 2) {
                     container.scrollLeft = 0;
                 }
             }
-            requestAnimationFrame(autoScroll);
+            requestAnimationFrame(smoothAutoScroll);
         }
-        requestAnimationFrame(autoScroll);
+        requestAnimationFrame(smoothAutoScroll);
 
-        let isDown = false;
-        let startX, scrollLeft;
-
+        // Mouse Drag Controls
         container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            isPaused = true;
+            isDragging = true;
             startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
+            scrollLeftPos = container.scrollLeft;
         });
 
-        container.addEventListener('mouseleave', () => { isDown = false; isPaused = false; });
-        container.addEventListener('mouseup', () => { isDown = false; isPaused = false; });
+        container.addEventListener('mouseleave', () => { isDragging = false; });
+        container.addEventListener('mouseup', () => { isDragging = false; });
 
         container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
+            if (!isDragging) return;
             e.preventDefault();
             const x = e.pageX - container.offsetLeft;
             const walk = (x - startX) * 2;
-            container.scrollLeft = scrollLeft - walk;
+            container.scrollLeft = scrollLeftPos - walk;
         });
 
-        // Lightbox Popup
+        // Touch Swipe Controls for Mobile
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX - container.offsetLeft;
+            scrollLeftPos = container.scrollLeft;
+        }, { passive: true });
+
+        container.addEventListener('touchend', () => { isDragging = false; });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - container.offsetLeft;
+            const walk = (x - startX) * 2;
+            container.scrollLeft = scrollLeftPos - walk;
+        }, { passive: true });
+
+        // Lightbox Popup Controls
         const lightboxModal = document.getElementById('lightboxModal');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxClose = document.getElementById('lightboxClose');
 
-        document.querySelectorAll('.square-frame-2d img').forEach(img => {
-            img.addEventListener('click', (e) => {
-                lightboxImg.src = e.target.src;
-                lightboxModal.classList.add('active');
-            });
-        });
+        function openLightboxDirect(src) {
+            lightboxImg.src = src;
+            lightboxModal.classList.add('active');
+        }
 
         lightboxClose.addEventListener('click', () => lightboxModal.classList.remove('active'));
         lightboxModal.addEventListener('click', (e) => {
             if (e.target === lightboxModal) lightboxModal.classList.remove('active');
         });
 
-        // 3D Card Carousel Animation for all 7 Categories (Medium Pace)
+        // 3D Category Card Deck Animation
         const cards = Array.from(document.querySelectorAll('.card-3d-item'));
         const positions = ['pos-0', 'pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5', 'pos-6'];
 
@@ -1061,38 +1068,38 @@
                 card.className = `card-3d-item ${positions[i]}`;
             });
         }
-
         setInterval(rotateCards, 3500);
 
-        // Category Modal Logic: Dynamic image generation for all 7 categories
+        // Category Modal Logic (Folder & File Extensions Handler)
         const categoryModal = document.getElementById('categoryModal');
         const categoryModalTitle = document.getElementById('categoryModalTitle');
         const categoryGrid = document.getElementById('categoryGrid');
         const categoryClose = document.getElementById('categoryClose');
 
-        function openCategoryModal(prefix, count) {
-            categoryModalTitle.innerText = `${prefix} Range (${count} Products)`;
+        function openCategoryModal(categoryName, count) {
+            categoryModalTitle.innerText = categoryName;
             categoryGrid.innerHTML = '';
 
             for (let i = 1; i <= count; i++) {
-                const imgPathUpper = `${prefix}${i}.JPG`;
-                const imgPathLower = `${prefix}${i}.jpg`;
-                
+                // Determine extensions based on files saved as PNG
+                let ext = 'JPG';
+                if (categoryName === 'SYRUP' && (i === 3 || i === 6 || i === 7)) {
+                    ext = 'PNG';
+                }
+
+                const pathInFolder = `${categoryName}/${categoryName}${i}.${ext}`;
+                const pathDirect = `${categoryName}${i}.${ext}`;
+                const pathLower = `${categoryName}/${categoryName}${i}.${ext.toLowerCase()}`;
+
                 const cardHtml = `
-                    <div class="category-item-card" onclick="openLightboxDirect('${imgPathUpper}')">
-                        <img src="${imgPathUpper}" alt="${prefix} ${i}" onerror="this.onerror=null; this.src='${imgPathLower}';">
-                        <h4>${prefix} ${i}</h4>
+                    <div class="category-item-card" onclick="openLightboxDirect('${pathInFolder}')">
+                        <img src="${pathInFolder}" alt="${categoryName} ${i}" onerror="this.onerror=null; this.src='${pathDirect}'; this.onerror=function(){this.src='${pathLower}';};">
                     </div>
                 `;
                 categoryGrid.innerHTML += cardHtml;
             }
 
             categoryModal.classList.add('active');
-        }
-
-        function openLightboxDirect(src) {
-            lightboxImg.src = src;
-            lightboxModal.classList.add('active');
         }
 
         categoryClose.addEventListener('click', () => categoryModal.classList.remove('active'));
