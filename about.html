@@ -1,1 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Madinal Lifescience</title>
+
+    <meta name="description"
+          content="Learn about Madinal Lifescience, established in 2017 by MAHESH J. PATEL, and our experience, quality, consistency and service in the pharmaceutical market.">
+
+    <!-- Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+          rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   MADINAL LIFESCIENCE
+   ABOUT US PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   BRAND COLOURS
+   ========================================================= */
+
+:root {
+
+    --brand-blue: #087EA4;
+
+    --brand-blue-dark: #05627F;
+
+    --brand-blue-light: #EEF7FA;
+
+    --brand-red: #E53935;
+
+    --brand-red-light: #FFF3F2;
+
+    --dark: #123447;
+
+    --text: #455B66;
+
+    --muted: #71858E;
+
+    --light: #F6FAFB;
+
+    --border: #DCE7EB;
+
+    --white: #FFFFFF;
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    color: var(--text);
+
+    background: var(--white);
+
+    overflow-x: hidden;
+
+}
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   GENERAL CONTAINER
+   ========================================================= */
+
+.about-container {
+
+    width: min(1180px, 90%);
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.about-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.about-nav {
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.about-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.about-logo img {
+
+    width: 58px;
+
+    height: 48px;
+
+    object-fit: contain;
+
+}
+
+
+.about-logo-name {
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    color: var(--dark);
+
+    letter-spacing: -.3px;
+
+}
+
+
+.about-logo-name span {
+
+    color: var(--brand-blue);
+
+}
+
+
+.about-logo-sub {
+
+    margin-top: 3px;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.about-navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.about-navigation a {
+
+    position: relative;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    color: var(--dark);
+
+    transition: color .25s ease;
+
+}
+
+
+.about-navigation a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--brand-blue);
+
+    transition: width .25s ease;
+
+}
+
+
+.about-navigation a:hover,
+
+.about-navigation a.active {
+
+    color: var(--brand-blue);
+
+}
+
+
+.about-navigation a:hover::after,
+
+.about-navigation a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   HERO / PAGE TITLE
+   ========================================================= */
+
+.about-hero {
+
+    position: relative;
+
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            #F7FBFC 0%,
+            #FFFFFF 55%,
+            #F2F9FB 100%
+        );
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+/* Decorative circle */
+
+.about-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+
+    height: 480px;
+
+    right: -190px;
+
+    top: -220px;
+
+    border: 1px solid rgba(8,126,164,.12);
+
+    border-radius: 50%;
+
+}
+
+
+/* Second decorative circle */
+
+.about-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    right: -80px;
+
+    bottom: -170px;
+
+    border: 1px solid rgba(229,57,53,.08);
+
+    border-radius: 50%;
+
+}
+
+
+.about-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.about-eyebrow {
+
+    display: inline-block;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: var(--brand-blue);
+
+}
+
+
+.about-hero h1 {
+
+    margin: 14px 0 17px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(48px, 7vw, 76px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    color: var(--dark);
+
+}
+
+
+.about-hero h1 span {
+
+    color: var(--brand-blue);
+
+}
+
+
+.about-hero p {
+
+    max-width: 690px;
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   ABOUT US INFORMATION / STORY
+   ========================================================= */
+
+.about-story {
+
+    padding: 100px 0;
+
+    background: var(--white);
+
+}
+
+
+.about-story-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(230px, .45fr);
+
+    gap: 65px;
+
+    align-items: start;
+
+}
+
+
+/* Main information card */
+
+.about-story-card {
+
+    padding: 45px 48px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-left: 5px solid var(--brand-blue);
+
+    border-radius: 0 17px 17px 0;
+
+    box-shadow:
+        0 18px 45px rgba(18,52,71,.055);
+
+}
+
+
+.about-story-card p {
+
+    margin: 0 0 22px;
+
+    font-size: 16px;
+
+    line-height: 1.95;
+
+    color: var(--text);
+
+}
+
+
+.about-story-card p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.about-story-card strong {
+
+    color: var(--dark);
+
+}
+
+
+/* =========================================================
+   2017 SIDE ELEMENT
+   ========================================================= */
+
+.about-year {
+
+    position: sticky;
+
+    top: 115px;
+
+}
+
+
+.about-year-number {
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(80px, 9vw, 115px);
+
+    line-height: .8;
+
+    font-weight: 800;
+
+    letter-spacing: -8px;
+
+    color: rgba(8,126,164,.11);
+
+}
+
+
+.about-year-line {
+
+    width: 100%;
+
+    height: 2px;
+
+    margin: 25px 0 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--brand-red),
+            var(--brand-blue)
+        );
+
+}
+
+
+.about-year h3 {
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    color: var(--dark);
+
+}
+
+
+.about-year p {
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   QUALITY / CONSISTENCY / SERVICE
+   ========================================================= */
+
+.about-qcs {
+
+    padding: 75px 0;
+
+    background: var(--light);
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.about-qcs-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.about-qcs-card {
+
+    padding: 31px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.about-qcs-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(18,52,71,.08);
+
+}
+
+
+/* Icons */
+
+.qcs-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 23px;
+
+    border: 2px solid var(--brand-blue);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: var(--brand-blue);
+
+}
+
+
+.qcs-icon.red {
+
+    border-color: var(--brand-red);
+
+    color: var(--brand-red);
+
+}
+
+
+.about-qcs-card h3 {
+
+    margin: 0 0 10px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 20px;
+
+    color: var(--dark);
+
+}
+
+
+.about-qcs-card p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.about-experience {
+
+    padding: 100px 0;
+
+    background: var(--white);
+
+}
+
+
+.about-experience-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+.about-experience h2 {
+
+    max-width: 650px;
+
+    margin: 12px 0 20px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(34px,4vw,52px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    color: var(--dark);
+
+}
+
+
+.about-experience p {
+
+    max-width: 680px;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: var(--muted);
+
+}
+
+
+.about-experience strong {
+
+    color: var(--dark);
+
+}
+
+
+/* =========================================================
+   EXPERIENCE TAGS
+   ========================================================= */
+
+.experience-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+}
+
+
+.experience-tags span {
+
+    padding: 9px 13px;
+
+    border-radius: 5px;
+
+    background: var(--brand-blue-light);
+
+    border: 1px solid #C9E3EB;
+
+    color: var(--brand-blue-dark);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+.experience-tags .red {
+
+    background: var(--brand-red-light);
+
+    border-color: #F4CFCD;
+
+    color: #C92E2A;
+
+}
+
+
+/* =========================================================
+   EXPERIENCE BOX
+   ========================================================= */
+
+.experience-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 40px;
+
+    background: var(--dark);
+
+    border-radius: 17px;
+
+    color: var(--white);
+
+}
+
+
+.experience-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    right: -100px;
+
+    top: -80px;
+
+    border: 1px solid rgba(8,126,164,.35);
+
+    border-radius: 50%;
+
+}
+
+
+.experience-number {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 80px;
+
+    line-height: .9;
+
+    font-weight: 800;
+
+    letter-spacing: -5px;
+
+    color: var(--brand-blue);
+
+}
+
+
+.experience-box h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 20px 0 8px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 20px;
+
+    color: var(--white);
+
+}
+
+
+.experience-box p {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: #A9BAC2;
+
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.about-values {
+
+    padding: 95px 0;
+
+    background: var(--dark);
+
+}
+
+
+.about-values-heading {
+
+    max-width: 750px;
+
+}
+
+
+.about-values-heading h2 {
+
+    margin: 12px 0 15px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(34px,4vw,52px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    color: var(--white);
+
+}
+
+
+.about-values-heading p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #A9BAC2;
+
+}
+
+
+.about-values-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+    margin-top: 40px;
+
+}
+
+
+.about-value {
+
+    min-height: 220px;
+
+    padding: 30px;
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid rgba(255,255,255,.11);
+
+    border-radius: 13px;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+
+}
+
+
+.about-value:hover {
+
+    transform: translateY(-7px);
+
+    background: rgba(8,126,164,.10);
+
+}
+
+
+.about-value > span {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    color: var(--brand-blue);
+
+}
+
+
+.about-value h3 {
+
+    margin: 45px 0 10px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 21px;
+
+    color: var(--white);
+
+}
+
+
+.about-value p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: #A9BAC2;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.about-footer {
+
+    padding: 55px 0;
+
+    text-align: center;
+
+    background: var(--white);
+
+}
+
+
+.about-footer h3 {
+
+    margin: 0 0 7px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 24px;
+
+    color: var(--dark);
+
+}
+
+
+.about-footer p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   SCROLL ANIMATIONS
+   ========================================================= */
+
+.about-reveal {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.about-left {
+
+    transform: translateX(-40px);
+
+}
+
+
+.about-right {
+
+    transform: translateX(40px);
+
+}
+
+
+.about-delay-1 {
+
+    transition-delay: .12s;
+
+}
+
+
+.about-delay-2 {
+
+    transition-delay: .24s;
+
+}
+
+
+.about-reveal.visible {
+
+    opacity: 1;
+
+    transform: translate(0,0);
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .about-navigation {
+
+        display: none;
+
+    }
+
+
+    .about-story-grid,
+
+    .about-experience-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .about-year {
+
+        position: relative;
+
+        top: auto;
+
+    }
+
+
+    .about-qcs-grid,
+
+    .about-values-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-container {
+
+        width: 92%;
+
+    }
+
+
+    .about-story,
+
+    .about-experience {
+
+        padding: 70px 0;
+
+    }
+
+
+    .about-qcs,
+
+    .about-values {
+
+        padding: 70px 0;
+
+    }
+
+
+    .about-hero {
+
+        min-height: 400px;
+
+    }
+
+
+    .about-hero h1 {
+
+        font-size: 50px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .about-hero p {
+
+        font-size: 14px;
+
+    }
+
+
+    .about-story-card {
+
+        padding: 29px 22px;
+
+    }
+
+
+    .about-story-card p {
+
+        font-size: 14px;
+
+        line-height: 1.85;
+
+    }
+
+
+    .about-year-number {
+
+        font-size: 82px;
+
+    }
+
+
+    .about-qcs-grid,
+
+    .about-values-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-experience h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .experience-box {
+
+        padding: 30px;
+
+    }
+
+
+    .experience-number {
+
+        font-size: 70px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="about-header">
+
+    <div class="about-container about-nav">
+
+
+        <a href="index.html"
+           class="about-logo">
+
+
+            <!--
+                IMPORTANT:
+                Make sure this filename exactly matches
+                the logo filename in your GitHub repository.
+            -->
+
+            <img src="MADINAL%20LOGO.jpg"
+                 alt="Madinal Lifescience Logo">
+
+
+            <div>
+
+                <div class="about-logo-name">
+
+                    MADINAL
+                    <span>LIFESCIENCE</span>
+
+                </div>
+
+
+                <div class="about-logo-sub">
+
+                    PHARMACEUTICAL HEALTHCARE
+
+                </div>
+
+            </div>
+
+
+        </a>
+
+
+        <nav class="about-navigation">
+
+
+            <a href="index.html">
+                HOME
+            </a>
+
+
+            <a href="about.html"
+               class="active">
+                ABOUT US
+            </a>
+
+
+            <a href="index.html#products">
+                PRODUCTS
+            </a>
+
+
+            <a href="index.html#business">
+                BUSINESS
+            </a>
+
+
+            <a href="index.html#literature">
+                LITERATURE
+            </a>
+
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     ABOUT US TITLE
+     ===================================================== -->
+
+<section class="about-hero">
+
+
+    <div class="about-container about-hero-content about-reveal">
+
+
+        <div class="about-eyebrow">
+
+            MADINAL LIFESCIENCE
+
+        </div>
+
+
+        <h1>
+
+            About <span>Us</span>
+
+        </h1>
+
+
+        <p>
+
+            A pharmaceutical business built through years of
+            market experience, a broad product portfolio,
+            consistent quality and dependable service.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT US INFORMATION
+     
+     NO "OUR STORY" HEADING
+     ===================================================== -->
+
+<section class="about-story">
+
+
+    <div class="about-container">
+
+
+        <div class="about-story-grid">
+
+
+            <!-- MAIN ABOUT INFORMATION -->
+
+            <article class="about-story-card about-reveal about-left">
+
+
+                <p>
+
+                    Established in
+                    <strong>2017 by MAHESH J. PATEL</strong>,
+                    Madinal Lifescience began its journey with a
+                    clear focus on serving the pharmaceutical
+                    market through dependable products and
+                    professional business relationships.
+
+                </p>
+
+
+                <p>
+
+                    Over the years, we have developed a wide
+                    range of pharmaceutical and healthcare
+                    products across categories including
+                    <strong>antipyretics, analgesics,
+                    anti-inflammatory medicines, antibiotics,
+                    painkillers, multivitamins, energy powders,
+                    antacids</strong> and many other healthcare
+                    products.
+
+                </p>
+
+
+                <p>
+
+                    Our experience has taught us that a strong
+                    pharmaceutical business is built not only
+                    on the products it offers, but also on
+                    <strong>quality, consistency and service</strong>.
+                    We therefore place importance on maintaining
+                    consistency in our work, responsible product
+                    handling, clear communication and dependable
+                    support for the customers, distributors and
+                    business partners we work with.
+
+                </p>
+
+
+                <p>
+
+                    From our beginning in 2017 to where we are
+                    today, our approach has remained practical
+                    and relationship-driven. Our experience over
+                    the years continues to shape how we work,
+                    how we understand the market and how we build
+                    lasting professional relationships.
+
+                </p>
+
+
+            </article>
+
+
+
+            <!-- 2017 -->
+
+            <aside class="about-year about-reveal about-right">
+
+
+                <div class="about-year-number">
+
+                    2017
+
+                </div>
+
+
+                <div class="about-year-line"></div>
+
+
+                <h3>
+
+                    Established by<br>
+                    MAHESH J. PATEL
+
+                </h3>
+
+
+                <p>
+
+                    The beginning of Madinal Lifescience's
+                    journey in the pharmaceutical market.
+
+                </p>
+
+
+            </aside>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     QUALITY / CONSISTENCY / SERVICE
+     ===================================================== -->
+
+<section class="about-qcs">
+
+
+    <div class="about-container">
+
+
+        <div class="about-qcs-grid">
+
+
+            <!-- QUALITY -->
+
+            <div class="about-qcs-card about-reveal">
+
+
+                <div class="qcs-icon">
+
+                    Q
+
+                </div>
+
+
+                <h3>
+
+                    Quality
+
+                </h3>
+
+
+                <p>
+
+                    We give importance to product consistency,
+                    responsible handling and the quality
+                    expectations of the market we serve.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- CONSISTENCY -->
+
+            <div class="about-qcs-card about-reveal about-delay-1">
+
+
+                <div class="qcs-icon red">
+
+                    C
+
+                </div>
+
+
+                <h3>
+
+                    Consistency
+
+                </h3>
+
+
+                <p>
+
+                    Our experience has reinforced the value
+                    of consistent products, communication and
+                    professional business practices.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- SERVICE -->
+
+            <div class="about-qcs-card about-reveal about-delay-2">
+
+
+                <div class="qcs-icon">
+
+                    S
+
+                </div>
+
+
+                <h3>
+
+                    Service
+
+                </h3>
+
+
+                <p>
+
+                    Dependable communication and responsive
+                    service help us maintain long-term
+                    relationships with our business partners.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+     ===================================================== -->
+
+<section class="about-experience">
+
+
+    <div class="about-container">
+
+
+        <div class="about-experience-grid">
+
+
+            <div class="about-reveal about-left">
+
+
+                <div class="about-eyebrow">
+
+                    EXPERIENCE OVER THE YEARS
+
+                </div>
+
+
+                <h2>
+
+                    Growing with the market while staying
+                    focused on what matters.
+
+                </h2>
+
+
+                <p>
+
+                    With years of experience behind us,
+                    we understand that customers and business
+                    partners value
+                    <strong>dependability, consistency and
+                    professional service</strong>
+                    just as much as a broad product portfolio.
+
+                </p>
+
+
+                <p>
+
+                    That understanding continues to influence
+                    how we work, how we communicate and how we
+                    build relationships across the pharmaceutical
+                    market.
+
+                </p>
+
+
+                <div class="experience-tags">
+
+
+                    <span>
+
+                        Experience
+
+                    </span>
+
+
+                    <span>
+
+                        Quality
+
+                    </span>
+
+
+                    <span>
+
+                        Consistency
+
+                    </span>
+
+
+                    <span class="red">
+
+                        Service
+
+                    </span>
+
+
+                    <span>
+
+                        Relationships
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- EXPERIENCE BOX -->
+
+            <div class="experience-box about-reveal about-right">
+
+
+                <div class="experience-number">
+
+                    2017
+
+                </div>
+
+
+                <h3>
+
+                    Our journey began
+
+                </h3>
+
+
+                <p>
+
+                    Years of pharmaceutical market experience,
+                    understanding and professional relationships
+                    continue to shape Madinal Lifescience.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     VALUES
+     ===================================================== -->
+
+<section class="about-values">
+
+
+    <div class="about-container">
+
+
+        <div class="about-values-heading about-reveal">
+
+
+            <div class="about-eyebrow">
+
+                WHAT DEFINES US
+
+            </div>
+
+
+            <h2>
+
+                The principles behind
+                Madinal Lifescience.
+
+            </h2>
+
+
+            <p>
+
+                Experience, quality and service remain central
+                to the way we approach our business and
+                relationships.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="about-values-grid">
+
+
+            <!-- EXPERIENCE -->
+
+            <div class="about-value about-reveal">
+
+
+                <span>
+
+                    01
+
+                </span>
+
+
+                <h3>
+
+                    Experience
+
+                </h3>
+
+
+                <p>
+
+                    Our journey since 2017 has given us
+                    practical understanding of the
+                    pharmaceutical market and its evolving
+                    needs.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- QUALITY -->
+
+            <div class="about-value about-reveal about-delay-1">
+
+
+                <span>
+
+                    02
+
+                </span>
+
+
+                <h3>
+
+                    Quality
+
+                </h3>
+
+
+                <p>
+
+                    We remain attentive to product consistency
+                    and the quality expectations associated
+                    with the products we supply.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- SERVICE -->
+
+            <div class="about-value about-reveal about-delay-2">
+
+
+                <span>
+
+                    03
+
+                </span>
+
+
+                <h3>
+
+                    Service
+
+                </h3>
+
+
+                <p>
+
+                    Professional communication, dependable
+                    support and lasting relationships are an
+                    important part of our approach.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="about-footer">
+
+
+    <div class="about-container">
+
+
+        <h3>
+
+            MADINAL LIFESCIENCE
+
+        </h3>
+
+
+        <p>
+
+            Experience. Quality. Service.
+
+        </p>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     SCROLL ANIMATION
+     ===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        const elements =
+            document.querySelectorAll(
+                ".about-reveal"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+
+                    entries.forEach(
+                        function (entry) {
+
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+
+                                entry.target
+                                    .classList
+                                    .add("visible");
+
+
+                            }
+
+                        }
+                    );
+
+
+                },
+
+                {
+
+                    threshold: 0.12
+
+                }
+
+            );
+
+
+        elements.forEach(
+            function (element) {
+
+                observer.observe(element);
+
+            }
+        );
+
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
