@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | Madinal Lifescience</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --blue:#087EA4;
+    --blue-dark:#05627F;
+    --dark:#123447;
+    --text:#455B66;
+    --muted:#71858E;
+    --border:#DCE7EB;
+    --bg:#F7FAFB;
+    --white:#FFFFFF;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"DM Sans",Arial,sans-serif;
+    color:var(--text);
+    background:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(12px);
+}
+
+.nav{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo img{
+    width:57px;
+    height:48px;
+    object-fit:contain;
+}
+
+.logo-name{
+    font:800 17px Manrope;
+    color:var(--dark);
+}
+
+.logo-name span{
+    color:var(--blue);
+}
+
+.logo-sub{
+    font-size:7px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    color:var(--muted);
+    margin-top:3px;
+}
+
+.links{
+    display:flex;
+    gap:28px;
+}
+
+.links a{
+    font-size:10px;
+    font-weight:700;
+    color:var(--dark);
+    position:relative;
+}
+
+.links a:after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--blue);
+    transition:.25s;
+}
+
+.links a:hover,
+.links a.active{
+    color:var(--blue);
+}
+
+.links a:hover:after,
+.links a.active:after{
+    width:100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:78px 0 70px;
+    background:linear-gradient(120deg,#f5fafb,#fff 60%,#f2f8fa);
+    border-bottom:1px solid var(--border);
+}
+
+.eyebrow{
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2.5px;
+    color:var(--blue);
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font:800 clamp(46px,7vw,70px)/1 Manrope;
+    letter-spacing:-3px;
+    color:var(--dark);
+    margin:14px 0;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero p{
+    max-width:650px;
+    margin:0;
+    font-size:15px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact{
+    padding:80px 0;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:28px;
+}
+
+.panel{
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:#fff;
+    box-shadow:0 12px 35px rgba(18,52,71,.05);
+    padding:35px;
+}
+
+.panel h2{
+    font:800 25px Manrope;
+    color:var(--dark);
+    margin:0 0 24px;
+}
+
+.detail{
+    padding:17px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.detail:last-child{
+    border:0;
+}
+
+.label{
+    font-size:9px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:6px;
+}
+
+.value{
+    font-size:13px;
+    line-height:1.7;
+    color:var(--dark);
+}
+
+.value a:hover{
+    color:var(--blue);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    display:block;
+    font-size:10px;
+    font-weight:700;
+    color:var(--dark);
+    margin-bottom:7px;
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:12px 13px;
+    font:13px "DM Sans";
+    color:var(--dark);
+    outline:none;
+    background:#fbfdfe;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    border-color:var(--blue);
+}
+
+.field select{
+    cursor:pointer;
+}
+
+textarea{
+    min-height:135px;
+    resize:vertical;
+}
+
+.button{
+    border:0;
+    border-radius:7px;
+    padding:13px 24px;
+    background:var(--blue);
+    color:#fff;
+    font:700 11px "DM Sans";
+    cursor:pointer;
+    transition:.2s;
+}
+
+.button:hover{
+    background:var(--blue-dark);
+}
+
+
+/* =========================
+   DISTRIBUTOR NETWORK
+========================= */
+
+.network{
+    padding:80px 0;
+    background:var(--bg);
+    border-top:1px solid var(--border);
+}
+
+.network-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    margin-bottom:28px;
+}
+
+.network-head h2{
+    font:800 38px Manrope;
+    letter-spacing:-1.5px;
+    color:var(--dark);
+    margin:8px 0 0;
+}
+
+.network-head p{
+    font-size:11px;
+    color:var(--muted);
+    margin:0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.dist{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:19px;
+    min-height:135px;
+    transition:.2s;
+}
+
+.dist:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 25px rgba(18,52,71,.06);
+}
+
+.dist-no{
+    font-size:9px;
+    font-weight:800;
+    color:var(--blue);
+    letter-spacing:1px;
+}
+
+.dist h3{
+    font:700 15px Manrope;
+    color:var(--dark);
+    margin:7px 0 6px;
+}
+
+.dist p{
+    font-size:11px;
+    line-height:1.65;
+    color:var(--muted);
+    margin:0;
+}
+
+.phone{
+    display:inline-block;
+    margin-top:9px;
+    font-size:10px;
+    font-weight:700;
+    color:var(--blue-dark);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    text-align:center;
+    padding:40px 0;
+    border-top:1px solid var(--border);
+}
+
+.footer strong{
+    font:800 18px Manrope;
+    color:var(--dark);
+}
+
+.footer p{
+    font-size:10px;
+    color:var(--muted);
+    margin:6px 0 0;
+}
+
+
+/* =========================
+   SUBTLE ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .55s ease,transform .55s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px){
+
+    .links{
+        display:none;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .network-head{
+        display:block;
+    }
+
+    .network-head p{
+        margin-top:10px;
+    }
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .contact,
+    .network{
+        padding:60px 0;
+    }
+}
+
+
+@media(max-width:560px){
+
+    .grid,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .panel{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .nav{
+        min-height:70px;
+    }
+
+    .logo img{
+        width:50px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+<div class="container nav">
+
+<a class="logo" href="index.html">
+
+<img src="MADINAL%20LOGO.jpg" alt="Madinal Lifescience">
+
+<div>
+
+<div class="logo-name">
+MADINAL <span>LIFESCIENCE</span>
+</div>
+
+<div class="logo-sub">
+PHARMACEUTICAL HEALTHCARE
+</div>
+
+</div>
+
+</a>
+
+
+<nav class="links">
+
+<a href="index.html">
+HOME
+</a>
+
+<a href="about.html">
+ABOUT US
+</a>
+
+<a href="index.html#products">
+PRODUCTS
+</a>
+
+<a href="index.html#business">
+PCD FRANCHISE
+</a>
+
+<a class="active" href="contact.html">
+CONTACT US
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="container reveal">
+
+<div class="eyebrow">
+MADINAL LIFESCIENCE
+</div>
+
+<h1>
+Contact <span>Us</span>
+</h1>
+
+<p>
+For product enquiries, business opportunities, distributor requirements or general assistance, connect with our team.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     OFFICE + ENQUIRY
+========================= -->
+
+<section class="contact">
+
+<div class="container contact-grid">
+
+
+<!-- OFFICE -->
+
+<div class="panel reveal">
+
+<div class="eyebrow">
+GET IN TOUCH
+</div>
+
+<h2>
+Our Office
+</h2>
+
+
+<div class="detail">
+
+<div class="label">
+Address
+</div>
+
+<div class="value">
+
+42 Shivam4 Estate,<br>
+Behind Satyam Mall,<br>
+Opposite IOC Petrol Pump,<br>
+Sarkhej-Bavla Road,<br>
+Changodar, Ahmedabad
+
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="label">
+Email
+</div>
+
+<div class="value">
+
+<a href="mailto:madinallifesciences@gmail.com">
+madinallifesciences@gmail.com
+</a>
+
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="label">
+Office No. 1
+</div>
+
+<div class="value">
+
+<a href="tel:+917383372960">
++91 7383372960
+</a>
+
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="label">
+Office No. 2
+</div>
+
+<div class="value">
+
+<a href="tel:+917383434971">
++91 7383434971
+</a>
+
+</div>
+
+</div>
+
+
+<div class="detail">
+
+<div class="label">
+Director
+</div>
+
+<div class="value">
+
+<a href="tel:+919913977154">
++91 9913977154
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ENQUIRY FORM -->
+
+<div class="panel reveal">
+
+<div class="eyebrow">
+ENQUIRY
+</div>
+
+<h2>
+Send an Enquiry
+</h2>
+
+
+<form onsubmit="event.preventDefault(); alert('Thank you. Your enquiry has been received.');">
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+Name
+</label>
+
+<input
+type="text"
+required
+placeholder="Your name">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Phone Number
+</label>
+
+<input
+type="tel"
+required
+placeholder="+91">
+
+</div>
+
+
+<div class="field">
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+required
+placeholder="you@example.com">
+
+</div>
+
+
+<div class="field">
+
+<label>
+State
+</label>
+
+<input
+type="text"
+required
+placeholder="Your state">
+
+</div>
+
+
+<div class="field full">
+
+<label>
+City
+</label>
+
+<input
+type="text"
+required
+placeholder="Your city">
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Message / Enquiry
+</label>
+
+<textarea
+required
+placeholder="Tell us about your enquiry..."></textarea>
+
+</div>
+
+
+</div>
+
+
+<button class="button" type="submit">
+SEND ENQUIRY
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     DISTRIBUTORS
+========================= -->
+
+<section class="network">
+
+<div class="container">
+
+
+<div class="network-head reveal">
+
+<div>
+
+<div class="eyebrow">
+DISTRIBUTOR NETWORK
+</div>
+
+<h2>
+Our Distributors
+</h2>
+
+</div>
+
+<p>
+Our current distributor network across multiple markets.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="dist reveal">
+<div class="dist-no">01 · AHMEDABAD</div>
+<h3>DK Pharma</h3>
+<p>Ashram Road</p>
+<a class="phone" href="tel:9925035108">9925035108</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">02 · DESSA</div>
+<h3>Prasad Pharma</h3>
+<p>Shivnagar Road</p>
+<a class="phone" href="tel:9727673325">9727673325</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">03 · PATAN</div>
+<h3>Shree Dutt Medical Agency</h3>
+<p>Kilachand Shopping Centre</p>
+<a class="phone" href="tel:9723467887">9723467887</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">04 · MEHSANA</div>
+<h3>JK Agency</h3>
+<p>Janta Super Market</p>
+<a class="phone" href="tel:9662040153">9662040153</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">05 · PALANPUR</div>
+<h3>Akash Distributor</h3>
+<p>ST Road</p>
+<a class="phone" href="tel:9429922908">9429922908</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">06 · MORBI</div>
+<h3>Medicare Marketing</h3>
+<p>Savsar Plot Main Road</p>
+<a class="phone" href="tel:9825421233">9825421233</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">07 · PALI RAJASTHAN</div>
+<h3>Prakash Pharma</h3>
+<p>Suraj Pole Pali</p>
+<a class="phone" href="tel:9414550396">9414550396</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">08 · JODHPUR</div>
+<h3>Siddhi Vinayak Associates</h3>
+<p>Jhalori Gate Jodhpur</p>
+<a class="phone" href="tel:7665293031">7665293031</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">09 · GODHRA</div>
+<h3>Agam Distributors</h3>
+<p>Prabha Road Godhra</p>
+<a class="phone" href="tel:8401154534">8401154534</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">10 · BARDOLI</div>
+<h3>Shivanshi Pharma</h3>
+<p>Surat</p>
+<a class="phone" href="tel:7984840014">7984840014</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">11 · VYARA</div>
+<h3>Jesal Medico</h3>
+<p>Vyara</p>
+<a class="phone" href="tel:9427126659">9427126659</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">12 · VADODARA</div>
+<h3>Asmee Pharma</h3>
+<p>Pratap Road, Raopura</p>
+<a class="phone" href="tel:9409789800">9409789800</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">13 · SURAT</div>
+<h3>Zen Medico</h3>
+<p>Vastadevdi, Katargam</p>
+<a class="phone" href="tel:9979603149">9979603149</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">14 · HIMMATNAGAR</div>
+<h3>Chirag Enterprise</h3>
+<p>ST Bustand</p>
+<a class="phone" href="tel:9824015798">9824015798</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">15 · JODHPUR</div>
+<h3>KSR Distributors</h3>
+<p>Jodhpur, Rajasthan</p>
+<a class="phone" href="tel:9785523000">9785523000</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">16 · KUTCH BHUJ</div>
+<h3>Ashapura Medical Agency</h3>
+<p>Kutch Bhuj</p>
+<a class="phone" href="tel:9428749400">9428749400</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">17 · RAJKOT</div>
+<h3>Bhavya Enterprise</h3>
+<p>Subhash Road, Rajkot</p>
+<a class="phone" href="tel:9712800345">9712800345</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">18 · BOTAD</div>
+<h3>Kedar Distributor</h3>
+<p>Paliyad Road</p>
+<a class="phone" href="tel:9624632038">9624632038</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">19 · UJJAIN</div>
+<h3>Vidhyashri Pharma</h3>
+<p>Dawa Bajar</p>
+<a class="phone" href="tel:9998868838">9998868838</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">20 · INDORE</div>
+<h3>Shree Mahavir Agency</h3>
+<p>Indore, Madhya Pradesh</p>
+<a class="phone" href="tel:7987394595">7987394595</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">21 · MAHARASHTRA</div>
+<h3>Shree Smarth Pharma</h3>
+<p>Jalgaon</p>
+<a class="phone" href="tel:9689922642">9689922642</a>
+</div>
+
+
+<div class="dist reveal">
+<div class="dist-no">22 · VADODARA</div>
+<h3>Amber Pharma</h3>
+<p>Raopura</p>
+<a class="phone" href="tel:8733050613">8733050613</a>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+<strong>
+MADINAL LIFESCIENCE
+</strong>
+
+<p>
+Experience. Quality. Service.
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+const observer =
+new IntersectionObserver(
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+{threshold:.1}
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => observer.observe(element));
+
+</script>
+
+
+</body>
+</html>
