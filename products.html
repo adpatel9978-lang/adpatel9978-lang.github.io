@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,20 +14,19 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html, body {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             background: #f8fafc;
             color: #0f172a;
+            overflow-x: hidden;
         }
 
-        /* =========================================================
-           SAME HEADER AS HOME PAGE
-           ========================================================= */
+        /* =====================================================
+           SAME HEADER AS INDEX.HTML
+           ===================================================== */
 
         header {
             position: sticky;
@@ -55,12 +53,6 @@
             gap: 14px;
         }
 
-        .logo-area img {
-            height: 55px;
-            width: auto;
-            object-fit: contain;
-        }
-
         .logo-text {
             font-size: 24px;
             font-weight: 800;
@@ -83,7 +75,6 @@
             display: flex;
             list-style: none;
             gap: 45px;
-            align-items: center;
         }
 
         .nav-links a {
@@ -101,401 +92,310 @@
             color: #2563eb;
         }
 
-        /* =========================================================
-           PRODUCTS HERO
-           ========================================================= */
 
-        .products-hero {
-            min-height: 330px;
-            padding: 75px 8%;
+        /* =====================================================
+           PRODUCT HERO
+           ===================================================== */
+
+        .product-hero {
+            min-height: 390px;
+            padding: 90px 8%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
 
             background:
-                linear-gradient(
-                    135deg,
-                    rgba(15, 23, 42, 0.96),
-                    rgba(30, 58, 138, 0.94)
-                );
+                radial-gradient(circle at 85% 25%,
+                    rgba(37, 99, 235, 0.13),
+                    transparent 32%),
+                radial-gradient(circle at 10% 80%,
+                    rgba(220, 38, 38, 0.08),
+                    transparent 30%),
+                #ffffff;
         }
 
-        .products-hero-content {
-            max-width: 900px;
+        .product-hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
         }
 
-        .products-hero h1 {
-            font-size: 52px;
-            line-height: 1.15;
-            color: #ffffff;
+        .hero-small-title {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .product-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
             font-weight: 900;
-            margin-bottom: 18px;
-            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+            color: #0f172a;
+            margin-bottom: 22px;
         }
 
-        .products-hero h1 span {
-            color: #60a5fa;
+        .product-hero h1 span {
+            color: #2563eb;
         }
 
-        .products-hero p {
-            color: #e2e8f0;
-            font-size: 18px;
-            line-height: 1.7;
+        .product-hero p {
             max-width: 780px;
-            margin: 0 auto;
+            color: #475569;
+            font-size: 18px;
+            line-height: 1.8;
         }
 
-        /* =========================================================
-           PRODUCTS SECTION
-           ========================================================= */
+        .hero-line {
+            width: 80px;
+            height: 5px;
+            background: #dc2626;
+            border-radius: 10px;
+            margin-top: 28px;
+        }
+
+
+        /* =====================================================
+           PRODUCT CATALOGUE
+           ===================================================== */
 
         .products-section {
-            padding: 70px 7%;
-            background: #ffffff;
+            padding: 70px 8% 100px;
+            background: #f1f5f9;
+        }
+
+        .products-container {
+            max-width: 1250px;
+            margin: auto;
         }
 
         .section-heading {
             text-align: center;
-            margin-bottom: 38px;
+            margin-bottom: 45px;
         }
 
         .section-heading h2 {
-            font-size: 36px;
-            color: #0f172a;
+            font-size: 38px;
             font-weight: 800;
+            color: #0f172a;
             margin-bottom: 10px;
-        }
-
-        .section-heading h2 span {
-            color: #2563eb;
         }
 
         .section-heading p {
             color: #64748b;
             font-size: 16px;
-            line-height: 1.6;
         }
 
-        /* =========================================================
-           SEARCH + FILTER
-           ========================================================= */
 
-        .product-controls {
-            max-width: 1200px;
-            margin: 0 auto 30px;
+        /* =====================================================
+           SEARCH + FILTERS
+           ===================================================== */
 
-            display: flex;
-            gap: 15px;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+        .catalogue-toolbar {
+            background: #ffffff;
+            padding: 22px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+            margin-bottom: 30px;
         }
 
-        .search-box {
-            flex: 1;
-            min-width: 260px;
+        .search-wrapper {
             position: relative;
+            margin-bottom: 18px;
         }
 
-        .search-box input {
+        .search-wrapper input {
             width: 100%;
             height: 52px;
-            padding: 0 20px;
-
             border: 1px solid #cbd5e1;
             border-radius: 10px;
-
+            padding: 0 18px;
             font-size: 15px;
             color: #0f172a;
-            background: #ffffff;
-
             outline: none;
             transition: border-color 0.2s ease,
                         box-shadow 0.2s ease;
         }
 
-        .search-box input:focus {
+        .search-wrapper input:focus {
             border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
         }
 
-        .category-filter {
-            height: 52px;
-            min-width: 220px;
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
 
-            padding: 0 18px;
-
+        .filter-btn {
             border: 1px solid #cbd5e1;
-            border-radius: 10px;
-
             background: #ffffff;
             color: #0f172a;
-
-            font-size: 15px;
-            font-weight: 600;
-
-            outline: none;
+            border-radius: 30px;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 700;
             cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        .category-filter:focus {
+        .filter-btn:hover {
             border-color: #2563eb;
+            color: #2563eb;
         }
 
-        /* =========================================================
-           PRODUCT TABLE
-           ========================================================= */
-
-        .table-wrapper {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-
-            overflow-x: auto;
-
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-
-            background: #ffffff;
-        }
-
-        .products-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 750px;
-        }
-
-        .products-table thead {
-            background: #0f172a;
+        .filter-btn.active {
+            background: #2563eb;
+            border-color: #2563eb;
             color: #ffffff;
         }
 
-        .products-table th {
-            padding: 18px 20px;
-            text-align: left;
-
+        .product-count {
+            color: #64748b;
             font-size: 14px;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-
-            white-space: nowrap;
+            margin: 20px 0 12px;
         }
 
-        .products-table td {
-            padding: 17px 20px;
 
-            border-bottom: 1px solid #e2e8f0;
+        /* =====================================================
+           PRODUCT LIST
+           ===================================================== */
 
-            font-size: 15px;
-            line-height: 1.5;
-
-            color: #334155;
-            vertical-align: middle;
+        .product-list {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
         }
 
-        .products-table tbody tr {
-            transition: background 0.2s ease;
-        }
+        .product-header {
+            display: grid;
+            grid-template-columns: 70px 1.2fr 2fr 130px;
+            gap: 20px;
 
-        .products-table tbody tr:hover {
-            background: #f8fafc;
-        }
+            background: #0f172a;
+            color: #ffffff;
 
-        .products-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .product-number {
-            width: 70px;
-            font-weight: 800;
-            color: #2563eb !important;
-        }
-
-        .brand-name {
-            font-weight: 800;
-            color: #0f172a !important;
-            min-width: 170px;
-        }
-
-        .composition {
-            min-width: 300px;
-        }
-
-        .dosage-form {
-            min-width: 130px;
-        }
-
-        .form-badge {
-            display: inline-block;
-
-            padding: 6px 12px;
-
-            border-radius: 20px;
-
-            background: #eff6ff;
-            color: #1d4ed8;
+            padding: 18px 22px;
 
             font-size: 12px;
             font-weight: 800;
-
             text-transform: uppercase;
-            white-space: nowrap;
+            letter-spacing: 1px;
         }
 
-        /* =========================================================
-           NO RESULTS
-           ========================================================= */
+        .category-title {
+            padding: 18px 22px;
 
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 45px 20px;
-            color: #64748b;
-        }
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(37, 99, 235, 0.10),
+                    rgba(220, 38, 38, 0.03)
+                );
 
-        .no-results h3 {
-            font-size: 22px;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
+            border-bottom: 1px solid #e2e8f0;
+            border-top: 1px solid #e2e8f0;
 
-        /* =========================================================
-           PRODUCT INFORMATION SECTION
-           ========================================================= */
-
-        .product-info-section {
-            padding: 70px 8%;
-            background: #f1f5f9;
-            border-top: 1px solid #cbd5e1;
-        }
-
-        .product-info-container {
-            max-width: 1150px;
-            margin: 0 auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .info-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 30px;
-
-            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
-
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            border-color: #2563eb;
-        }
-
-        .info-card .icon {
-            width: 48px;
-            height: 48px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 12px;
-
-            background: #eff6ff;
-            color: #2563eb;
-
-            font-size: 23px;
-            font-weight: 900;
-
-            margin-bottom: 18px;
-        }
-
-        .info-card:nth-child(2) .icon,
-        .info-card:nth-child(2) h3 {
-            color: #dc2626;
-        }
-
-        .info-card:nth-child(2) .icon {
-            background: #fef2f2;
-        }
-
-        .info-card h3 {
-            font-size: 21px;
             color: #1e3a8a;
-            margin-bottom: 10px;
+
+            font-size: 18px;
             font-weight: 800;
         }
 
-        .info-card p {
-            color: #64748b;
-            font-size: 15px;
-            line-height: 1.75;
+        .category-title:first-child {
+            border-top: none;
         }
 
-        /* =========================================================
-           CTA
-           ========================================================= */
+        .product-row {
+            display: grid;
+            grid-template-columns: 70px 1.2fr 2fr 130px;
+            gap: 20px;
+            align-items: center;
 
-        .products-cta {
-            padding: 70px 8%;
+            padding: 19px 22px;
+
+            border-bottom: 1px solid #e2e8f0;
+
             background: #ffffff;
-            text-align: center;
-        }
-
-        .products-cta h2 {
-            font-size: 32px;
-            color: #0f172a;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .products-cta p {
-            max-width: 720px;
-            margin: 0 auto 25px;
-
-            color: #64748b;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        .cta-btn {
-            display: inline-block;
-
-            padding: 14px 32px;
-
-            background: #2563eb;
-            color: #ffffff;
-
-            text-decoration: none;
-            font-weight: 700;
-
-            border-radius: 8px;
-
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
 
             transition:
                 background 0.2s ease,
                 transform 0.2s ease;
         }
 
-        .cta-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
+        .product-row:hover {
+            background: #f8fbff;
         }
 
-        /* =========================================================
+        .product-row:last-child {
+            border-bottom: none;
+        }
+
+        .product-number {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .brand-name {
+            color: #0f172a;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .composition-label {
+            display: block;
+            color: #2563eb;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .composition {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .product-form {
+            justify-self: start;
+
+            padding: 7px 12px;
+
+            border-radius: 30px;
+            border: 1px solid #cbd5e1;
+
+            color: #475569;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            color: #64748b;
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
            FOOTER
-           ========================================================= */
+           ===================================================== */
 
         footer {
             background: #0f172a;
@@ -506,23 +406,25 @@
             border-top: 4px solid #dc2626;
         }
 
-        /* =========================================================
-           TABLET
-           ========================================================= */
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
 
         @media (max-width: 992px) {
-
-            .translucent-nav-bar {
-                justify-content: center;
-            }
 
             .logo-branding-row {
                 justify-content: center;
             }
 
-            .product-info-container {
-                grid-template-columns: 1fr;
-                max-width: 700px;
+            .translucent-nav-bar {
+                justify-content: center;
+            }
+
+            .product-header,
+            .product-row {
+                grid-template-columns: 55px 1fr 1.7fr 110px;
+                gap: 14px;
             }
 
             .products-section {
@@ -531,11 +433,15 @@
             }
         }
 
-        /* =========================================================
-           MOBILE
-           ========================================================= */
 
         @media (max-width: 767px) {
+
+            html,
+            body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
 
             header {
                 position: sticky;
@@ -552,7 +458,7 @@
             }
 
             .logo-area img {
-                height: 42px;
+                height: 42px !important;
                 max-width: 52px;
             }
 
@@ -583,109 +489,127 @@
                 letter-spacing: 0.2px;
             }
 
-            /* Hero */
 
-            .products-hero {
-                min-height: 300px;
-                padding: 55px 20px;
+            /* HERO */
+
+            .product-hero {
+                min-height: auto;
+                padding: 60px 20px 55px;
             }
 
-            .products-hero h1 {
-                font-size: clamp(32px, 9vw, 44px);
-                line-height: 1.15;
+            .hero-small-title {
+                font-size: 11px;
+                letter-spacing: 1.7px;
             }
 
-            .products-hero p {
+            .product-hero h1 {
+                font-size: clamp(38px, 11vw, 52px);
+                line-height: 1.08;
+                margin-bottom: 18px;
+            }
+
+            .product-hero p {
                 font-size: 15px;
-                line-height: 1.65;
+                line-height: 1.7;
             }
 
-            /* Products */
+
+            /* SECTION */
 
             .products-section {
-                padding: 45px 14px;
+                padding: 45px 14px 65px;
             }
 
             .section-heading {
-                margin-bottom: 25px;
+                margin-bottom: 28px;
             }
 
             .section-heading h2 {
-                font-size: 28px;
+                font-size: 29px;
             }
 
             .section-heading p {
                 font-size: 14px;
+                line-height: 1.5;
             }
 
-            .product-controls {
-                flex-direction: column;
-                align-items: stretch;
-                margin-bottom: 22px;
+
+            /* TOOLBAR */
+
+            .catalogue-toolbar {
+                padding: 15px;
+                border-radius: 12px;
             }
 
-            .search-box {
-                width: 100%;
-                min-width: 0;
+            .filter-buttons {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scrollbar-width: none;
+                padding-bottom: 4px;
             }
 
-            .category-filter {
-                width: 100%;
-                min-width: 0;
+            .filter-buttons::-webkit-scrollbar {
+                display: none;
             }
 
-            .table-wrapper {
-                border-radius: 10px;
+            .filter-btn {
+                flex-shrink: 0;
+                font-size: 11px;
+                padding: 9px 13px;
             }
 
-            .products-table {
-                min-width: 700px;
+
+            /* MOBILE PRODUCT LIST */
+
+            .product-header {
+                display: none;
             }
 
-            .products-table th {
-                padding: 15px 14px;
-                font-size: 12px;
+            .product-row {
+                display: grid;
+                grid-template-columns: 38px 1fr;
+                gap: 8px 12px;
+                padding: 18px 15px;
             }
 
-            .products-table td {
-                padding: 14px;
+            .product-number {
+                grid-column: 1;
+                grid-row: 1;
+                padding-top: 2px;
+            }
+
+            .brand-name {
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 15px;
+            }
+
+            .composition {
+                grid-column: 1 / -1;
+                grid-row: 2;
                 font-size: 13px;
+                line-height: 1.6;
             }
 
-            /* Info */
-
-            .product-info-section {
-                padding: 45px 16px;
+            .product-form {
+                grid-column: 2;
+                grid-row: 3;
+                justify-self: start;
+                margin-top: 3px;
             }
 
-            .product-info-container {
-                gap: 14px;
+            .composition-label {
+                font-size: 9px;
             }
 
-            .info-card {
-                padding: 23px;
+            .category-title {
+                padding: 16px 15px;
+                font-size: 16px;
             }
 
-            .info-card h3 {
-                font-size: 19px;
-            }
-
-            .info-card p {
-                font-size: 14px;
-            }
-
-            /* CTA */
-
-            .products-cta {
-                padding: 50px 18px;
-            }
-
-            .products-cta h2 {
-                font-size: 26px;
-            }
-
-            .products-cta p {
-                font-size: 14px;
+            .product-count {
+                font-size: 12px;
             }
 
             footer {
@@ -694,9 +618,6 @@
             }
         }
 
-        /* =========================================================
-           VERY SMALL PHONES
-           ========================================================= */
 
         @media (max-width: 380px) {
 
@@ -712,558 +633,1051 @@
                 font-size: 11px;
             }
 
-            .products-hero {
-                min-height: 280px;
+            .product-hero {
+                padding-left: 16px;
+                padding-right: 16px;
             }
 
-            .products-hero h1 {
-                font-size: 30px;
+            .product-hero h1 {
+                font-size: 36px;
             }
 
-            .products-hero p {
-                font-size: 14px;
+            .products-section {
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
-            .section-heading h2 {
-                font-size: 25px;
+            .product-row {
+                padding: 16px 12px;
             }
         }
+
+
+        /* =====================================================
+           ANIMATION
+           ===================================================== */
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(18px);
+            transition:
+                opacity 0.55s ease,
+                transform 0.55s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- =========================================================
-         SAME HEADER AS HOME PAGE
-         Products is now the ACTIVE page.
-         ========================================================= -->
 
-    <header>
+<!-- =========================================================
+     SAME HEADER AS INDEX.HTML
+     ========================================================= -->
 
-        <div class="logo-branding-row">
+<header>
 
-            <div class="logo-area">
+    <div class="logo-branding-row">
 
+        <div class="logo-area">
+
+            <a href="index.html">
                 <img
                     src="MADINAL LOGO.jpg"
                     alt="Madinal Lifescience Logo"
+                    style="
+                        height:55px;
+                        width:auto;
+                        object-fit:contain;
+                    "
                 >
+            </a>
 
-                <div class="logo-text">
-                    MADINAL <span>LIFESCIENCE</span>
-                </div>
-
+            <div class="logo-text">
+                MADINAL <span>LIFESCIENCE</span>
             </div>
 
         </div>
 
-        <div class="translucent-nav-bar">
+    </div>
 
-            <ul class="nav-links">
 
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
+    <div class="translucent-nav-bar">
 
-                <li>
-                    <a href="about.html">
-                        About Us
-                    </a>
-                </li>
+        <ul class="nav-links">
 
-                <li>
-                    <a href="products.html" class="active">
-                        Products
-                    </a>
-                </li>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
 
-                <li>
-                    <a href="#">
-                        PCD Franchise
-                    </a>
-                </li>
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
 
-                <li>
-                    <a href="contact.html">
-                        Contact Us
-                    </a>
-                </li>
+            <li>
+                <a href="product.html" class="active">Products</a>
+            </li>
 
-            </ul>
+            <li>
+                <a href="#">PCD Franchise</a>
+            </li>
 
+            <li>
+                <a href="contact.html">Contact Us</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PRODUCT HERO
+     ========================================================= -->
+
+<section class="product-hero">
+
+    <div class="product-hero-content fade-up">
+
+        <div class="hero-small-title">
+            Madinal Lifescience · Product Portfolio
         </div>
 
-    </header>
+        <h1>
+            Our <span>Products</span>
+        </h1>
+
+        <p>
+            Explore the pharmaceutical product portfolio of Madinal
+            Lifescience, organised according to our therapeutic
+            categories and presented with brand name, composition
+            and dosage form.
+        </p>
+
+        <div class="hero-line"></div>
+
+    </div>
+
+</section>
 
 
-    <!-- =========================================================
-         PRODUCTS HERO
-         ========================================================= -->
 
-    <section class="products-hero">
+<!-- =========================================================
+     PRODUCTS
+     ========================================================= -->
 
-        <div class="products-hero-content">
+<section class="products-section">
 
-            <h1>
-                Our <span>Products</span>
-            </h1>
-
-            <p>
-                Explore the pharmaceutical product portfolio of
-                Madinal Lifescience, covering a wide range of
-                quality formulations developed to meet diverse
-                healthcare requirements.
-            </p>
-
-        </div>
-
-    </section>
+    <div class="products-container">
 
 
-    <!-- =========================================================
-         PRODUCTS CATALOGUE
-         ========================================================= -->
-
-    <section class="products-section">
-
-        <div class="section-heading">
+        <div class="section-heading fade-up">
 
             <h2>
-                Pharmaceutical <span>Product Portfolio</span>
+                Pharmaceutical Product Portfolio
             </h2>
 
             <p>
-                Browse our products by brand name, composition or dosage form.
+                Browse our products by therapeutic category
+                or search by brand name or composition.
             </p>
 
         </div>
 
 
-        <!-- Search and category filter -->
 
-        <div class="product-controls">
+        <!-- SEARCH + FILTER -->
 
-            <div class="search-box">
+        <div class="catalogue-toolbar fade-up">
+
+            <div class="search-wrapper">
 
                 <input
-                    type="text"
+                    type="search"
                     id="productSearch"
-                    placeholder="Search by brand name or composition..."
-                    onkeyup="filterProducts()"
+                    placeholder="Search product or composition..."
+                    autocomplete="off"
                 >
 
             </div>
 
 
-            <select
-                id="categoryFilter"
-                class="category-filter"
-                onchange="filterProducts()"
-            >
+            <div class="filter-buttons" id="filterButtons">
 
-                <option value="all">
-                    All Dosage Forms
-                </option>
+                <button
+                    class="filter-btn active"
+                    data-filter="ALL"
+                >
+                    ALL
+                </button>
 
-                <option value="tablet">
-                    Tablet
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="ANTIBIOTICS"
+                >
+                    ANTIBIOTICS
+                </button>
 
-                <option value="capsule">
-                    Capsule
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="IRON & VITAMINS"
+                >
+                    IRON & VITAMINS
+                </button>
 
-                <option value="syrup">
-                    Syrup
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="ANTI COLD-COUGH / ANTI HISTAMINICS"
+                >
+                    COLD-COUGH
+                </button>
 
-                <option value="injectable">
-                    Injectable
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="ANTACIDS"
+                >
+                    ANTACIDS
+                </button>
 
-                <option value="powder">
-                    Powder
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="STEROIDS"
+                >
+                    STEROIDS
+                </button>
 
-                <option value="semi solids">
-                    Semi Solids
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="ANTI PYRETICS / PAIN KILLERS"
+                >
+                    PAIN KILLERS
+                </button>
 
-                <option value="aerosols">
-                    Aerosols
-                </option>
+                <button
+                    class="filter-btn"
+                    data-filter="INJECTABLE"
+                >
+                    INJECTABLE
+                </button>
 
-            </select>
+                <button
+                    class="filter-btn"
+                    data-filter="RPOTRIN & ENERGY POWDER"
+                >
+                    ENERGY POWDER
+                </button>
+
+            </div>
 
         </div>
 
 
-        <!-- Product table -->
-
-        <div class="table-wrapper">
-
-            <table class="products-table">
-
-                <thead>
-
-                    <tr>
-
-                        <th>No.</th>
-
-                        <th>Brand Name</th>
-
-                        <th>Composition</th>
-
-                        <th>Form</th>
-
-                    </tr>
-
-                </thead>
+        <p class="product-count" id="productCount">
+            57 products listed
+        </p>
 
 
-                <tbody id="productTableBody">
+
+        <!-- =================================================
+             PRODUCT TABLE
+             ================================================= -->
+
+        <div class="product-list">
+
+            <div class="product-header">
+
+                <span>No.</span>
+
+                <span>Brand Name</span>
+
+                <span>Composition</span>
+
+                <span>Form</span>
+
+            </div>
 
 
-                    <!-- =================================================
-                         PRODUCT DATA
-
-                         ADD YOUR PRODUCTS BELOW.
-
-                         FORMAT:
-
-                         <tr
-                           data-category="tablet"
-                           data-search="brand composition"
-                         >
-
-                         <td>1</td>
-
-                         <td class="brand-name">
-                             BRAND NAME
-                         </td>
-
-                         <td class="composition">
-                             Composition here
-                         </td>
-
-                         <td class="dosage-form">
-                             <span class="form-badge">
-                                 Tablet
-                             </span>
-                         </td>
-
-                         </tr>
-
-                         ================================================= -->
-
-
-                    <tr
-                        data-category="tablet"
-                        data-search="sample tablet composition"
-                    >
-
-                        <td class="product-number">
-                            1
-                        </td>
-
-                        <td class="brand-name">
-                            PRODUCT NAME
-                        </td>
-
-                        <td class="composition">
-                            Product composition
-                        </td>
-
-                        <td class="dosage-form">
-                            <span class="form-badge">
-                                Tablet
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr
-                        data-category="capsule"
-                        data-search="sample capsule composition"
-                    >
-
-                        <td class="product-number">
-                            2
-                        </td>
-
-                        <td class="brand-name">
-                            PRODUCT NAME
-                        </td>
-
-                        <td class="composition">
-                            Product composition
-                        </td>
-
-                        <td class="dosage-form">
-                            <span class="form-badge">
-                                Capsule
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr
-                        data-category="syrup"
-                        data-search="sample syrup composition"
-                    >
-
-                        <td class="product-number">
-                            3
-                        </td>
-
-                        <td class="brand-name">
-                            PRODUCT NAME
-                        </td>
-
-                        <td class="composition">
-                            Product composition
-                        </td>
-
-                        <td class="dosage-form">
-                            <span class="form-badge">
-                                Syrup
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <!-- =================================================
-                         DELETE THE THREE SAMPLE PRODUCTS ABOVE AND
-                         REPLACE THEM WITH YOUR ACTUAL PRODUCTS.
-                         ================================================= -->
-
-
-                </tbody>
-
-            </table>
-
+            <div id="productContainer"></div>
 
             <div
                 class="no-results"
                 id="noResults"
             >
-
-                <h3>
-                    No Products Found
-                </h3>
-
-                <p>
-                    Try changing your search or dosage form filter.
-                </p>
-
+                No products found matching your search.
             </div>
 
         </div>
 
-    </section>
-
-
-    <!-- =========================================================
-         PRODUCT INFORMATION
-         ========================================================= -->
-
-    <section class="product-info-section">
-
-        <div class="product-info-container">
-
-
-            <div class="info-card">
-
-                <div class="icon">
-                    ✓
-                </div>
-
-                <h3>
-                    Quality Focused
-                </h3>
-
-                <p>
-                    Our pharmaceutical portfolio is developed with
-                    a strong focus on quality, consistency and
-                    dependable formulation standards.
-                </p>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="icon">
-                    +
-                </div>
-
-                <h3>
-                    Wide Product Range
-                </h3>
-
-                <p>
-                    Our portfolio covers multiple dosage forms and
-                    therapeutic requirements to provide healthcare
-                    partners with a comprehensive range of options.
-                </p>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="icon">
-                    →
-                </div>
-
-                <h3>
-                    Reliable Service
-                </h3>
-
-                <p>
-                    We focus on responsive communication, dependable
-                    supply and professional support for our customers
-                    and business partners.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         CTA
-         ========================================================= -->
-
-    <section class="products-cta">
-
-        <h2>
-            Looking for a Pharmaceutical Partner?
-        </h2>
-
-        <p>
-            Connect with Madinal Lifescience to discuss our product
-            portfolio, distribution requirements and PCD franchise
-            opportunities.
-        </p>
-
-        <a
-            href="contact.html"
-            class="cta-btn"
-        >
-            Contact Us
-        </a>
-
-    </section>
-
-
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
-
-    <footer>
-
-        <p>
-            &copy; 2026 Madinal Lifescience. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- =========================================================
-         PRODUCT SEARCH SCRIPT
-         ========================================================= -->
-
-    <script>
-
-        function filterProducts() {
-
-            const searchInput =
-                document
-                .getElementById('productSearch')
-                .value
-                .toLowerCase()
-                .trim();
-
-            const category =
-                document
-                .getElementById('categoryFilter')
-                .value
-                .toLowerCase();
-
-            const rows =
-                document.querySelectorAll(
-                    '#productTableBody tr'
-                );
-
-            let visibleCount = 0;
-
-
-            rows.forEach(function(row) {
-
-                const searchText =
-                    row
-                    .getAttribute('data-search')
-                    .toLowerCase();
-
-                const rowCategory =
-                    row
-                    .getAttribute('data-category')
-                    .toLowerCase();
-
-
-                const matchesSearch =
-                    searchText.includes(searchInput);
-
-                const matchesCategory =
-                    category === 'all' ||
-                    rowCategory === category;
-
-
-                if (
-                    matchesSearch &&
-                    matchesCategory
-                ) {
-
-                    row.style.display = '';
-
-                    visibleCount++;
-
-                } else {
-
-                    row.style.display = 'none';
-
-                }
-
-            });
-
-
-            const noResults =
-                document.getElementById('noResults');
-
-
-            if (visibleCount === 0) {
-
-                noResults.style.display = 'block';
-
-            } else {
-
-                noResults.style.display = 'none';
-
-            }
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <p>
+        &copy; 2026 Madinal Lifescience.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   PRODUCT DATA
+   57 PRODUCTS
+   PACKING INTENTIONALLY REMOVED
+   ========================================================= */
+
+const products = [
+
+    /* =======================
+       ANTIBIOTICS
+       ======================= */
+
+    {
+        no: "01",
+        category: "ANTIBIOTICS",
+        brand: "CEPOSAN-200 TAB.",
+        composition: "Cefpodoxime 200 mg dispersible tablet.",
+        form: "Tablet"
+    },
+
+    {
+        no: "02",
+        category: "ANTIBIOTICS",
+        brand: "MITACEF-200 LB TAB.",
+        composition: "Cefixime 200 mg + Lactobacillus",
+        form: "Tablet"
+    },
+
+    {
+        no: "03",
+        category: "ANTIBIOTICS",
+        brand: "MITACEF-CV TAB.",
+        composition: "Cefixime 200 mg + Clavulanate acid 125 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "04",
+        category: "ANTIBIOTICS",
+        brand: "MITACEF-OF TAB.",
+        composition: "Cefixime 200 mg + Ofloxacin 200 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "05",
+        category: "ANTIBIOTICS",
+        brand: "LEVOMAD 250 TAB.",
+        composition: "Levofloxacin 250 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "06",
+        category: "ANTIBIOTICS",
+        brand: "LEVOMAD 500 TAB.",
+        composition: "Levofloxacin 500 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "07",
+        category: "ANTIBIOTICS",
+        brand: "SYNACLAVE-625 TAB.",
+        composition: "Amoxicillin 500 mg + Clavulanic acid 125 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "08",
+        category: "ANTIBIOTICS",
+        brand: "SYNACLAVE-625 LB TAB.",
+        composition: "Amoxicillin 500 mg + Clavulanic acid 125 mg + Lactobacillus 60 million spores",
+        form: "Tablet"
+    },
+
+    {
+        no: "09",
+        category: "ANTIBIOTICS",
+        brand: "SYNACLOX LB CAP.",
+        composition: "Amoxycillin 250 mg + Cloxacillin 250 mg + Lactobacillus 90 million spores",
+        form: "Capsule"
+    },
+
+    {
+        no: "10",
+        category: "ANTIBIOTICS",
+        brand: "ZIMIT-250/500 TAB.",
+        composition: "Azithromycin 250/500 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "11",
+        category: "ANTIBIOTICS",
+        brand: "DEVID-OZ TAB.",
+        composition: "Ofloxacin 200 mg + Ornidazole 500 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "12",
+        category: "ANTIBIOTICS",
+        brand: "MOXINAL-400 TAB.",
+        composition: "Moxifloxacin 400 mg",
+        form: "Tablet"
+    },
+
+
+    /* =======================
+       IRON & VITAMINS
+       ======================= */
+
+    {
+        no: "13",
+        category: "IRON & VITAMINS",
+        brand: "FERIMIT-XT TAB.",
+        composition: "Ferrous ascorbate 100 mg + Folic acid 1.5 mg + Zinc sulphate 22.5 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "14",
+        category: "IRON & VITAMINS",
+        brand: "MECOSAN-12 TAB.",
+        composition: "Methylcobalamin 750 mg + Folic acid 5 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "15",
+        category: "IRON & VITAMINS",
+        brand: "XIMCAL-D3 SOFT GELATIN CAPS.",
+        composition: "Cholecalciferol (Vitamin D3) 60,000 IU",
+        form: "Soft Gelatin Capsule"
+    },
+
+    {
+        no: "16",
+        category: "IRON & VITAMINS",
+        brand: "MECONAL-MD TAB.",
+        composition: "L-Methylfolate calcium 5 mg + Pyridoxine-5-phosphate 0.5 mg + Vitamin B12 2.25 mcg + Vitamin D3 2000 IU",
+        form: "Tablet"
+    },
+
+    {
+        no: "17",
+        category: "IRON & VITAMINS",
+        brand: "MECONAL NP-SR TAB.",
+        composition: "Pregabalin 75 mg + Methylcobalamine 1500 mcg + Nortriptyline 10 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "18",
+        category: "IRON & VITAMINS",
+        brand: "NERVIFOL-D TAB.",
+        composition: "L-Methylfolate 5 mg + Methylcobalamine 1500 mcg + Pyridoxal-5-phosphate 0.5 mg + Vitamin D3 2000 IU + DHA 200 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "19",
+        category: "IRON & VITAMINS",
+        brand: "MECOSAN OD TAB.",
+        composition: "Methylcobalamine 1500 mcg + Vitamin A 5000 IU + Alpha lipoic acid 100 mg + Inositol 100 mg + Vitamin B1 10 mg + Pyridoxine HCl 1.5 mg + Vitamin E 25 IU + Calcium pantothenate 10 mg + Folic acid 1500 mcg + Chromium 200 mcg + Elemental selenium 163.6 mcg",
+        form: "Tablet"
+    },
+
+    {
+        no: "20",
+        category: "IRON & VITAMINS",
+        brand: "XEROXID TAB.",
+        composition: "Black grape extract 25 mg + Lycopene 2 mg + Lutein 3 mg + Vitamin A 3330 IU + Vitamin B1 1.8 mg + Vitamin B2 2.5 mg + Vitamin B6 1.5 mg + Methylcobalamin 2.5 mg + Folic acid 300 mcg + Zinc sulphate 23 mg + Green tea 50 mg + Beta carotene 4.2 mg + Biotin 30 mcg + Vitamin C 80 mg + Vitamin E 15 IU",
+        form: "Tablet"
+    },
+
+
+    /* =======================
+       ANTI COLD / COUGH
+       ======================= */
+
+    {
+        no: "21",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-P SYP.",
+        composition: "Paracetamol 125 mg + CPM 1 mg + Phenylephrine 2.5 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "22",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-P DS SYP.",
+        composition: "Paracetamol 250 mg + CPM 2 mg + Phenylephrine 5 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "23",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-DM SYP.",
+        composition: "Dextromethorphan HBr 15 mg + Phenylephrine HCl 5 mg + Chlorpheniramine maleate 2 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "24",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-DM SYP.",
+        composition: "Dextromethorphan HBr 15 mg + Phenylephrine HCl 5 mg + Chlorpheniramine maleate 2 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "25",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-AT SYP.",
+        composition: "Ambroxol HCl 15 mg + Terbutaline sulphate 1.25 mg + Guaiphenesin 50 mg + Menthol 2.5 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "26",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-LS SYP.",
+        composition: "Levosalbutamol sulphate 1 mg + Ambroxol hydrochloride 30 mg + Guaiphenesin 50 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "27",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-CP SUSP.",
+        composition: "Dextromethorphan HBr 10 mg + Phenylephrine HCl 5 mg + Paracetamol 250 mg",
+        form: "Suspension"
+    },
+
+    {
+        no: "28",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "L-MITCET TAB.",
+        composition: "Levocetirizine HCl 5 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "29",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "L-MITCET-M TAB.",
+        composition: "Levocetirizine diHCl 5 mg + Montelukast 10 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "30",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "HISTOMAD SYP.",
+        composition: "Diphenhydramine HCl 14.08 mg + Ammonium chloride 138 mg + Sodium citrate 57.03 mg + Menthol 1.14 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "31",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "CYPROMIT SYP.",
+        composition: "Cyproheptadine 2 mg + Tricholine citrate 275 mg",
+        form: "Syrup"
+    },
+
+    {
+        no: "32",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS-D20 TAB.",
+        composition: "Dextromethorphan HBr 20 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "33",
+        category: "ANTI COLD-COUGH / ANTI HISTAMINICS",
+        brand: "SINUS COLD ADVANCE TAB.",
+        composition: "Aceclofenac 100 mg + Paracetamol 325 mg + Phenylephrine HCl 5 mg + Cetirizine diHCl 10 mg + Caffeine 25 mg",
+        form: "Tablet"
+    },
+
+
+    /* =======================
+       ANTACIDS
+       ======================= */
+
+    {
+        no: "34",
+        category: "ANTACIDS",
+        brand: "RABEMIT-DSR CAP.",
+        composition: "Rabeprazole sodium 20 mg + Domperidone 30 mg sustained release",
+        form: "Capsule"
+    },
+
+    {
+        no: "35",
+        category: "ANTACIDS",
+        brand: "VOMIPAN-D TAB.",
+        composition: "Pantoprazole 40 mg + Domperidone 10 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "36",
+        category: "ANTACIDS",
+        brand: "RABEMIT-LSR CAP.",
+        composition: "Rabeprazole sodium 20 mg + Levosulpride 75 mg",
+        form: "Capsule"
+    },
+
+    {
+        no: "37",
+        category: "ANTACIDS",
+        brand: "VOMIPAN-DSR CAP.",
+        composition: "Pantoprazole 40 mg + Domperidone 30 mg",
+        form: "Capsule"
+    },
+
+
+    /* =======================
+       STEROIDS
+       ======================= */
+
+    {
+        no: "38",
+        category: "STEROIDS",
+        brand: "DEFLAMAD-6 TAB.",
+        composition: "Deflazacort 6 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "39",
+        category: "STEROIDS",
+        brand: "PREDMAD-4 TAB.",
+        composition: "Methylprednisolone 4 mg",
+        form: "Tablet"
+    },
+
+
+    /* =======================
+       ANTI PYRETICS / PAIN
+       ======================= */
+
+    {
+        no: "40",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "ACPOSE-P TAB.",
+        composition: "Aceclofenac 100 mg + Paracetamol 325 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "41",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "ACPOSE-SP TAB.",
+        composition: "Aceclofenac 100 mg + Paracetamol 325 mg + Serratiopeptidase 15 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "42",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "DICPOSE TAB.",
+        composition: "Diclofenac potassium 50 mg + Paracetamol 325 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "43",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "SLIDER-DP TAB.",
+        composition: "Diclofenac potassium 50 mg + Paracetamol 325 mg + Serratiopeptidase 10 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "44",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "LIKE-MD TAB.",
+        composition: "Nimesulide 100 mg mouth dissolving",
+        form: "Tablet"
+    },
+
+    {
+        no: "45",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "EROCK-90 TAB.",
+        composition: "Etoricoxib 90 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "46",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "HYOMAD PLUS TAB.",
+        composition: "Hyoscine butylbromide 10 mg + Paracetamol 325 mg",
+        form: "Tablet"
+    },
+
+    {
+        no: "47",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "POWERJET SPRAY",
+        composition: "Linseed oil + Diclofenac diethylamine + Methyl salicylate + Menthol",
+        form: "Spray"
+    },
+
+    {
+        no: "48",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "PREGADIC GEL",
+        composition: "Pregabalin 8% + Diclofenac sodium 5% + Methyl salicylate 10% + Menthol 5% + Capsaicin 0.035% + Benzyl alcohol 1% gel base",
+        form: "Gel"
+    },
+
+    {
+        no: "49",
+        category: "ANTI PYRETICS / PAIN KILLERS",
+        brand: "CARTIMAD TAB.",
+        composition: "Bosswellia serrata 250 mg + Glucosamine 220 mg + Collagen peptide type-II 40 mg + Sodium hyaluronate 20 mg + Chondroitin sulphate 50 mg + Rose hip extract 375 mg + Ginseng extract 10 mg + Pyridoxine HCl 1000 mcg + Thiamine 1000 mcg",
+        form: "Tablet"
+    },
+
+
+    /* =======================
+       INJECTABLE
+       ======================= */
+
+    {
+        no: "50",
+        category: "INJECTABLE",
+        brand: "MITAXONE-S 1.5 INJ.",
+        composition: "Ceftriaxone 1000 mg + Sulbactam 500 mg",
+        form: "Injection"
+    },
+
+    {
+        no: "51",
+        category: "INJECTABLE",
+        brand: "CEFOZEC-S INJ.",
+        composition: "Cefoperazone 1000 mg + Sulbactam 500 mg",
+        form: "Injection"
+    },
+
+    {
+        no: "52",
+        category: "INJECTABLE",
+        brand: "ANZPAN-40 INJ.",
+        composition: "Pantoprazole 40 mg",
+        form: "Injection"
+    },
+
+    {
+        no: "53",
+        category: "INJECTABLE",
+        brand: "PTZEC-INJ.",
+        composition: "Piperacillin 4 g + Tazobactam 500 mg",
+        form: "Injection"
+    },
+
+    {
+        no: "54",
+        category: "INJECTABLE",
+        brand: "FERIMIT FCM INJ.",
+        composition: "Ferric carboxymaltose 500 mg",
+        form: "Injection"
+    },
+
+    {
+        no: "55",
+        category: "INJECTABLE",
+        brand: "MECONAL AQ PFS",
+        composition: "Mecobalamin injection 1500 mcg",
+        form: "Injection / PFS"
+    },
+
+
+    /* =======================
+       RPOTRIN & ENERGY POWDER
+       ======================= */
+
+    {
+        no: "56",
+        category: "RPOTRIN & ENERGY POWDER",
+        brand: "PROTOMAD POW.",
+        composition: "Protein + Vitamin Powder (Chocolate flavour)",
+        form: "Powder"
+    },
+
+    {
+        no: "57",
+        category: "RPOTRIN & ENERGY POWDER",
+        brand: "SUCRO-Z POW.",
+        composition: "Dextrose 17.5 mg + Sucrose 14 mg + Zinc sulphate 32.5 mg + Vitamin C 50 mg",
+        form: "Powder"
+    }
+
+];
+
+
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const productContainer =
+    document.getElementById("productContainer");
+
+const productSearch =
+    document.getElementById("productSearch");
+
+const productCount =
+    document.getElementById("productCount");
+
+const noResults =
+    document.getElementById("noResults");
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+
+let activeCategory = "ALL";
+
+
+
+/* =========================================================
+   RENDER PRODUCTS
+   ========================================================= */
+
+function renderProducts() {
+
+    const searchText =
+        productSearch.value
+            .trim()
+            .toLowerCase();
+
+
+    const filteredProducts =
+        products.filter(product => {
+
+            const categoryMatch =
+                activeCategory === "ALL" ||
+                product.category === activeCategory;
+
+
+            const searchMatch =
+                !searchText ||
+                product.brand
+                    .toLowerCase()
+                    .includes(searchText) ||
+                product.composition
+                    .toLowerCase()
+                    .includes(searchText);
+
+
+            return categoryMatch && searchMatch;
+
+        });
+
+
+    productContainer.innerHTML = "";
+
+
+    let currentCategory = "";
+
+
+    filteredProducts.forEach(product => {
+
+
+        /* CATEGORY HEADING */
+
+        if (product.category !== currentCategory) {
+
+            currentCategory =
+                product.category;
+
+
+            const categoryHeading =
+                document.createElement("div");
+
+            categoryHeading.className =
+                "category-title";
+
+            categoryHeading.textContent =
+                currentCategory;
+
+            productContainer.appendChild(
+                categoryHeading
+            );
 
         }
 
-    </script>
+
+        /* PRODUCT ROW */
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "product-row fade-up";
+
+
+        row.innerHTML = `
+
+            <div class="product-number">
+                ${product.no}
+            </div>
+
+            <div class="brand-name">
+                ${product.brand}
+            </div>
+
+            <div class="composition">
+                <span class="composition-label">
+                    Composition
+                </span>
+
+                ${product.composition}
+            </div>
+
+            <div class="product-form">
+                ${product.form}
+            </div>
+
+        `;
+
+
+        productContainer.appendChild(row);
+
+    });
+
+
+    /* COUNT */
+
+    productCount.textContent =
+        filteredProducts.length +
+        " product" +
+        (filteredProducts.length === 1
+            ? ""
+            : "s") +
+        " shown";
+
+
+    /* NO RESULTS */
+
+    noResults.style.display =
+        filteredProducts.length === 0
+            ? "block"
+            : "none";
+
+
+    /* ANIMATION */
+
+    setTimeout(() => {
+
+        document
+            .querySelectorAll(".fade-up")
+            .forEach((element, index) => {
+
+                setTimeout(() => {
+
+                    element.classList.add(
+                        "visible"
+                    );
+
+                }, index * 20);
+
+            });
+
+    }, 20);
+
+}
+
+
+
+/* =========================================================
+   CATEGORY FILTER
+   ========================================================= */
+
+filterButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            activeCategory =
+                button.dataset.filter;
+
+
+            filterButtons.forEach(
+                item => {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            renderProducts();
+
+        }
+    );
+
+});
+
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+productSearch.addEventListener(
+    "input",
+    renderProducts
+);
+
+
+
+/* =========================================================
+   INITIAL LOAD
+   ========================================================= */
+
+renderProducts();
+
+
+</script>
 
 </body>
 </html>
-```
