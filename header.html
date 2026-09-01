@@ -1,0 +1,42 @@
+<!-- Shared Madinal Lifescience header -->
+<style>
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.40);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid rgba(255,255,255,.5);box-shadow:0 8px 32px rgba(31,38,135,.08)}
+.site-logo-row{display:flex;align-items:center;padding:14px 8%;background:transparent;border-bottom:3px solid rgba(220,38,38,.85)}
+.site-logo-area{display:flex;align-items:center;gap:14px}
+.site-logo-area img{height:55px;width:auto;object-fit:contain}
+.site-logo-text{font-size:24px;font-weight:800;letter-spacing:.5px;color:#dc2626}
+.site-logo-text span{color:#2563eb}
+.site-nav-bar{width:100%;padding:14px 8%;display:flex;justify-content:flex-start}
+.site-nav-links{display:flex;list-style:none;gap:45px;margin:0;padding:0;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.site-nav-links::-webkit-scrollbar{display:none}
+.site-nav-links a{text-decoration:none;color:#0f172a;font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.5px;transition:color .2s ease}
+.site-nav-links a:hover,.site-nav-links a.active{color:#2563eb}
+@media(max-width:800px){.site-logo-row{padding:10px 5%}.site-logo-area img{height:48px}.site-logo-text{font-size:19px}.site-nav-bar{padding:12px 5%}.site-nav-links{gap:28px}.site-nav-links a{font-size:13px}}
+</style>
+<header class="site-header">
+  <div class="site-logo-row">
+    <a class="site-logo-area" href="index.html" aria-label="Madinal Lifescience Home">
+      <img src="MADINAL LOGO.jpg" alt="Madinal Lifescience Logo">
+      <div class="site-logo-text">MADINAL <span>LIFESCIENCE</span></div>
+    </a>
+  </div>
+  <div class="site-nav-bar">
+    <nav aria-label="Primary navigation">
+      <ul class="site-nav-links">
+        <li><a data-page="index.html" href="index.html">Home</a></li>
+        <li><a data-page="about.html" href="about.html">About Us</a></li>
+        <li><a data-page="products.html" href="products.html">Products</a></li>
+        <li><a data-page="pcd-franchise.html" href="pcd-franchise.html">PCD Franchise</a></li>
+        <li><a data-page="contact.html" href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<script>
+(function(){
+  const page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  document.querySelectorAll('.site-nav-links a[data-page]').forEach(a=>{
+    if(a.dataset.page.toLowerCase()===page)a.classList.add('active');
+  });
+})();
+</script>
