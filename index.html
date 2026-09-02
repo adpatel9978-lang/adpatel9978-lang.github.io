@@ -660,398 +660,96 @@
             border-top: 4px solid #dc2626;
         }
 
-
-        /* =========================================================
-           MOBILE RESPONSIVENESS
-           Keeps the desktop design/animations intact while making
-           the complete page fit smaller screens without horizontal
-           overflow or empty/hidden content areas.
-           ========================================================= */
         @media (max-width: 767px) {
-            html, body {
-                width: 100%;
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-
-            header {
-                position: sticky;
-            }
-
-            .logo-branding-row {
-                padding: 10px 16px;
-                justify-content: center;
-            }
-
-            .logo-area {
-                gap: 8px;
-                min-width: 0;
-            }
-
-            .logo-area img {
-                height: 42px !important;
-                max-width: 52px;
-            }
-
-            .logo-text {
-                font-size: 18px;
-                white-space: nowrap;
-            }
-
-            .translucent-nav-bar {
-                padding: 10px 12px;
-                justify-content: flex-start;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .translucent-nav-bar::-webkit-scrollbar {
-                display: none;
-            }
-
-            .nav-links {
-                gap: 18px;
-                min-width: max-content;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-                letter-spacing: 0.2px;
-            }
-
-            .hero-slider-wrapper {
-                height: 520px;
-                min-height: 520px;
-            }
-
-            .hero-slide {
-                padding: 45px 20px 75px;
-                background-position: center center;
-            }
-
-            .slide-content-box {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .hero-title-large {
-                font-size: clamp(30px, 9vw, 42px);
-                line-height: 1.15;
-                margin-bottom: 16px;
-            }
-
-            .hero-subtitle-text {
-                font-size: 16px;
-                line-height: 1.55;
-                margin-bottom: 22px;
-            }
-
-            .banner-highlight-shapes {
-                gap: 8px;
-                margin-bottom: 18px;
-            }
-
-            .shape-badge {
-                font-size: 13px;
-                padding: 8px 13px;
-            }
-
-            .cta-btn {
-                padding: 12px 22px;
-                font-size: 14px;
-            }
-
-            .slider-controls {
-                bottom: 18px;
-            }
-
-            .dot {
-                width: 11px;
-                height: 11px;
-            }
-
-            .story-section {
-                padding: 40px 16px;
-            }
-
-            .story-card {
-                padding: 24px 20px;
-                border-left-width: 4px;
-                border-radius: 0 12px 12px 0;
-            }
-
-            .story-card h2 {
-                font-size: 25px;
-                line-height: 1.25;
-            }
-
-            .story-card p {
-                font-size: 15px;
-                line-height: 1.7;
-                margin-bottom: 24px;
-            }
-
-            .story-highlights-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .highlight-box {
-                padding: 16px;
-            }
-
-            .highlight-box .number {
-                font-size: 27px;
-            }
-
-            .bottom-gallery-2d {
-                padding: 45px 0 30px;
-            }
-
-            .bottom-gallery-2d h2 {
-                font-size: 28px;
-            }
-
-            .bottom-gallery-2d p.subtitle {
-                font-size: 14px;
-                line-height: 1.5;
-                padding: 0 18px;
-                margin-bottom: 20px;
-            }
-
-            .marquee-container {
-                overflow-x: auto;
-                width: 100%;
-                touch-action: pan-x;
-            }
-
-            .marquee-track {
-                gap: 14px;
-                padding: 0 14px;
-            }
-
-            .square-frame-2d {
-                width: min(68vw, 220px);
-                height: min(68vw, 220px);
-            }
-
-            .blended-literature-section {
-                padding: 42px 18px;
-            }
-
-            .blended-literature-section h3 {
-                font-size: 23px;
-                line-height: 1.3;
-            }
-
-            .blended-literature-section p {
-                font-size: 15px;
-                line-height: 1.75;
-            }
-
-            .who-we-are-section {
-                padding: 55px 18px 40px;
-            }
-
-            .who-we-are-section h2.main-title {
-                font-size: 30px;
-                margin-bottom: 35px;
-            }
-
-            .infographic-container {
-                width: 100%;
-                gap: 35px;
-            }
-
-            .info-column {
-                width: 100%;
-                gap: 28px;
-            }
-
-            .info-column.left-side,
-            .info-column.right-side {
-                text-align: center;
-            }
-
-            .info-block h3 {
-                font-size: 18px;
-                margin-bottom: 7px;
-            }
-
-            .info-block p {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-
-            .stage-3d-viewport {
-                width: min(88vw, 360px);
-                height: 360px;
-                max-width: 100%;
-                overflow: visible;
-            }
-
-            .unfold-hub-3d {
-                transform: scale(0.78);
-                transform-origin: center center;
-            }
-
+            html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+            header { position: sticky; }
+            .logo-branding-row { padding: 10px 16px; justify-content: center; }
+            .logo-area { gap: 8px; min-width: 0; }
+            .logo-area img { height: 42px !important; max-width: 52px; }
+            .logo-text { font-size: 18px; white-space: nowrap; }
+            .translucent-nav-bar { padding: 10px 12px; justify-content: flex-start; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+            .translucent-nav-bar::-webkit-scrollbar { display: none; }
+            .nav-links { gap: 18px; min-width: max-content; }
+            .nav-links a { font-size: 12px; letter-spacing: 0.2px; }
+            .hero-slider-wrapper { height: 520px; min-height: 520px; }
+            .hero-slide { padding: 45px 20px 75px; background-position: center center; }
+            .slide-content-box { width: 100%; max-width: 100%; }
+            .hero-title-large { font-size: clamp(30px, 9vw, 42px); line-height: 1.15; margin-bottom: 16px; }
+            .hero-subtitle-text { font-size: 16px; line-height: 1.55; margin-bottom: 22px; }
+            .banner-highlight-shapes { gap: 8px; margin-bottom: 18px; }
+            .shape-badge { font-size: 13px; padding: 8px 13px; }
+            .cta-btn { padding: 12px 22px; font-size: 14px; }
+            .slider-controls { bottom: 18px; }
+            .dot { width: 11px; height: 11px; }
+            .story-section { padding: 40px 16px; }
+            .story-card { padding: 24px 20px; border-left-width: 4px; border-radius: 0 12px 12px 0; }
+            .story-card h2 { font-size: 25px; line-height: 1.25; }
+            .story-card p { font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+            .story-highlights-grid { grid-template-columns: 1fr; gap: 12px; }
+            .highlight-box { padding: 16px; }
+            .highlight-box .number { font-size: 27px; }
+            .bottom-gallery-2d { padding: 45px 0 30px; }
+            .bottom-gallery-2d h2 { font-size: 28px; }
+            .bottom-gallery-2d p.subtitle { font-size: 14px; line-height: 1.5; padding: 0 18px; margin-bottom: 20px; }
+            .marquee-container { overflow-x: auto; width: 100%; touch-action: pan-x; }
+            .marquee-track { gap: 14px; padding: 0 14px; }
+            .square-frame-2d { width: min(68vw, 220px); height: min(68vw, 220px); }
+            .blended-literature-section { padding: 42px 18px; }
+            .blended-literature-section h3 { font-size: 23px; line-height: 1.3; }
+            .blended-literature-section p { font-size: 15px; line-height: 1.75; }
+            .who-we-are-section { padding: 55px 18px 40px; }
+            .who-we-are-section h2.main-title { font-size: 30px; margin-bottom: 35px; }
+            .infographic-container { width: 100%; gap: 35px; }
+            .info-column { width: 100%; gap: 28px; }
+            .info-column.left-side, .info-column.right-side { text-align: center; }
+            .info-block h3 { font-size: 18px; margin-bottom: 7px; }
+            .info-block p { font-size: 14px; line-height: 1.6; }
+            .stage-3d-viewport { width: min(88vw, 360px); height: 360px; max-width: 100%; overflow: visible; }
+            .unfold-hub-3d { transform: scale(0.78); transform-origin: center center; }
             .stage-3d-viewport.activated .rect-node-1 { transform: rotate(0deg) translateY(-145px) rotateX(-15deg); }
             .stage-3d-viewport.activated .rect-node-2 { transform: rotate(60deg) translateY(-145px) rotateX(-15deg) rotateZ(-60deg); }
             .stage-3d-viewport.activated .rect-node-3 { transform: rotate(120deg) translateY(-145px) rotateX(-15deg) rotateZ(-120deg); }
             .stage-3d-viewport.activated .rect-node-4 { transform: rotate(180deg) translateY(-145px) rotateX(-15deg) rotateZ(-180deg); }
             .stage-3d-viewport.activated .rect-node-5 { transform: rotate(240deg) translateY(-145px) rotateX(-15deg) rotateZ(-240deg); }
             .stage-3d-viewport.activated .rect-node-6 { transform: rotate(300deg) translateY(-145px) rotateX(-15deg) rotateZ(-300deg); }
-
-            .categories-section {
-                padding: 50px 12px;
-                overflow: hidden;
-            }
-
-            .categories-section h2 {
-                font-size: 29px;
-            }
-
-            .categories-section p.subtitle {
-                font-size: 14px;
-                line-height: 1.5;
-                padding: 0 10px;
-                margin-bottom: 25px;
-            }
-
-            .deck-3d-stage {
-                width: 100%;
-                height: 390px;
-                max-width: 100%;
-                overflow: visible;
-            }
-
-            .card-3d-item {
-                width: min(62vw, 230px);
-                height: min(86vw, 315px);
-                padding: 14px;
-            }
-
-            .card-3d-item img {
-                height: 190px;
-            }
-
-            .card-3d-item h4 {
-                font-size: 18px;
-            }
-
+            .categories-section { padding: 50px 12px; overflow: hidden; }
+            .categories-section h2 { font-size: 29px; }
+            .categories-section p.subtitle { font-size: 14px; line-height: 1.5; padding: 0 10px; margin-bottom: 25px; }
+            .deck-3d-stage { width: 100%; height: 390px; max-width: 100%; overflow: visible; }
+            .card-3d-item { width: min(62vw, 230px); height: min(86vw, 315px); padding: 14px; }
+            .card-3d-item img { height: 190px; }
+            .card-3d-item h4 { font-size: 18px; }
             .card-3d-item.pos-1 { transform: translateX(125px) translateZ(30px) rotateY(-15deg) scale(0.78); }
             .card-3d-item.pos-2 { transform: translateX(205px) translateZ(-60px) rotateY(-25deg) scale(0.68); }
             .card-3d-item.pos-3 { transform: translateX(0) translateZ(-120px) scale(0.62); }
             .card-3d-item.pos-4 { transform: translateX(-205px) translateZ(-60px) rotateY(25deg) scale(0.68); }
             .card-3d-item.pos-5 { transform: translateX(-125px) translateZ(30px) rotateY(15deg) scale(0.78); }
             .card-3d-item.pos-6 { transform: translateX(0) translateZ(-90px) scale(0.65); }
-
-            footer {
-                padding: 30px 16px;
-                font-size: 13px;
-            }
-
-            .category-modal-box {
-                width: calc(100% - 24px);
-                max-height: 88vh;
-                padding: 26px 16px;
-                border-radius: 14px;
-            }
-
-            .category-modal-box h2 {
-                font-size: 23px;
-                padding-right: 30px;
-            }
-
-            .category-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 10px;
-            }
-
-            .category-item-card {
-                padding: 8px;
-            }
-
-            .category-item-card img {
-                height: 130px;
-            }
-
-            .lightbox-content {
-                max-width: 94%;
-                max-height: 82%;
-            }
-
-            .lightbox-content img {
-                max-width: 100%;
-                max-height: 78vh;
-            }
-
-            .lightbox-close {
-                top: -38px;
-                font-size: 28px;
-            }
+            footer { padding: 30px 16px; font-size: 13px; }
+            .category-modal-box { width: calc(100% - 24px); max-height: 88vh; padding: 26px 16px; border-radius: 14px; }
+            .category-modal-box h2 { font-size: 23px; padding-right: 30px; }
+            .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+            .category-item-card { padding: 8px; }
+            .category-item-card img { height: 130px; }
+            .lightbox-content { max-width: 94%; max-height: 82%; }
+            .lightbox-content img { max-width: 100%; max-height: 78vh; }
+            .lightbox-close { top: -38px; font-size: 28px; }
         }
 
-        /* Very small phones */
         @media (max-width: 380px) {
-            .logo-text {
-                font-size: 16px;
-            }
-
-            .nav-links {
-                gap: 14px;
-            }
-
-            .nav-links a {
-                font-size: 11px;
-            }
-
-            .hero-slider-wrapper {
-                height: 500px;
-                min-height: 500px;
-            }
-
-            .hero-slide {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            .hero-title-large {
-                font-size: 29px;
-            }
-
-            .hero-subtitle-text {
-                font-size: 15px;
-            }
-
-            .shape-badge {
-                font-size: 12px;
-                padding: 7px 10px;
-            }
-
-            .stage-3d-viewport {
-                width: 320px;
-                height: 330px;
-            }
-
-            .unfold-hub-3d {
-                transform: scale(0.68);
-            }
-
-            .deck-3d-stage {
-                height: 350px;
-            }
-
-            .card-3d-item {
-                width: 205px;
-                height: 285px;
-            }
-
-            .card-3d-item img {
-                height: 165px;
-            }
-
+            .logo-text { font-size: 16px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 11px; }
+            .hero-slider-wrapper { height: 500px; min-height: 500px; }
+            .hero-slide { padding-left: 16px; padding-right: 16px; }
+            .hero-title-large { font-size: 29px; }
+            .hero-subtitle-text { font-size: 15px; }
+            .shape-badge { font-size: 12px; padding: 7px 10px; }
+            .stage-3d-viewport { width: 320px; height: 330px; }
+            .unfold-hub-3d { transform: scale(0.68); }
+            .deck-3d-stage { height: 350px; }
+            .card-3d-item { width: 205px; height: 285px; }
+            .card-3d-item img { height: 165px; }
             .card-3d-item.pos-1 { transform: translateX(105px) translateZ(20px) rotateY(-15deg) scale(0.72); }
             .card-3d-item.pos-2 { transform: translateX(165px) translateZ(-40px) rotateY(-25deg) scale(0.60); }
             .card-3d-item.pos-3 { transform: translateX(0) translateZ(-90px) scale(0.56); }
@@ -1094,10 +792,7 @@
 
     <section class="hero-slider-wrapper">
         <div class="hero-slide slide-one active">
-            <div class="slide-content-box">
-                <h1 class="hero-title-large">Welcome to <span style="color: #ef4444;">Madinal</span> <span style="color: #60a5fa;">Lifesciences</span></h1>
-                <p class="hero-subtitle-text">Advancing Healthcare through Quality Formulations: Delivering Premium Antibiotics, Analgesics, and Targeted Healthcare Solutions across national distribution networks.</p>
-            </div>
+            <div class="slide-content-box"></div>
         </div>
 
         <div class="hero-slide slide-pcd">
@@ -1412,7 +1107,6 @@
             for (let i = 1; i <= count; i++) {
                 let imgPath = '';
                 if (categoryName === 'TABLET') {
-                    // Handles .png files for index 3, 18, 35 directly from root
                     const ext = (i === 3 || i === 18 || i === 35) ? 'png' : 'jpg';
                     imgPath = `TABLET${i}.${ext}`;
                 } else if (categoryName === 'AEROSOLS') {
