@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://madinallifesciences.com/sitemap.xml
+Sitemap: https://madinallifesciences.com/sitemap.txt
